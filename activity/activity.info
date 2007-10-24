@@ -1,0 +1,7 @@
+[Activity]
+name = Log Viewer
+activity_version = 1
+service_name = org.laptop.LogViewer
+exec = sugar-activity logviewer.LogViewer -s
+icon = activity-log
+
