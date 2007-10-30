@@ -29,6 +29,8 @@ import gnomevfs
 
 from sugar.activity import activity
 from sugar import env
+from sugar.graphics.toolbutton import ToolButton
+from ps_watcher import 
 
 class MultiLogView(gtk.VBox):
     def __init__(self, path, extra_files):
@@ -239,6 +241,10 @@ class LogViewer(activity.Activity):
         toolbox = activity.ActivityToolbox(self)
         toolbox.show()
 
+        toolbar = LogToolbar()
+        toolbox.add_toolbar(_('Interfaces'), toolbar)
+        toolbar.show()
+
         self.set_toolbox(toolbox)
         self.show_all()
         
@@ -246,3 +252,17 @@ class LogViewer(activity.Activity):
         toolbar = toolbox.get_activity_toolbar()
         toolbar.share.hide()
         toolbar.keep.hide()
+
+class LogToolbar(gtk.Toolbar):
+    def __init__(self):
+        gtk.Toolbar.__init__(self)
+
+        self._logviewer = ToolButton('zoom-best-fit')
+        self._logviewer.set_tooltip(_('Log Viewer'))
+        self.insert(self._logviewer, -1)
+        self._logviewer.show()
+
+        self._presence = ToolButton('computer-xo')
+        self._presence.set_tooltip(_('Presence Service'))
+        self.insert(self._presence, -1)
+        self._presence.show()
