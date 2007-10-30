@@ -30,7 +30,7 @@ import gnomevfs
 from sugar.activity import activity
 from sugar import env
 from sugar.graphics.toolbutton import ToolButton
-from ps_watcher import 
+from ps_watcher import PresenceServiceNameWatcher
 
 class MultiLogView(gtk.VBox):
     def __init__(self, path, extra_files):
@@ -219,7 +219,7 @@ class LogView(gtk.ScrolledWindow):
         self.textview.show()
 
 
-class LogViewer(activity.Activity):
+class LogHandler(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
         logging.debug('Starting the Log Viewer activity')
@@ -234,35 +234,57 @@ class LogViewer(activity.Activity):
         ext_files.append("/var/log/syslog")
         ext_files.append("/var/log/messages")
 
-        viewer = MultiLogView(main_path, ext_files)
-        self.set_canvas(viewer.hbox)
+        self._viewer = MultiLogView(main_path, ext_files).hbox
+        self._ps = PresenceServiceNameWatcher(dbus.SessionBus())
+
+        self._box = gtk.HBox()
+        self._box.pack_start(self._viewer)
+        self._box.show()
+
+        self.set_canvas(self._box)
 
         # TOOLBAR
         toolbox = activity.ActivityToolbox(self)
         toolbox.show()
 
-        toolbar = LogToolbar()
+        toolbar = LogToolbar(self)
         toolbox.add_toolbar(_('Interfaces'), toolbar)
         toolbar.show()
 
         self.set_toolbox(toolbox)
-        self.show_all()
-        
+        self.show()
+
         # Dirty hide()
         toolbar = toolbox.get_activity_toolbar()
         toolbar.share.hide()
         toolbar.keep.hide()
 
-class LogToolbar(gtk.Toolbar):
-    def __init__(self):
-        gtk.Toolbar.__init__(self)
+    def switch_to_logviewer(self):
+        self._box.remove(self._box.get_children()[0])
+        self._box.pack_start(self._viewer)
+      
+    def switch_to_presence(self):
+        self._box.remove(self._box.get_children()[0])
+        self._box.pack_start(self._ps)
 
+class LogToolbar(gtk.Toolbar):
+    def __init__(self, handler):
+        gtk.Toolbar.__init__(self)
+        self._handler = handler
         self._logviewer = ToolButton('zoom-best-fit')
         self._logviewer.set_tooltip(_('Log Viewer'))
+        self._logviewer.connect('clicked', self._on_logviewer_clicked_cb)
         self.insert(self._logviewer, -1)
         self._logviewer.show()
 
         self._presence = ToolButton('computer-xo')
         self._presence.set_tooltip(_('Presence Service'))
+        self._presence.connect('clicked', self._on_presence_clicked_cb)
         self.insert(self._presence, -1)
         self._presence.show()
+
+    def _on_logviewer_clicked_cb(self, widget):
+        self._handler.switch_to_logviewer()
+
+    def _on_presence_clicked_cb(self, widget):
+        self._handler.switch_to_presence()

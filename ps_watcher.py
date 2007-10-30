@@ -722,8 +722,3 @@ class PresenceServiceNameWatcher(VBox):
                 self.paned.pack2(self.ps_watcher)
         except Exception, e:
             self.log('ERROR: %s', e)
-
-
-class Interface(object):
-    def __init__(self):
-        self.widget = PresenceServiceNameWatcher(dbus.SessionBus())
