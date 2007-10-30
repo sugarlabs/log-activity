@@ -17,7 +17,7 @@
 
 import gobject
 from netdevice import NetDevice
-from ui.treeview import TreeView
+from treeview import TreeView
 
 class NetworkView(TreeView):
     def __init__(self):
@@ -35,7 +35,7 @@ class NetworkView(TreeView):
         cols_type = [str, str, str, str, str, str, str, str]
         TreeView.__init__(self, cols_type, col_names)
 
-        self._dev = Device()
+        self._dev = NetDevice()
         self.show_all()
         gobject.timeout_add(1500, self._update_data)
 
