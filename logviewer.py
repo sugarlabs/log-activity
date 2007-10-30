@@ -124,7 +124,11 @@ class MultiLogView(gtk.VBox):
             return False
 
         if not os.path.exists(path):
-            print "ERROR: %s don't exists"
+            print "ERROR: %s don't exists" % path
+            return False
+
+        if not os.access(path, os.R_OK): 
+            print "ERROR: I can't read '%s' file" % path
             return False
 
         logfile = self._get_filename_from_path(path)
