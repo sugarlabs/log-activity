@@ -30,8 +30,6 @@ import gnomevfs
 from sugar.activity import activity
 from sugar import env
 from sugar.graphics.toolbutton import ToolButton
-from ps_watcher import PresenceServiceNameWatcher
-from network import NetworkView
 
 class MultiLogView(gtk.VBox):
     def __init__(self, path, extra_files):
@@ -236,8 +234,6 @@ class LogHandler(activity.Activity):
         ext_files.append("/var/log/messages")
 
         self._viewer = MultiLogView(main_path, ext_files).hbox
-        self._ps = PresenceServiceNameWatcher(dbus.SessionBus())
-        self._network = NetworkView()
 
         self._box = gtk.HBox()
         self._box.pack_start(self._viewer)
@@ -249,9 +245,9 @@ class LogHandler(activity.Activity):
         toolbox = activity.ActivityToolbox(self)
         toolbox.show()
 
-        toolbar = LogToolbar(self)
-        toolbox.add_toolbar(_('Interfaces'), toolbar)
-        toolbar.show()
+        #toolbar = LogToolbar(self)
+        #toolbox.add_toolbar(_('Interfaces'), toolbar)
+        #toolbar.show()
 
         self.set_toolbox(toolbox)
         self.show()
@@ -261,22 +257,10 @@ class LogHandler(activity.Activity):
         toolbar.share.hide()
         toolbar.keep.hide()
 
+    # Keeping this method to add new funcs later
     def switch_to_logviewer(self):
         self._clean_box()
         self._box.pack_start(self._viewer)
-
-    def switch_to_presence(self):
-        self._clean_box()
-        self._box.pack_start(self._ps)
-
-    def switch_to_network(self):
-        self._clean_box()
-        self._box.pack_start(self._network)
-
-    def _clean_box(self):
-        childs = self._box.get_children()
-        for c in childs:
-            self._box.remove(c)
 
 class LogToolbar(gtk.Toolbar):
     def __init__(self, handler):
@@ -289,23 +273,5 @@ class LogToolbar(gtk.Toolbar):
         self.insert(logviewer, -1)
         logviewer.show()
 
-        network = ToolButton('network-wireless-060')
-        network.set_tooltip(_('Network Status'))
-        network.connect('clicked', self._on_network_clicked_cb)
-        self.insert(network, -1)
-        network.show()
-
-        presence = ToolButton('computer-xo')
-        presence.set_tooltip(_('Presence Service'))
-        presence.connect('clicked', self._on_presence_clicked_cb)
-        self.insert(presence, -1)
-        presence.show()
-
     def _on_logviewer_clicked_cb(self, widget):
         self._handler.switch_to_logviewer()
-
-    def _on_presence_clicked_cb(self, widget):
-        self._handler.switch_to_presence()
-
-    def _on_network_clicked_cb(self, widget):
-        self._handler.switch_to_network()
