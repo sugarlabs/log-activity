@@ -36,6 +36,10 @@
 # 2. It is a python module.
 
 import os
+import zipfile
+import glob
+import sys
+import time
 
 class MachineProperties:
     """Various machine properties in easy to access chunks.
@@ -77,6 +81,12 @@ class MachineProperties:
                 return line            
         return ''
 
+    def loadavg(self):
+        for line in self.__read_file('/proc/loadavg').splitlines():
+            if line != '':
+                return line            
+        return ''
+
     def kernel_version(self):
         for line in self.__read_file('/proc/version').splitlines():
             if line != '':
@@ -94,7 +104,7 @@ class MachineProperties:
         """Return mfg data item from /ofw/mfg-data/"""
         
         if not os.path.exists('/ofw/mfg-data/'+item):
-            return '??'
+            return ''
                 
         return self.__read_file('/ofw/mfg-data/'+item)
             
@@ -105,7 +115,12 @@ class MachineProperties:
         return self._mfg_data('B#')
 
     def laptop_board_revision(self):
+        s = self._mfg_data('SG')[0:1]
+        if s == '':
+            return ''
+            
         return '%02X' % ord(self._mfg_data('SG')[0:1])
+        
 
     def laptop_uuid(self):
         return self._mfg_data('U#')
@@ -130,16 +145,18 @@ class MachineProperties:
     
     def _battery_info(self, item):
         """ from  /sys/class/power-supply/olpc-battery/ """
-        if not os.path.exists('/sys/class/power_supply/olpc-battery/'+item):
-            return '??'
+        root = '/sys/class/power_supply/olpc-battery/'
+        if not os.path.exists(root+item):
+            return ''
         
-        return self.__read_file('/sys/class/power_supply/olpc-battery/'+item).strip()
+        return self.__read_file(root+item).strip()
 
     def battery_serial_number(self):
         return self._battery_info('serial_number')
     
     def battery_capacity(self):
-        return self._battery_info('capacity') + ' ' + self._battery_info('capacity_level')
+        return self._battery_info('capacity') + ' ' + \
+                    self._battery_info('capacity_level')
 
     def battery_info(self):
         #Should be just:
@@ -159,6 +176,36 @@ class MachineProperties:
     def diskfree(self, path):
         return os.statvfs(path).f_bsize * os.statvfs(path).f_bavail
         
+    def _read_popen(self, cmd):
+        p = os.popen(cmd)
+        s = ''
+        try:
+            for line in p:
+                s += line 
+        finally:
+            p.close()        
+        
+        return s
+    
+    def ifconfig(self):        
+        return self._read_popen('/sbin/ifconfig')
+               
+    def route_n(self):        
+        return self._read_popen('/sbin/route -n')
+    
+    def installed_activities(self):
+        
+        s = ''
+        
+        for path in glob.glob('/usr/share/activities/*.activity'):
+            s += os.path.basename(path) + '\n'
+
+        for path in glob.glob('/home/olpc/Activities/*'):
+            s += '~' + os.path.basename(path) + '\n'
+            
+        return s
+        
+        
 
 class LogCollect:
     """Collect XO logfiles and machine metadata for reporting to OLPC
@@ -167,6 +214,80 @@ class LogCollect:
     def __init__(self):
         self._mp = MachineProperties()
 
+    def write_logs(self, archive='', logbytes=15360):
+        """Write a zipfile containing the tails of the logfiles and machine info of the XO
+        
+        Arguments:
+            archive -   Specifies the location where to store the data
+                        defaults to /dev/shm/logs-<xo-serial>.zip
+                        
+            logbytes -  Maximum number of bytes to read from each log file.
+                        0 means complete logfiles, not just the tail
+                        -1 means only save machine info, no logs
+        """
+        
+        if archive=='':            
+            #archive = '/dev/shm/logs-%s.zip' % self._mp.laptop_serial_number()
+            # Oops - null character in serialno!
+            archive = '/dev/shm/logs.zip'
+            
+        z = zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED)
+        
+        try:         
+            z.writestr('info.txt', self.laptop_info())
+            
+            if logbytes > -1:            
+                # Include some log files from /var/log.
+                for fn in ['dmesg', 'messages', 'cron', 'maillog','rpmpkgs',
+                           'Xorg.0.log', 'spooler']:
+                    if os.access('/var/log/'+fn, os.F_OK):
+                        if logbytes == 0:
+                            z.write('/var/log/'+fn, 'var-log/'+fn)
+                        else:
+                            z.writestr('var-log/'+fn,
+                                       self.file_tail('/var/log/'+fn, logbytes))
+                    
+                # Include all current ones from sugar/logs
+                for path in glob.glob('/home/olpc/.sugar/default/logs/*.log'):
+                    if os.access(path, os.F_OK):
+                        if logbytes == 0:
+                            z.write(path, 'sugar-logs/'+os.path.basename(path))
+                        else:
+                            z.writestr('sugar-logs/'+os.path.basename(path),
+                                       self.file_tail(path, logbytes))
+                 
+                z.write('/etc/resolv.conf')
+        except Exception, e:
+            print 'While creating zip archive: %s' % e            
+        
+        z.close()
+        
+        
+        return archive
+
+    def file_tail(self, filename, tailbytes):
+        """Read the tail (end) of the file
+        
+        Arguments:
+            filename    The name of the file to read
+            tailbytes   Number of bytes to include or 0 for entire file
+        """
+
+        data = ''
+
+        f = open(filename)
+        try:
+            fsize = os.stat(filename).st_size
+            
+            if tailbytes > 0 and fsize > tailbytes:
+                f.seek(-tailbytes, 2)
+                
+            data = f.read()
+        finally:
+            f.close()
+
+        return data        
+              
 
     def make_report(self, target='stdout'):
         """Create the report
@@ -182,46 +303,52 @@ class LogCollect:
             
         print self._mp.battery_info()
 
-    def read_file(self, filename):
-        """Read the entire contents of a file and return it as a string"""
-
-        data = ''
-
-        f = open(filename)
-        try:
-            data = f.read()
-        finally:
-            f.close()
-
-        return data
-
     def laptop_info(self):
         """Return a string with laptop serial, battery type, build, memory info, etc."""
 
-        d=dict()
-        d['laptop-info-version'] = '0.1'
-        d['memfree'] = self._mp.memfree()
-        d['disksize'] = '%d MB' % ( self._mp.disksize('/') / (1024*1024) ) 
-        d['diskfree'] = '%d MB' % ( self._mp.diskfree('/') / (1024*1024) ) 
-        d['olpc_build'] = self._mp.olpc_build()
-        d['kernel_version'] = self._mp.kernel_version()
-        d['uptime'] = self._mp.uptime()
-        d['serial-number'] = self._mp.laptop_serial_number()
-        d['motherboard-number'] = self._mp.laptop_motherboard_number()
-        d['board-revision'] = self._mp.laptop_board_revision()
-        d['uuid'] = self._mp.laptop_uuid()
-        d['keyboard'] = self._mp.laptop_keyboard()
-        d['wireless_mac'] = self._mp.laptop_wireless_mac()
-        d['bios-version'] = self._mp.laptop_bios_version()
-        d['country'] = self._mp.laptop_country()
-        d['localization'] = self._mp.laptop_localization()
-        #d['battery-serial-number'] = self._mp.battery_serial_number()
-        #d['battery-capacity'] = self._mp.battery_capacity()       
+        s = ''        
+
+        # Do not include UUID!
+        s += 'laptop-info-version: 1.0\n'
+        s += 'clock: %f\n' % time.clock()
+        s += 'date: %s' % time.strftime("%a, %d %b %Y %H:%M:%S +0000",
+                                        time.gmtime())
+        s += 'memfree: %s\n' % self._mp.memfree()
+        s += 'disksize: %s MB\n' % ( self._mp.disksize('/') / (1024*1024) ) 
+        s += 'diskfree: %s MB\n' % ( self._mp.diskfree('/') / (1024*1024) ) 
+        s += 'olpc_build: %s\n' % self._mp.olpc_build()
+        s += 'kernel_version: %s\n' % self._mp.kernel_version()
+        s += 'uptime: %s\n' % self._mp.uptime()
+        s += 'loadavg: %s\n' % self._mp.loadavg()        
+        s += 'serial-number: %s\n' % self._mp.laptop_serial_number()
+        s += 'motherboard-number: %s\n' % self._mp.laptop_motherboard_number()
+        s += 'board-revision: %s\n' %  self._mp.laptop_board_revision()
+        s += 'keyboard: %s\n' %  self._mp.laptop_keyboard()
+        s += 'wireless_mac: %s\n' %  self._mp.laptop_wireless_mac()
+        s += 'firmware: %s\n' %  self._mp.laptop_bios_version()
+        s += 'country: %s\n' % self._mp.laptop_country()
+        s += 'localization: %s\n' % self._mp.laptop_localization()
+            
+        s += self._mp.battery_info()
+        
+        s += "\n[/sbin/ifconfig]\n%s\n" % self._mp.ifconfig()
+        s += "\n[/sbin/route -n]\n%s\n" % self._mp.route_n()
+        
+        s += '\n[Installed Activities]\n%s\n' % self._mp.installed_activities()
+        
+        return s
+
+
+# This script is dual-mode, it can be used as a command line tool and as
+# a library. 
+if sys.argv[0].endswith('log-collect.py') or \
+        sys.argv[0].endswith('log-collect'):
+    print 'log-collect utility 1.0'
+        
+    lc = LogCollect()
     
-        return d
-
-lc = LogCollect()
-
-lc.make_report()
+    logs = lc.write_logs()
+    print 'Logs saved in %s' % logs
+    
 
 
