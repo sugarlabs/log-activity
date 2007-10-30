@@ -19,7 +19,7 @@ import fcntl
 import struct
 import string
 
-class Device:
+class NetDevice:
     def __init__(self):
         self._dev = self.get_interfaces()
 

@@ -16,7 +16,7 @@
 # Boston, MA 02111-1307, USA.
 
 import gobject
-from net.device import Device
+from netdevice import NetDevice
 from ui.treeview import TreeView
 
 class NetworkView(TreeView):
