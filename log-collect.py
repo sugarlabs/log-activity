@@ -41,6 +41,10 @@ import glob
 import sys
 import time
 
+# The next couple are used by LogSend
+import httplib
+import mimetypes
+
 class MachineProperties:
     """Various machine properties in easy to access chunks.
     """
@@ -105,8 +109,13 @@ class MachineProperties:
         
         if not os.path.exists('/ofw/mfg-data/'+item):
             return ''
-                
-        return self.__read_file('/ofw/mfg-data/'+item)
+        
+        v = self.__read_file('/ofw/mfg-data/'+item)
+        # Remove trailing 0 character, if any:
+        if v != '' and ord(v[len(v)-1]) == 0:
+            v = v[:len(v)-1]
+        
+        return v
             
     def laptop_serial_number(self):
         return self._mfg_data('SN')
@@ -227,9 +236,9 @@ class LogCollect:
         """
         
         if archive=='':            
-            #archive = '/dev/shm/logs-%s.zip' % self._mp.laptop_serial_number()
+            archive = '/dev/shm/logs-%s.zip' % self._mp.laptop_serial_number()
             # Oops - null character in serialno!
-            archive = '/dev/shm/logs.zip'
+            #archive = '/dev/shm/logs.zip'
             
         z = zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED)
         
@@ -338,6 +347,81 @@ class LogCollect:
         
         return s
 
+class LogSend:
+    
+    # post_multipart and encode_multipart_formdata have been taken from
+    #  http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/146306
+    def post_multipart(self, host, selector, fields, files):
+        """
+        Post fields and files to an http host as multipart/form-data.
+        fields is a sequence of (name, value) elements for regular form fields.
+        files is a sequence of (name, filename, value) elements for data to be uploaded as files
+        Return the server's response page.        
+        """
+        content_type, body = self.encode_multipart_formdata(fields, files)
+        h = httplib.HTTP(host)
+        h.putrequest('POST', selector)
+        h.putheader('content-type', content_type)
+        h.putheader('content-length', str(len(body)))
+        h.putheader('Host', host)
+        h.endheaders()
+        h.send(body)
+        errcode, errmsg, headers = h.getreply()
+        return h.file.read()
+    
+    def encode_multipart_formdata(self, fields, files):
+        """
+        fields is a sequence of (name, value) elements for regular form fields.
+        files is a sequence of (name, filename, value) elements for data to be uploaded as files
+        Return (content_type, body) ready for httplib.HTTP instance
+        """
+        BOUNDARY = '----------ThIs_Is_tHe_bouNdaRY_$'
+        CRLF = '\r\n'
+        L = []
+        for (key, value) in fields:
+            L.append('--' + BOUNDARY)
+            L.append('Content-Disposition: form-data; name="%s"' % key)
+            L.append('')
+            L.append(value)
+        for (key, filename, value) in files:
+            L.append('--' + BOUNDARY)
+            L.append('Content-Disposition: form-data; name="%s"; filename="%s"' % (key, filename))
+            L.append('Content-Type: %s' % self.get_content_type(filename))
+            L.append('')
+            L.append(value)
+        L.append('--' + BOUNDARY + '--')
+        L.append('')
+        body = CRLF.join(L)
+        content_type = 'multipart/form-data; boundary=%s' % BOUNDARY
+        return content_type, body
+    
+    def read_file(self, filename):
+        """Read the entire contents of a file and return it as a string"""
+
+        data = ''
+
+        f = open(filename)
+        try:
+            data = f.read()
+        finally:
+            f.close()
+
+        return data
+
+    def get_content_type(self, filename):
+        return mimetypes.guess_type(filename)[0] or 'application/octet-stream'
+        
+    def http_post_logs(self, hostname, url, archive):
+        #host, selector, fields, files
+        files = ('logs', os.path.basename(archive), self.read_file(archive)),
+        
+        # Client= olpc will make the server return just "OK" or "FAIL"
+        fields = ('client', 'xo'),
+                
+        r = self.post_multipart(hostname, url, fields, files)
+        print r
+        return (r == 'OK')
+
 
 # This script is dual-mode, it can be used as a command line tool and as
 # a library. 
@@ -346,9 +430,18 @@ if sys.argv[0].endswith('log-collect.py') or \
     print 'log-collect utility 1.0'
         
     lc = LogCollect()
+    ls = LogSend()
     
     logs = lc.write_logs()
     print 'Logs saved in %s' % logs
-    
+
+    if sys.argv[len(sys.argv)-1] == 'http':
+        print "Trying to send the logs using HTTP (web)"
+        if ls.http_post_logs('pascal.scheffers.net', '/olpc/submit.tcl', logs):
+            print "Logs were sent."
+        else:
+            print "FAILED to send logs."
+       
+
 
 
