@@ -208,10 +208,6 @@ class LogView(gtk.ScrolledWindow):
         self.textview = gtk.TextView()
         self.textview.set_wrap_mode(gtk.WRAP_WORD)
         
-        font = pango.FontDescription('Sans 8')
-        font.set_weight(pango.WEIGHT_LIGHT)
-        self.textview.modify_font(font)
-        
         # Set background color
         bgcolor = gtk.gdk.color_parse("#FFFFFF")
         self.textview.modify_base(gtk.STATE_NORMAL, bgcolor)
