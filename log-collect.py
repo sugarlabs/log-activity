@@ -202,10 +202,20 @@ class MachineProperties:
     def route_n(self):        
         return self._read_popen('/sbin/route -n')
     
-    def installed_activities(self):
+    def df_a(self):
+        return self._read_popen('/bin/df -a')
+  
+    def ps_auxfwww(self):
+        return self._read_popen('/bin/ps auxfwww')
+    
+    def usr_bin_free(self):
+        return self._read_popen('/usr/bin/free')
+
+    def top(self):
+        return self._read_popen('/usr/bin/top -bn2')
         
-        s = ''
-        
+    def installed_activities(self):        
+        s = ''        
         for path in glob.glob('/usr/share/activities/*.activity'):
             s += os.path.basename(path) + '\n'
 
@@ -344,6 +354,11 @@ class LogCollect:
         s += "\n[/sbin/route -n]\n%s\n" % self._mp.route_n()
         
         s += '\n[Installed Activities]\n%s\n' % self._mp.installed_activities()
+
+        s += '\n[df -a]\n%s\n' % self._mp.df_a()
+        s += '\n[ps auxwww]\n%s\n' % self._mp.ps_auxfwww()
+        s += '\n[free]\n%s\n' % self._mp.usr_bin_free()
+        s += '\n[top -bn2]\n%s\n' % self._mp.top()
         
         return s
 
@@ -431,17 +446,34 @@ if sys.argv[0].endswith('log-collect.py') or \
         
     lc = LogCollect()
     ls = LogSend()
+
+    mode = 'ask'
+    if len(sys.argv)>1:
+       mode = sys.argv[len(sys.argv)-1]
+
+    #if mode.lower().startswith('http'):
+    #    pass
+    #else if mode.lower().startswith('usb'):
+    #    pass
+    #else if mode.lower().startswith('sd'):
+    #    pass
     
     logs = lc.write_logs()
     print 'Logs saved in %s' % logs
-
-    if sys.argv[len(sys.argv)-1] == 'http':
+    
+    sent_ok = False
+    mode = 'ask'
+    if len(sys.argv)>1:
+       mode = sys.argv[len(sys.argv)-1]
+    
+    if mode == 'http':
         print "Trying to send the logs using HTTP (web)"
         if ls.http_post_logs('pascal.scheffers.net', '/olpc/submit.tcl', logs):
             print "Logs were sent."
+            sent_ok = True
         else:
             print "FAILED to send logs."
-       
+    
 
 
 
