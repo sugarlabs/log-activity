@@ -44,6 +44,7 @@ import time
 # The next couple are used by LogSend
 import httplib
 import mimetypes
+import urlparse
 
 class MachineProperties:
     """Various machine properties in easy to access chunks.
@@ -426,14 +427,15 @@ class LogSend:
     def get_content_type(self, filename):
         return mimetypes.guess_type(filename)[0] or 'application/octet-stream'
         
-    def http_post_logs(self, hostname, url, archive):
+    def http_post_logs(self, url, archive):
         #host, selector, fields, files
         files = ('logs', os.path.basename(archive), self.read_file(archive)),
         
         # Client= olpc will make the server return just "OK" or "FAIL"
         fields = ('client', 'xo'),
-                
-        r = self.post_multipart(hostname, url, fields, files)
+        urlparts = urlparse.urlsplit(url)
+        print "Sending logs to %s" % url
+        r = self.post_multipart(urlparts[1], urlparts[2], fields, files)
         print r
         return (r == 'OK')
 
@@ -447,10 +449,44 @@ if sys.argv[0].endswith('log-collect.py') or \
     lc = LogCollect()
     ls = LogSend()
 
+    logs = ''
     mode = 'ask'
-    if len(sys.argv)>1:
-       mode = sys.argv[len(sys.argv)-1]
+    
+    if len(sys.argv)==1:
+        print """log-collect.py - send your XO logs to OLPC
+        
+Usage:
+    log-collect.py http  - send logs to default server
+    
+    log-collect.py http://server.name/submit.php
+                         - submit logs to alternative server
+                         
+    log-collect.py file:/media/xxxx-yyyy/mylog.zip
+                         - save the zip file on a USB device or SD card
+                         
+    log-collect.py all file:/media/xxxx-yyyy/mylog.zip
+                        - Save to zip file and include ALL logs
 
+    log-collect.py none http
+                        - Just send info.txt, but no logs via http.
+
+        """
+        sys.exit()
+        
+    
+    logbytes = 15360   
+    if len(sys.argv)>1:
+        mode = sys.argv[len(sys.argv)-1]
+        if sys.argv[1] == 'all':
+            logbytes = 0
+        if sys.argv[1] == 'none':
+            logbytes = -1
+   
+
+    if mode.startswith('file'):
+        # file://
+        logs = mode[5:]
+ 
     #if mode.lower().startswith('http'):
     #    pass
     #else if mode.lower().startswith('usb'):
@@ -458,7 +494,7 @@ if sys.argv[0].endswith('log-collect.py') or \
     #else if mode.lower().startswith('sd'):
     #    pass
     
-    logs = lc.write_logs()
+    logs = lc.write_logs(logs, logbytes)
     print 'Logs saved in %s' % logs
     
     sent_ok = False
@@ -466,14 +502,22 @@ if sys.argv[0].endswith('log-collect.py') or \
     if len(sys.argv)>1:
        mode = sys.argv[len(sys.argv)-1]
     
-    if mode == 'http':
+    if mode.startswith('http'):
         print "Trying to send the logs using HTTP (web)"
-        if ls.http_post_logs('pascal.scheffers.net', '/olpc/submit.tcl', logs):
+        if len(mode) == 4:
+            url = 'http://pascal.scheffers.net/olpc/submit.tcl'
+        else:
+            url = mode
+            
+        if ls.http_post_logs(url, logs):
             print "Logs were sent."
-            sent_ok = True
+            sent_ok = True            
         else:
             print "FAILED to send logs."
-    
+ 
 
+    if sent_ok:
+        os.remove(logs)
+        print "Logs were sent, tempfile deleted."
 
 
