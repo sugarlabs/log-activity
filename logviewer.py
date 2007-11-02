@@ -30,6 +30,8 @@ import gnomevfs
 from sugar.activity import activity
 from sugar import env
 from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.palette import Palette
+from logcollect import LogCollect, LogSend
 
 class MultiLogView(gtk.VBox):
     def __init__(self, path, extra_files):
@@ -245,9 +247,9 @@ class LogHandler(activity.Activity):
         toolbox = activity.ActivityToolbox(self)
         toolbox.show()
 
-        #toolbar = LogToolbar(self)
-        #toolbox.add_toolbar(_('Interfaces'), toolbar)
-        #toolbar.show()
+        toolbar = LogToolbar(self)
+        toolbox.add_toolbar(_('Tools'), toolbar)
+        toolbar.show()
 
         self.set_toolbox(toolbox)
         self.show()
@@ -267,11 +269,46 @@ class LogToolbar(gtk.Toolbar):
         gtk.Toolbar.__init__(self)
         self._handler = handler
         
+        collector_palette = CollectorMenu()
         logviewer = ToolButton('zoom-best-fit')
-        logviewer.set_tooltip(_('Log Viewer'))
+        logviewer.set_palette(collector_palette)
         logviewer.connect('clicked', self._on_logviewer_clicked_cb)
         self.insert(logviewer, -1)
         logviewer.show()
 
     def _on_logviewer_clicked_cb(self, widget):
         self._handler.switch_to_logviewer()
+
+class CollectorMenu(Palette):
+    _DEFAULT_SERVER = 'http://pascal.scheffers.net/olpc/submit.tcl'
+
+    def __init__(self):
+        Palette.__init__(self, 'Log Collector: send XO information')
+
+        self._collector = LogCollect()
+        label = gtk.Label(_('Log collector allow to send information about\n\
+the system  and running process to a central\nserver, use this option if you \
+want to report\nsome detected problem'))
+        
+        send_button = gtk.Button(_('Send information'))
+        send_button.connect('clicked', self._on_send_button_clicked_cb)
+
+        vbox = gtk.VBox(False, 5)
+        vbox.pack_start(label)
+        vbox.pack_start(send_button)
+        vbox.show_all()
+
+        self.set_content(vbox)
+
+    def _on_send_button_clicked_cb(self, button):
+        # Using the default values, just for testing...
+        data = self._collector.write_logs()
+        sender = LogSend()
+        
+        if sender.http_post_logs(self._DEFAULT_SERVER, data):
+            print "Logs sent...OK"
+        else:
+            print "FAILED to send logs"
+
+        os.remove(data)
+        self.popdown()
