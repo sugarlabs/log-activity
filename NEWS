@@ -1,3 +1,6 @@
+* logcollect.py now defaults to http://olpc.scheffers.net/olpc/submit.tcl
+* Fix command-line mode and cleanup 'usage' after rename from log-collect.py
+
 3
 
 * Read check permission

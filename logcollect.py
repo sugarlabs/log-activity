@@ -442,8 +442,8 @@ class LogSend:
 
 # This script is dual-mode, it can be used as a command line tool and as
 # a library. 
-if sys.argv[0].endswith('log-collect.py') or \
-        sys.argv[0].endswith('log-collect'):
+if sys.argv[0].endswith('logcollect.py') or \
+        sys.argv[0].endswith('logcollect'):
     print 'log-collect utility 1.0'
         
     lc = LogCollect()
@@ -453,23 +453,27 @@ if sys.argv[0].endswith('log-collect.py') or \
     mode = 'ask'
     
     if len(sys.argv)==1:
-        print """log-collect.py - send your XO logs to OLPC
+        print """logcollect.py - send your XO logs to OLPC
         
 Usage:
-    log-collect.py http  - send logs to default server
+    logcollect.py http  - send logs to default server
     
-    log-collect.py http://server.name/submit.php
+    logcollect.py http://server.name/submit.php
                          - submit logs to alternative server
                          
-    log-collect.py file:/media/xxxx-yyyy/mylog.zip
+    logcollect.py file:/media/xxxx-yyyy/mylog.zip
                          - save the zip file on a USB device or SD card
                          
-    log-collect.py all file:/media/xxxx-yyyy/mylog.zip
+    logcollect.py all file:/media/xxxx-yyyy/mylog.zip
                         - Save to zip file and include ALL logs
 
-    log-collect.py none http
+    logcollect.py none http
                         - Just send info.txt, but no logs via http.
 
+    logcollect.py none file
+                        - Just save info.txt in /dev/shm/logs-SN123.zip
+
+    If you specify 'all' or 'none' you must specify http or file as well.
         """
         sys.exit()
         
@@ -505,7 +509,7 @@ Usage:
     if mode.startswith('http'):
         print "Trying to send the logs using HTTP (web)"
         if len(mode) == 4:
-            url = 'http://pascal.scheffers.net/olpc/submit.tcl'
+            url = 'http://olpc.scheffers.net/olpc/submit.tcl'
         else:
             url = mode
             
