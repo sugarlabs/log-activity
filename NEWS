@@ -1,3 +1,6 @@
+* Harden logcollect.py with a whole bunch of try...except to always collect as
+  much as possible. (pascal)
+
 4
 
 * logcollect.py now defaults to http://olpc.scheffers.net/olpc/submit.tcl

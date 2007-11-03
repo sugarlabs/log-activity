@@ -135,7 +135,7 @@ class MachineProperties:
     def laptop_uuid(self):
         return self._mfg_data('U#')
 
-    def laptop_keyboard(self):        
+    def laptop_keyboard(self):
         kb = self._mfg_data('KM') + '-'
         kb += self._mfg_data('KL') + '-'
         kb += self._mfg_data('KV')
@@ -245,43 +245,64 @@ class LogCollect:
                         0 means complete logfiles, not just the tail
                         -1 means only save machine info, no logs
         """
+        #This function is crammed with try...except to make sure we get as much
+        #data as possible, if anything fails.
         
-        if archive=='':            
-            archive = '/dev/shm/logs-%s.zip' % self._mp.laptop_serial_number()
-            # Oops - null character in serialno!
-            #archive = '/dev/shm/logs.zip'
+        if archive=='':
+            archive = '/dev/shm/logs.zip'
+            try:
+                #With serial number is more convenient, but might fail for some
+                #Unknown reason...
+                archive = '/dev/shm/logs-%s.zip' % self._mp.laptop_serial_number()
+            except Exception:
+                pass
             
         z = zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED)
         
-        try:         
-            z.writestr('info.txt', self.laptop_info())
+        try:            
+            try: 
+                z.writestr('info.txt', self.laptop_info())
+            except Exception, e:
+                z.writestr('info.txt',
+                           "logcollect: could not add info.txt: %s" % e)
             
             if logbytes > -1:            
                 # Include some log files from /var/log.
                 for fn in ['dmesg', 'messages', 'cron', 'maillog','rpmpkgs',
                            'Xorg.0.log', 'spooler']:
-                    if os.access('/var/log/'+fn, os.F_OK):
-                        if logbytes == 0:
-                            z.write('/var/log/'+fn, 'var-log/'+fn)
-                        else:
-                            z.writestr('var-log/'+fn,
-                                       self.file_tail('/var/log/'+fn, logbytes))
-                    
+                    try:
+                        if os.access('/var/log/'+fn, os.F_OK):
+                            if logbytes == 0:
+                                z.write('/var/log/'+fn, 'var-log/'+fn)
+                            else:
+                                z.writestr('var-log/'+fn,
+                                           self.file_tail('/var/log/'+fn, logbytes))
+                    except Exception, e:
+                        z.writestr('var-log/'+fn,
+                                   "logcollect: could not add %s: %s" % (fn, e))
+                        
                 # Include all current ones from sugar/logs
                 for path in glob.glob('/home/olpc/.sugar/default/logs/*.log'):
-                    if os.access(path, os.F_OK):
-                        if logbytes == 0:
-                            z.write(path, 'sugar-logs/'+os.path.basename(path))
-                        else:
-                            z.writestr('sugar-logs/'+os.path.basename(path),
-                                       self.file_tail(path, logbytes))
-                 
-                z.write('/etc/resolv.conf')
+                    try:
+                        if os.access(path, os.F_OK):
+                            if logbytes == 0:
+                                z.write(path, 'sugar-logs/'+os.path.basename(path))
+                            else:
+                                z.writestr('sugar-logs/'+os.path.basename(path),
+                                           self.file_tail(path, logbytes))
+                    except Exception, e:
+                        z.writestr('sugar-logs/'+fn,
+                                   "logcollect: could not add %s: %s" % (fn, e))
+                try:                 
+                    z.write('/etc/resolv.conf')
+                except Exception, e:
+                    z.writestr('/etc/resolv.conf',
+                               "logcollect: could not add resolv.conf: %s" % e)
+                    
         except Exception, e:
             print 'While creating zip archive: %s' % e            
         
-        z.close()
-        
+        z.close()        
         
         return archive
 
@@ -327,39 +348,41 @@ class LogCollect:
         """Return a string with laptop serial, battery type, build, memory info, etc."""
 
         s = ''        
-
-        # Do not include UUID!
-        s += 'laptop-info-version: 1.0\n'
-        s += 'clock: %f\n' % time.clock()
-        s += 'date: %s' % time.strftime("%a, %d %b %Y %H:%M:%S +0000",
-                                        time.gmtime())
-        s += 'memfree: %s\n' % self._mp.memfree()
-        s += 'disksize: %s MB\n' % ( self._mp.disksize('/') / (1024*1024) ) 
-        s += 'diskfree: %s MB\n' % ( self._mp.diskfree('/') / (1024*1024) ) 
-        s += 'olpc_build: %s\n' % self._mp.olpc_build()
-        s += 'kernel_version: %s\n' % self._mp.kernel_version()
-        s += 'uptime: %s\n' % self._mp.uptime()
-        s += 'loadavg: %s\n' % self._mp.loadavg()        
-        s += 'serial-number: %s\n' % self._mp.laptop_serial_number()
-        s += 'motherboard-number: %s\n' % self._mp.laptop_motherboard_number()
-        s += 'board-revision: %s\n' %  self._mp.laptop_board_revision()
-        s += 'keyboard: %s\n' %  self._mp.laptop_keyboard()
-        s += 'wireless_mac: %s\n' %  self._mp.laptop_wireless_mac()
-        s += 'firmware: %s\n' %  self._mp.laptop_bios_version()
-        s += 'country: %s\n' % self._mp.laptop_country()
-        s += 'localization: %s\n' % self._mp.laptop_localization()
+        try:
+            # Do not include UUID!
+            s += 'laptop-info-version: 1.0\n'
+            s += 'clock: %f\n' % time.clock()
+            s += 'date: %s' % time.strftime("%a, %d %b %Y %H:%M:%S +0000",
+                                            time.gmtime())
+            s += 'memfree: %s\n' % self._mp.memfree()
+            s += 'disksize: %s MB\n' % ( self._mp.disksize('/') / (1024*1024) ) 
+            s += 'diskfree: %s MB\n' % ( self._mp.diskfree('/') / (1024*1024) ) 
+            s += 'olpc_build: %s\n' % self._mp.olpc_build()
+            s += 'kernel_version: %s\n' % self._mp.kernel_version()
+            s += 'uptime: %s\n' % self._mp.uptime()
+            s += 'loadavg: %s\n' % self._mp.loadavg()        
+            s += 'serial-number: %s\n' % self._mp.laptop_serial_number()
+            s += 'motherboard-number: %s\n' % self._mp.laptop_motherboard_number()
+            s += 'board-revision: %s\n' %  self._mp.laptop_board_revision()
+            s += 'keyboard: %s\n' %  self._mp.laptop_keyboard()
+            s += 'wireless_mac: %s\n' %  self._mp.laptop_wireless_mac()
+            s += 'firmware: %s\n' %  self._mp.laptop_bios_version()
+            s += 'country: %s\n' % self._mp.laptop_country()
+            s += 'localization: %s\n' % self._mp.laptop_localization()
+                
+            s += self._mp.battery_info()
             
-        s += self._mp.battery_info()
-        
-        s += "\n[/sbin/ifconfig]\n%s\n" % self._mp.ifconfig()
-        s += "\n[/sbin/route -n]\n%s\n" % self._mp.route_n()
-        
-        s += '\n[Installed Activities]\n%s\n' % self._mp.installed_activities()
-
-        s += '\n[df -a]\n%s\n' % self._mp.df_a()
-        s += '\n[ps auxwww]\n%s\n' % self._mp.ps_auxfwww()
-        s += '\n[free]\n%s\n' % self._mp.usr_bin_free()
-        s += '\n[top -bn2]\n%s\n' % self._mp.top()
+            s += "\n[/sbin/ifconfig]\n%s\n" % self._mp.ifconfig()
+            s += "\n[/sbin/route -n]\n%s\n" % self._mp.route_n()
+            
+            s += '\n[Installed Activities]\n%s\n' % self._mp.installed_activities()
+    
+            s += '\n[df -a]\n%s\n' % self._mp.df_a()
+            s += '\n[ps auxwww]\n%s\n' % self._mp.ps_auxfwww()
+            s += '\n[free]\n%s\n' % self._mp.usr_bin_free()
+            s += '\n[top -bn2]\n%s\n' % self._mp.top()
+        except Exception, e:
+            s += '\nException while building info:\n%s\n' % e
         
         return s
 
@@ -450,7 +473,7 @@ if sys.argv[0].endswith('logcollect.py') or \
     ls = LogSend()
 
     logs = ''
-    mode = 'ask'
+    mode = 'http'
     
     if len(sys.argv)==1:
         print """logcollect.py - send your XO logs to OLPC
@@ -502,7 +525,6 @@ Usage:
     print 'Logs saved in %s' % logs
     
     sent_ok = False
-    mode = 'ask'
     if len(sys.argv)>1:
        mode = sys.argv[len(sys.argv)-1]
     
