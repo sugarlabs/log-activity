@@ -280,7 +280,7 @@ class LogToolbar(gtk.Toolbar):
         self._handler.switch_to_logviewer()
 
 class CollectorMenu(Palette):
-    _DEFAULT_SERVER = 'http://pascal.scheffers.net/olpc/submit.tcl'
+    _DEFAULT_SERVER = 'http://olpc.scheffers.net/olpc/submit.tcl'
 
     def __init__(self):
         Palette.__init__(self, 'Log Collector: send XO information')
