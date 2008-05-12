@@ -1,3 +1,13 @@
+7
+
+* Strips ANSI escape codes from logs.
+* New Edit toolbar with Copy, Word wrap toggle & Search.
+* Delete Log added to Tools menu.
+* Notification added after log upload.
+* Watches multiple directories, plus extra files.
+* Organizes logs in tree view by directory.
+* Tree view sorted alphabetically, with special sorting for xxxx-NNN.log files.
+
 5
 
 * Harden logcollect.py with a whole bunch of try...except to always collect as
