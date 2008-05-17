@@ -52,7 +52,7 @@ class MultiLogView(gtk.HBox):
         self.active_log = None
         self.logs = {}
 
-        self._search_text = ''
+        self.search_text = ''
         
         self._build_treeview()
         self._build_textview()
@@ -84,7 +84,7 @@ class MultiLogView(gtk.HBox):
             self.path_iter[p] = self._treemodel.append(None, [p])
 
         if len(self.extra_files):
-            self.extra_iter = self._treemodel.append(None, ['Other'])
+            self.extra_iter = self._treemodel.append(None, [_('Other')])
 
         scroll = gtk.ScrolledWindow()
         scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
@@ -100,7 +100,7 @@ class MultiLogView(gtk.HBox):
         pangoFont = pango.FontDescription('Courier 8')
         self._textview.modify_font(pangoFont)
 
-        bgcolor = gtk.gdk.color_parse("#FFFFFF")
+        bgcolor = gtk.gdk.color_parse('#FFFFFF')
         self._textview.modify_base(gtk.STATE_NORMAL, bgcolor)
 
         self._textview.set_editable(False)
@@ -182,8 +182,13 @@ class MultiLogView(gtk.HBox):
 
     def _find_logs(self):
         for path in self.paths:
-            for logfile in os.listdir(path):
-                self._add_log_file(os.path.join(path, logfile))
+            try:
+                files = os.listdir(path)
+            except:
+                logging.debug(_("ERROR: Failed to look for files in '%(path)s'.") % {'path': path})
+            else:
+                for logfile in files:
+                    self._add_log_file(os.path.join(path, logfile))
 
         for logfile in self.extra_files:
             self._add_log_file(logfile)
@@ -195,11 +200,11 @@ class MultiLogView(gtk.HBox):
             return False
 
         if not os.path.exists(path):
-            logging.debug(_("ERROR: File '%s' does not exist.") % path)
+            logging.debug(_("ERROR: File '%(file)s' does not exist.") % {'file': path})
             return False
 
         if not os.access(path, os.R_OK): 
-            logging.debug(_("ERROR: Unable to read file '%s'.") % path)
+            logging.debug(_("ERROR: Unable to read file '%(file)s'.") % {'file': path})
             return False
 
         dir, logfile = os.path.split(path)
@@ -233,63 +238,56 @@ class MultiLogView(gtk.HBox):
         del self.logs[logfile]
 
     def set_search_text(self, text):
-        self._search_text = text
+        self.search_text = text
         
         buffer = self._textview.get_buffer()
         
         start, end = buffer.get_bounds()
         buffer.remove_tag_by_name('search-hilite', start, end)
         buffer.remove_tag_by_name('search-select', start, end)
-        buffer.search_sel = None
         
         iter = buffer.get_start_iter()
         while True:
             next = iter.forward_search(text, 0)
-            if not next: break
+            if next is None: break
             start, end = next
             buffer.apply_tag_by_name('search-hilite', start, end)
             iter = end
 
-        if self.get_next_result(True):
-            self.search_next(True)
-        elif self.get_next_result(False):
-            self.search_next(False)
+        if self.get_next_result('current'):
+            self.search_next('current')
+        elif self.get_next_result('backward'):
+            self.search_next('backward')
 
-    def get_search_text(self):
-        return self._search_text
-    
-    def get_next_result(self, forward, iter=None):
-        buffer = self._textview.get_buffer()
-        if not iter:
-            iter = buffer.get_iter_at_mark(buffer.get_insert())
-        if forward:
-            return iter.forward_search(self._search_text, 0)
-        else:
-            return iter.backward_search(self._search_text, 0)
-
-    def search_next(self, forward):
+    def get_next_result(self, dir):
         buffer = self._textview.get_buffer()
         
-        if buffer.search_sel is not None:
-            if forward:
-                iter = buffer.search_sel[1]
-            else:
-                iter = buffer.search_sel[0]
+        if dir == 'forward':
+            iter = buffer.get_iter_at_mark(buffer.get_insert())
+            iter.forward_char()
         else:
             iter = buffer.get_iter_at_mark(buffer.get_insert())
+            
+        if dir == 'backward':
+            return iter.backward_search(self.search_text, 0)
+        else:
+            return iter.forward_search(self.search_text, 0)
 
-        next = self.get_next_result(forward, iter)
+    def search_next(self, dir):        
+        next = self.get_next_result(dir)
         if next:
-            if buffer.search_sel  is not None:
-                buffer.remove_tag_by_name(
-                    'search-select', buffer.search_sel[0], buffer.search_sel[1])
+            buffer = self._textview.get_buffer()
+
+            start, end = buffer.get_bounds()
+            buffer.remove_tag_by_name('search-select', start, end)
 
             start, end = next
             buffer.apply_tag_by_name('search-select', start, end)
-            buffer.search_sel = (start, end)
             
             buffer.place_cursor(start)
-            self._textview.scroll_mark_onscreen(buffer.get_insert())
+            
+            self._textview.scroll_to_iter(start, 0.1)
+            self._textview.scroll_to_iter(end, 0.1)
 
 class LogBuffer(gtk.TextBuffer):
     def __init__(self, tagtable, logfile, iter):
@@ -298,7 +296,6 @@ class LogBuffer(gtk.TextBuffer):
         self.logfile = logfile
         self._pos = 0
         self.iter = iter
-        self.search_sel = None
         self.update()
 
     def append_formatted_text(self, text):
@@ -326,7 +323,7 @@ class LogBuffer(gtk.TextBuffer):
 class LogActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
-        self.set_title(_('Log Activity'))
+        self.set_title(_('Log'))
 
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
         paths = []
@@ -335,7 +332,7 @@ class LogActivity(activity.Activity):
 
         # Additional misc files.
         ext_files = []
-        ext_files.append("/home/olpc/.bash_history")
+        ext_files.append('/home/olpc/.bash_history')
 
         self.viewer = MultiLogView(paths, ext_files)
         self.set_canvas(self.viewer)
@@ -356,7 +353,7 @@ class LogActivity(activity.Activity):
         edit_toolbar.copy.connect('clicked', self._copy_cb)
         
         wrap_btn = ToggleToolButton('format-justify-left')
-        wrap_btn.set_tooltip(_("Word Wrap"))
+        wrap_btn.set_tooltip(_('Word Wrap'))
         wrap_btn.connect('clicked', self._wrap_cb)
         wrap_btn.show()
         edit_toolbar.insert(wrap_btn, -1)
@@ -406,7 +403,7 @@ class LogActivity(activity.Activity):
         tools_toolbar = gtk.Toolbar()
 
         delete_btn = ToolButton('list-remove')
-        delete_btn.set_tooltip(_("Delete Log File"))
+        delete_btn.set_tooltip(_('Delete Log File'))
         delete_btn.connect('clicked', self._delete_log_cb)
         delete_btn.show()
         tools_toolbar.insert(delete_btn, -1)
@@ -454,23 +451,22 @@ class LogActivity(activity.Activity):
         self._update_search_buttons()
     
     def _search_prev_cb(self, button):
-        self.viewer.search_next(False)
+        self.viewer.search_next('backward')
         self._update_search_buttons()
     
     def _search_next_cb(self, button):
-        self.viewer.search_next(True)
+        self.viewer.search_next('forward')
         self._update_search_buttons()
     
     def _update_search_buttons(self,):
-        text = self.viewer.get_search_text()
-        if len(text) == 0:
+        if len(self.viewer.search_text) == 0:
             self._search_prev.props.sensitive = False
             self._search_next.props.sensitive = False
         else:
-            prev = self.viewer.get_next_result(False)
-            next = self.viewer.get_next_result(True)
-            self._search_prev.props.sensitive = len(text) > 0 and prev != None
-            self._search_next.props.sensitive = len(text) > 0 and next != None
+            prev = self.viewer.get_next_result('backward')
+            next = self.viewer.get_next_result('forward')
+            self._search_prev.props.sensitive = prev != None
+            self._search_next.props.sensitive = next != None
     
     def _delete_log_cb(self, widget):
         if self.viewer.active_log:
@@ -479,8 +475,9 @@ class LogActivity(activity.Activity):
                 os.remove(logfile)
             except OSError, err:
                 notify = NotifyAlert()
-                notify.props.title = 'Error'
-                notify.props.msg = err.strerror + _(' when deleting ') + logfile
+                notify.props.title = _('Error')
+                notify.props.msg = _('%(error)s when deleting %(file)s') % \
+                    { 'error': err.strerror, 'file': logfile }
                 notify.connect('response', _notify_response_cb, self)
                 self.add_alert(notify)
 
@@ -491,7 +488,7 @@ class CollectorPalette(Palette):
     _DEFAULT_SERVER = 'http://olpc.scheffers.net/olpc/submit.tcl'
 
     def __init__(self, handler):
-        Palette.__init__(self, 'Log Collector: Send XO information')
+        Palette.__init__(self, _('Log Collector: Send XO information'))
 
         self._handler = handler
         
