@@ -224,8 +224,9 @@ class MultiLogView(gtk.HBox):
 
         if self.active_log == None:
             self.active_log = log
-            self._treeview.get_selection().select_iter(log.iter)
             self._show_log(logfile)
+            iter = self._treeview.get_model().convert_child_iter_to_iter(None, log.iter)
+            self._treeview.get_selection().select_iter(iter)
 
         if written > 0 and self.active_log == log:
             self._textview.scroll_to_mark(log.get_insert(), 0)
@@ -303,7 +304,7 @@ class LogBuffer(gtk.TextBuffer):
         # todo- Handle a subset of them.
         strip_ansi = re.compile(r'\033\[[\d;]*m')
         text = strip_ansi.sub('', text)
-        self.insert(self.get_end_iter(), text)
+        self.insert(self.get_end_iter(), text.encode('utf8'))
 
     def update(self):
         try:
@@ -327,7 +328,7 @@ class LogActivity(activity.Activity):
 
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
         paths = []
-        paths.append(os.path.join(env.get_profile_path(), 'logs'))
+        paths.append('/home/olpc/.sugar/default/logs')
         paths.append('/var/log')
 
         # Additional misc files.
