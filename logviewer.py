@@ -23,9 +23,7 @@ from gettext import gettext as _
 import re
 
 import gtk
-import dbus
 import pango
-import pygtk
 import gobject
 import gnomevfs
 
