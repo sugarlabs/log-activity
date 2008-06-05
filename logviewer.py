@@ -328,12 +328,12 @@ class LogActivity(activity.Activity):
 
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
         paths = []
-        paths.append('/home/olpc/.sugar/default/logs')
+        paths.append(env.get_profile_path('logs'))
         paths.append('/var/log')
 
         # Additional misc files.
         ext_files = []
-        ext_files.append('/home/olpc/.bash_history')
+        ext_files.append(os.path.expanduser('~/.bash_history'))
 
         self.viewer = MultiLogView(paths, ext_files)
         self.set_canvas(self.viewer)
