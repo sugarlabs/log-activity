@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-06-08 03:31-0400\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0rc2\n"
+
+#: activity/activity.info:2 logviewer.py:326
+msgid "Log"
+msgstr "Bản ghi"
+
+#: logviewer.py:79
+msgid "Log Files"
+msgstr "Tập tin ghi lưu"
+
+#: logviewer.py:87
+msgid "Other"
+msgstr "Khác"
+
+#: logviewer.py:188
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "LỖI: không tìm được tập tin trên đường dẫn « %(path)s »."
+
+#: logviewer.py:203
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "LỖI: tập tin « %(file)s » không tồn tại."
+
+#: logviewer.py:207
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "LỖI: không thể đọc tập tin « %(file)s »."
+
+#: logviewer.py:320
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "Lỗi: không thể mở tập tin « %s »\n"
+
+#: logviewer.py:356
+msgid "Word Wrap"
+msgstr "Cuộn từ"
+
+#: logviewer.py:385
+msgid "Previous"
+msgstr "Lùi"
+
+#: logviewer.py:392
+msgid "Next"
+msgstr "Tiếp"
+
+#: logviewer.py:401
+msgid "Edit"
+msgstr "Sửa"
+
+#: logviewer.py:406
+msgid "Delete Log File"
+msgstr "Xoá tập tin ghi lưu"
+
+#: logviewer.py:425
+msgid "Tools"
+msgstr "Công cụ"
+
+#: logviewer.py:478
+msgid "Error"
+msgstr "Lỗi"
+
+#: logviewer.py:479
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s khi xoá %(file)s"
+
+#: logviewer.py:491
+msgid "Log Collector: Send XO information"
+msgstr "Thu thập bản ghi: gửi thông tin XO"
+
+#: logviewer.py:498
+msgid ""
+"Log collector sends information about the system\n"
+"and running processes to a central server.  Use\n"
+"this option if you want to report a problem."
+msgstr ""
+"Chức năng thu thập bản ghi thì gửi thông tin\n"
+"về hệ thống và các tiến trình đang chạy cho\n"
+"một trình phục vụ trung tâm. Hãy bật tùy chọn này\n"
+"nếu bạn muốn thông báo một vấn đề."
+
+#: logviewer.py:502
+msgid "Send information"
+msgstr "Gửi thông tin"
+
+#: logviewer.py:527
+msgid "Logs sent"
+msgstr "Đã ghi các bản ghi"
+
+#: logviewer.py:528
+msgid "The logs were uploaded to the server."
+msgstr "Các bản ghi đã được tải lên máy phục vụ."
+
+#: logviewer.py:530
+msgid "Logs not sent"
+msgstr "Chưa gửi bản ghi"
+
+#: logviewer.py:531
+msgid ""
+"The logs could not be uploaded to the server. Please check your network "
+"connection."
+msgstr "Không thể tải bản ghi lên máy phục vụ. Hãy kiểm tra lại kết nối mạng."
