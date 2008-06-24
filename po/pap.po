@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-06-20 15:41-0400\n"
+"Last-Translator: Urso Wieske <uwieske@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0rc2\n"
+
+#: activity/activity.info:2 logviewer.py:326
+#, fuzzy
+msgid "Log"
+msgstr "Log"
+
+#: logviewer.py:79
+msgid "Log Files"
+msgstr "Log Files"
+
+#: logviewer.py:87
+msgid "Other"
+msgstr "Otro"
+
+#: logviewer.py:188
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "EROR: No por a buska filenan den '%(path)s'."
+
+#: logviewer.py:203
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "EROR: File '%(file)s' no ta eksisti"
+
+#: logviewer.py:207
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "EROR: No por a lesa file '%(file)s'."
+
+#: logviewer.py:320
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "EROR: No por a habri e file '%s'\n"
+
+#: logviewer.py:356
+msgid "Word Wrap"
+msgstr ""
+
+#: logviewer.py:385
+msgid "Previous"
+msgstr "Anterior"
+
+#: logviewer.py:392
+msgid "Next"
+msgstr "Sigiente"
+
+#: logviewer.py:401
+msgid "Edit"
+msgstr "Edita"
+
+#: logviewer.py:406
+msgid "Delete Log File"
+msgstr "Elimina Log File"
+
+#: logviewer.py:425
+msgid "Tools"
+msgstr "Toolnan"
+
+#: logviewer.py:478
+msgid "Error"
+msgstr "Eror"
+
+#: logviewer.py:479
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(erornan) durante di %(files)nan"
+
+#: logviewer.py:491
+msgid "Log Collector: Send XO information"
+msgstr "Log Collector: Manda XO information"
+
+#: logviewer.py:498
+msgid ""
+"Log collector sends information about the system\n"
+"and running processes to a central server.  Use\n"
+"this option if you want to report a problem."
+msgstr ""
+
+#: logviewer.py:502
+msgid "Send information"
+msgstr "Manda information"
+
+#: logviewer.py:527
+msgid "Logs sent"
+msgstr "Log a wordu manda"
+
+#: logviewer.py:528
+msgid "The logs were uploaded to the server."
+msgstr "E logfiles nan a wordu di upload na e server."
+
+#: logviewer.py:530
+msgid "Logs not sent"
+msgstr "Log a wordu manda"
+
+#: logviewer.py:531
+msgid ""
+"The logs could not be uploaded to the server. Please check your network "
+"connection."
+msgstr ""
+"E lognan no por a wordu di upload na e server. Please check bo konekshon di "
+"netwerk. "
