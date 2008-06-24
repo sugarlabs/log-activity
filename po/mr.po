@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-06-21 02:54-0400\n"
+"Last-Translator: Rupali Sarode <rups23in@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0rc2\n"
+
+#: activity/activity.info:2 logviewer.py:326
+msgid "Log"
+msgstr "लॉग"
+
+#: logviewer.py:79
+msgid "Log Files"
+msgstr "लॉग फाइल"
+
+#: logviewer.py:87
+msgid "Other"
+msgstr "दुसरे"
+
+#: logviewer.py:188
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "चुक : '%(path)s' मधे फाइल शोधू शकला नाही"
+
+#: logviewer.py:203
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "चुक : '%(path)s' फाइल नाही"
+
+#: logviewer.py:207
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "चुक :' %(path)s' फाइल वाचू शकत नाही"
+
+#: logviewer.py:320
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr ""
+"चुक : '%s'\n"
+" फाइल उघडू शकत नाही"
+
+#: logviewer.py:356
+msgid "Word Wrap"
+msgstr "शब्द झाकने"
+
+#: logviewer.py:385
+msgid "Previous"
+msgstr "अगोदरचा"
+
+#: logviewer.py:392
+msgid "Next"
+msgstr "यानंतर"
+
+#: logviewer.py:401
+msgid "Edit"
+msgstr "संपादन करणे "
+
+#: logviewer.py:406
+msgid "Delete Log File"
+msgstr "लॉग फाइल मिटावा"
+
+#: logviewer.py:425
+msgid "Tools"
+msgstr "साधने"
+
+#: logviewer.py:478
+msgid "Error"
+msgstr "चुक"
+
+#: logviewer.py:479
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(file)s मिटवताना चुक"
+
+#: logviewer.py:491
+msgid "Log Collector: Send XO information"
+msgstr "लॉग अधिकारी : एक्स ओची माहिती पाठवा"
+
+#: logviewer.py:498
+msgid ""
+"Log collector sends information about the system\n"
+"and running processes to a central server.  Use\n"
+"this option if you want to report a problem."
+msgstr ""
+"लॉग अधिकारी सिस्टम आणि चालू असलेल्या प्रोसेस बद्दल सेंट्रल सर्वेरला माहिती "
+"देतो\n"
+"काहीही अडचण असल्यावर हा विकलप वापरा\n"
+
+#: logviewer.py:502
+msgid "Send information"
+msgstr "माहिती पाठवा"
+
+#: logviewer.py:527
+msgid "Logs sent"
+msgstr "लॉग पाठविले"
+
+#: logviewer.py:528
+msgid "The logs were uploaded to the server."
+msgstr "लॉग सर्वर वर अपलॉड केले"
+
+#: logviewer.py:530
+msgid "Logs not sent"
+msgstr "लॉग नाही पाठवले"
+
+#: logviewer.py:531
+msgid ""
+"The logs could not be uploaded to the server. Please check your network "
+"connection."
+msgstr ""
+"लॉग सर्वर वर अपलॉड केले नाही जाउ शकत. कृपया आपले नेटवॉरकचे संपर्क तपासा."
