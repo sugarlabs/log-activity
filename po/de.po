@@ -1,0 +1,119 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-06-14 17:59-0400\n"
+"Last-Translator: Markus Schlager <m.slg@gmx.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0rc2\n"
+
+#: activity/activity.info:2 logviewer.py:326
+msgid "Log"
+msgstr "Log"
+
+#: logviewer.py:79
+msgid "Log Files"
+msgstr "Logdateien"
+
+#: logviewer.py:87
+msgid "Other"
+msgstr "Andere"
+
+#: logviewer.py:188
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "FEHLER: Konnte Dateien in '%(path)s' nicht finden."
+
+#: logviewer.py:203
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "FEHLER: Datei '%(file)s' existiert nicht."
+
+#: logviewer.py:207
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "FEHLER: Kann Datei '%(file)s' nicht lesen."
+
+#: logviewer.py:320
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "FEHLER: Kann Datei '%s' nicht öffnen\n"
+
+#: logviewer.py:356
+msgid "Word Wrap"
+msgstr "Zeilenumbruch"
+
+#: logviewer.py:385
+msgid "Previous"
+msgstr "Vorheriges"
+
+#: logviewer.py:392
+msgid "Next"
+msgstr "Nächstes"
+
+#: logviewer.py:401
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: logviewer.py:406
+msgid "Delete Log File"
+msgstr "Log-Datei löschen"
+
+#: logviewer.py:425
+msgid "Tools"
+msgstr "Werkzeuge"
+
+#: logviewer.py:478
+msgid "Error"
+msgstr "Fehler"
+
+#: logviewer.py:479
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s beim Löschen von %(file)s"
+
+#: logviewer.py:491
+msgid "Log Collector: Send XO information"
+msgstr "Log-Sammler: Sende XO-Informationen"
+
+#: logviewer.py:498
+msgid ""
+"Log collector sends information about the system\n"
+"and running processes to a central server.  Use\n"
+"this option if you want to report a problem."
+msgstr ""
+"Der Log-Sammler sendet Informationen über das System\n"
+"und laufende Prozesse an einen zentralen Server.\n"
+"Benutze diese Option, um einen Problembericht zu senden."
+
+#: logviewer.py:502
+msgid "Send information"
+msgstr "Sende Informationen"
+
+#: logviewer.py:527
+msgid "Logs sent"
+msgstr "Logs gesendet"
+
+#: logviewer.py:528
+msgid "The logs were uploaded to the server."
+msgstr "Die Logs wurden auf den Server hochgeladen."
+
+#: logviewer.py:530
+msgid "Logs not sent"
+msgstr "Logs nicht gesendet"
+
+#: logviewer.py:531
+msgid ""
+"The logs could not be uploaded to the server. Please check your network "
+"connection."
+msgstr ""
+"Die Logs konnten nicht auf den Server hochgeladen werden. Überprüfe bitte "
+"deine Netzwerkverbindung."
