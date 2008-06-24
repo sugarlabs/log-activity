@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-06-09 18:39-0400\n"
+"Last-Translator: Maria del Pilar Saenz Rodriguez <mapisaro@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0rc2\n"
+
+#: activity/activity.info:2 logviewer.py:326
+msgid "Log"
+msgstr "Registro"
+
+#: logviewer.py:79
+msgid "Log Files"
+msgstr "Archivos registrados"
+
+#: logviewer.py:87
+msgid "Other"
+msgstr "Otro"
+
+#: logviewer.py:188
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "ERROR: No se ha podido buscar por archivos en '%(path)s'."
+
+#: logviewer.py:203
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "ERROR: No existe el archivo '%(file)s' "
+
+#: logviewer.py:207
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "ERROR: No se puede leer el archivo '%(file)s'."
+
+#: logviewer.py:320
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "Error: No se puede abrir el archivo '%s'\n"
+
+#: logviewer.py:356
+msgid "Word Wrap"
+msgstr "Ajuste de línea"
+
+#: logviewer.py:385
+msgid "Previous"
+msgstr "Anterior"
+
+#: logviewer.py:392
+msgid "Next"
+msgstr "Siguiente"
+
+#: logviewer.py:401
+msgid "Edit"
+msgstr "Editar"
+
+#: logviewer.py:406
+msgid "Delete Log File"
+msgstr "Borrar el archivo de registro"
+
+#: logviewer.py:425
+msgid "Tools"
+msgstr "Herramientas"
+
+#: logviewer.py:478
+msgid "Error"
+msgstr "Error"
+
+#: logviewer.py:479
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s borrando %(file)s"
+
+#: logviewer.py:491
+#, fuzzy
+msgid "Log Collector: Send XO information"
+msgstr "Colector de Registros: Envía información del XO"
+
+#: logviewer.py:498
+msgid ""
+"Log collector sends information about the system\n"
+"and running processes to a central server.  Use\n"
+"this option if you want to report a problem."
+msgstr ""
+"Colector de Registros envía información sobre el sistema\n"
+"y procesos en ejecución a un servidor central. Use\n"
+"esta opción si quiere reportar un problema."
+
+#: logviewer.py:502
+msgid "Send information"
+msgstr "Enviar información"
+
+#: logviewer.py:527
+msgid "Logs sent"
+msgstr "Registros enviados"
+
+#: logviewer.py:528
+msgid "The logs were uploaded to the server."
+msgstr "Los registros fueron cargados al servidor."
+
+#: logviewer.py:530
+msgid "Logs not sent"
+msgstr "Registros no enviados"
+
+#: logviewer.py:531
+msgid ""
+"The logs could not be uploaded to the server. Please check your network "
+"connection."
+msgstr ""
+"Los registros no pudieron ser cargados al servidor. Por favor verifique su "
+"conexión de red."
