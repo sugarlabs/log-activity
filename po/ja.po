@@ -2,88 +2,87 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-07-02 12:29-0400\n"
+"Last-Translator: korakurider <korakurider@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "ログ"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "ログファイル"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "その他"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "エラー: '%(path)s' でファイルが見つかりません"
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "エラー: ファイル '%(file)s' がありません。"
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "エラー: ファイル '%(file)s' を読み込めません。"
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "エラー: ファイル '%s' を開けません\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr ""
+msgstr "単語の折り返し"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "前へ"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "次へ"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "ログファイルを削除"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "ツール"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "エラー"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(file)s を削除している時 %(error)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "ログコレクタ: XOの情報を送信"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +90,28 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"ログコレクタは、システムと動作しているプロセスの\n"
+"情報を、中央サーバーに送信します。問題を報告す\n"
+"る時にこのオプションを使ってください。"
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "情報を送信"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "ログが送られました"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "ログはサーバーにアップロードされました"
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "ログが送られませんでした"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
-msgstr ""
+msgstr "ログをサーバーにアップロードできませんでした。ネットワーク接続を確認してください。"
