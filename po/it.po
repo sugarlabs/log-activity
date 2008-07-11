@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-06-06 09:14-0400\n"
+"PO-Revision-Date: 2008-07-11 05:19-0400\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,10 @@ msgstr ""
 "X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
-#, fuzzy
 msgid "Log"
 msgstr "Log"
 
 #: logviewer.py:79
-#, fuzzy
 msgid "Log Files"
 msgstr "File di Log"
 
@@ -67,7 +65,6 @@ msgid "Edit"
 msgstr "Modifica"
 
 #: logviewer.py:406
-#, fuzzy
 msgid "Delete Log File"
 msgstr "Elimina il file di Log"
 
@@ -81,7 +78,6 @@ msgstr "Errore"
 
 #: logviewer.py:479
 #, python-format
-#, fuzzy
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s durante la cancellazione di %(file)s"
 
