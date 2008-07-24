@@ -2,51 +2,51 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-07-24 14:26+0100\n"
+"Last-Translator: Satyanarayana Murthy Saladi <saladism@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 1.1.1rc4\n"
 
-#: activity/activity.info:2 logviewer.py:326
+#: activity/activity.info:2
+#: logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "లెఖ్ఖాపత్రము"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "లెఖ్ఖాపత్రము ఫైలులు"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "మరియొక"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "దోషణ:  '%(path)s' లో ఫైలులగురించి చూచుటకుదరలేదు"
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "దోషణ:  ఫైలు '%(file)s' లేదు "
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "దోషణ:  ఫైలు '%(file)s' చదవటంకుదరలేదు "
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "దోషణ:  ఫైలు '%s' తెరవడంకుదరలేదు \n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
@@ -54,27 +54,27 @@ msgstr ""
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "ముందు"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "తర్వాత"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "కూర్చు"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "లెఖ్ఖాపత్రమును తీసివేయుము"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "పనిముట్లు"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "దోషం:"
 
 #: logviewer.py:479
 #, python-format
@@ -94,7 +94,7 @@ msgstr ""
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "సమాచారాన్ని పంపు"
 
 #: logviewer.py:527
 msgid "Logs sent"
