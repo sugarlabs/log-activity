@@ -45,7 +45,7 @@ msgstr "АЛДАА: '%(file)s' файлыг уншиж чадсангүй."
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "Алдаа: '%s' файлыг нээж чадсангүй"
+msgstr "Алдаа: '%s' файлыг нээж чадсангүй\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
