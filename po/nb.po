@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-07-23 17:24+0100\n"
+"Last-Translator: Kent Dahl <kentda@pvv.org>\n"
+"Language-Team: Norwegian <i18n-no@lister.ping.uio.no>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.1.1rc4\n"
+
+#: activity/activity.info:2
+#: logviewer.py:326
+msgid "Log"
+msgstr "Logg"
+
+#: logviewer.py:79
+msgid "Log Files"
+msgstr "Loggfiler"
+
+#: logviewer.py:87
+msgid "Other"
+msgstr "Annet"
+
+#: logviewer.py:188
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "FEIL: Fikk ikke til å lete etter filer i '%(path)s'."
+
+#: logviewer.py:203
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "FEIL: Filen '%(file)s' finnes ikke."
+
+#: logviewer.py:207
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "FEIL: Kunne ikke lese fil '%(file)s'."
+
+#: logviewer.py:320
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "Feil: Kan ikke åpne filen '%s'\n"
+
+#: logviewer.py:356
+msgid "Word Wrap"
+msgstr "Ordeling"
+
+#: logviewer.py:385
+msgid "Previous"
+msgstr "Forrige"
+
+#: logviewer.py:392
+msgid "Next"
+msgstr "Neste"
+
+#: logviewer.py:401
+msgid "Edit"
+msgstr "Endre"
+
+#: logviewer.py:406
+msgid "Delete Log File"
+msgstr "Slett loggfil"
+
+#: logviewer.py:425
+msgid "Tools"
+msgstr "Verktøy"
+
+#: logviewer.py:478
+msgid "Error"
+msgstr "Feil"
+
+#: logviewer.py:479
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s under sletting av %(file)s"
+
+#: logviewer.py:491
+msgid "Log Collector: Send XO information"
+msgstr "Loggsamler: Send XO informasjon"
+
+#: logviewer.py:498
+#, fuzzy
+msgid ""
+"Log collector sends information about the system\n"
+"and running processes to a central server.  Use\n"
+"this option if you want to report a problem."
+msgstr ""
+"Loggsamleren sender informasjon om systemet\n"
+"og de kjørende prosessene til en sentral tjener.\n"
+"Bruk denne opsjonen om du ønsker å rapportere et problem."
+
+#: logviewer.py:502
+msgid "Send information"
+msgstr "Send informasjon"
+
+#: logviewer.py:527
+msgid "Logs sent"
+msgstr "Logger sendt"
+
+#: logviewer.py:528
+msgid "The logs were uploaded to the server."
+msgstr "Loggene ble lastet opp til tjeneren."
+
+#: logviewer.py:530
+msgid "Logs not sent"
+msgstr "Loggene ble ikke sendt"
+
+#: logviewer.py:531
+msgid ""
+"The logs could not be uploaded to the server. Please check your network "
+"connection."
+msgstr ""
+"Loggene kunne ikke bli lastet opp til tjeneren. Vennligst sjekk "
+"nettverkskoblingen din."
