@@ -2,88 +2,88 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-07-05 05:03-0400\n"
+"Last-Translator: Γιάννης Κασκαμανίδης <ttnfy17@yahoo.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "Καταγραφή"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "Αρχεία καταγραφών"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "Άλλο"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Αποτυχία αναζήτησης για αρχεία στο '%(path)s'."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Το αρχείο '%(file)s' δεν υπάρχει."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Αδυναμία ανάγνωσης του αρχείου '%(file)s'."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "ΣΦΑΛΜΑ: Αδυναμία ανοίγματος του αρχείου '%s'\n"
 
 #: logviewer.py:356
+#, fuzzy
 msgid "Word Wrap"
-msgstr ""
+msgstr "Αναδίπλωση λέξης"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "Προηγούμενο"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "Επόμενο"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "Επεξεργασία"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "Διαγραφή αρχείου καταγραφής"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "Εργαλεία"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "Σφάλμα"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(error)s κατά τη διαγραφή %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "Συλλέκτης καταγραφών: Αποστολή πληροφοριών του XO"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +91,30 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"Ο συλλέκτης καταγραφών στέλνει πληροφορίες γι' αυτό το σύστημα\n"
+"και εκτελεί διαδικασίες σε έναν κεντρικό διακομιστή.  Χρησιμοποιήστε\n"
+"αυτή την επιλογή αν θέλετε να αναφέρετε ένα πρόβλημα."
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "Αποστολή πληροφοριών"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "Οι καταγραφές στάλθηκαν"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "Έγινε αποστολή των καταγραφών στον διακομιστή"
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "Οι καταγραφές δεν στάλθηκαν"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
+"Οι καταγραφές δεν ήταν δυνατό να σταλθούν στον διακομιστή. Παρακαλώ ελέγξτε "
+"τη τη σύνδεση δικτύου."
