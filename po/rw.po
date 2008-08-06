@@ -31,22 +31,22 @@ msgstr "Ikindi"
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "Ikosa:ntishobora kubona ububiko muri `%(Umuyoboro)s`"
+msgstr "Ikosa:ntishobora kubona ububiko muri `%(path)s`"
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "IKOSA:ububiko`%s`ntibubaho"
+msgstr "IKOSA:ububiko`%(file)s` ntibubaho"
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "IKOSA:Ntishoboye gusoma ububiko`%(ububiko)s`."
+msgstr "IKOSA:Ntishoboye gusoma ububiko`%(file)s`."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "IKOSA:ntishobora gufungura ububiko"
+msgstr "IKOSA:ntishobora gufungura ububiko '%s'\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
@@ -79,7 +79,7 @@ msgstr "Ikosa"
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(ikosa)igihe usiba %(ububiko)s"
+msgstr "%(error)s igihe usiba %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"

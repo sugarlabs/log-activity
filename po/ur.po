@@ -30,22 +30,22 @@ msgstr "دوسرے"
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "غلطی:فائل کو ڈھونڈنے ميں ناکام '%(راستہ)s'."
+msgstr "غلطی:فائل کو ڈھونڈنے ميں ناکام '%(path)s'."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "غلطی:فائل '%(فائل)s' موجود نہيں ہے."
+msgstr "غلطی:فائل '%(file)s' موجود نہيں ہے."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "غلطی:فائل کو پھڑنے ميں ناکام '%(فائل)s'."
+msgstr "غلطی:فائل کو پھڑنے ميں ناکام '%(file)s'."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "غلطی:فائل کھولنے ميں ناکام '%(فائل)s'."
+msgstr "غلطی:فائل کھولنے ميں ناکام '%s'\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
@@ -78,7 +78,7 @@ msgstr "غلطی"
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(غلطی)s ختم کرتے ہوئے %(فائل)s"
+msgstr "%(error)s ختم کرتے ہوئے %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
