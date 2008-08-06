@@ -2,88 +2,87 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-07-08 05:59-0400\n"
+"Last-Translator: salman minhas <sulmanminhas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "لاگ"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "لاگ فائل"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "دوسرے"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "غلطی:فائل کو ڈھونڈنے ميں ناکام '%(راستہ)s'."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "غلطی:فائل '%(فائل)s' موجود نہيں ہے."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "غلطی:فائل کو پھڑنے ميں ناکام '%(فائل)s'."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "غلطی:فائل کھولنے ميں ناکام '%(فائل)s'."
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr ""
+msgstr "لفظ کا ديپ"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "پچھلا"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "اگلا"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "تبديل کریں"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "لاگ فائل ختم کريں"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "آلات"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "غلطی"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(غلطی)s ختم کرتے ہوئے %(فائل)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "لاگ جمع کنے والا: XO کی معلومات بھيجيں"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +90,28 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"لاگ کلکٹر نے سسٹم کی معلومات بھيج ديں/nاور چلنے والے پروسس کی سنٹرل سرور کو۔ "
+" استعمال/nکريں اس آپشن کو اگر آپ مسلئے کی رپورٹ بھیجنا چاہ رہے ہیں۔"
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "معلومات بھيجيں"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "لاگ بھیج ديے"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "لاگ سرور پر اپ لوڈ ہو گئے ہيں۔"
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "لاگ نہيں بھيبے"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
+"لاگ سرور پر اپ لوڈ نہیں ہو سکے۔ مہربانی کر کے اپنا انٹرنيٹ کنکشن چيک کريں۔"
