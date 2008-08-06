@@ -2,88 +2,87 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-08-06 07:42-0400\n"
+"Last-Translator: Yuan Chao <yuanchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "系統日誌"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "系統日誌檔案"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "其它"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "錯誤：在 '%(path)s' 目錄下找到找不到檔案"
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "錯誤：'%(file)s' 檔案不存在"
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "錯誤：'%(file)s' 檔案無法讀取"
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "錯誤：檔案 '%s' 無法開啟"
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr ""
+msgstr "自動折行"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "上一個"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "下一個"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "刪除系統日誌檔案"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "工具"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "刪除 %(file)s 時發生 %(error)s 錯誤"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "系統日誌收集器：發送 XO 資料"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +90,28 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"系統日誌收集器發送關於系統與\n"
+"執行程式等資料至中央主機。 如果\n"
+"您想回報系統錯誤，請點選本選項。"
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "發送資料"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "系統日誌發送完畢"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "系統日誌已經上傳至主機"
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "系統日誌發送失敗"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
-msgstr ""
+msgstr "系統日誌無法上傳至主機，請檢查您的網路連線狀態。"
