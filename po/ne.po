@@ -2,88 +2,89 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-08-01 03:58-0400\n"
+"Last-Translator: Bibek Kafle <oxese.eax@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "लग"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "लग फाईलहरु"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "अरु"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "त्रुटि : '%(पाथ)हरु' मा फाइलहरु खोज्दा अवरोध पुग्यो"
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "त्रुटि : '%(फाइल)हरु' फाइल विद्यमान छैनन्"
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "त्रुटि : '%(फाइल)हरु' खोल्न असमर्थ"
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr ""
+"त्रुटि : '%(s)'\n"
+" खोल्न मिलेन"
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr ""
+msgstr "हरेक लाइनलाई स्क्रिनमा अटाउने"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "पहिलाको"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "अरु"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "सम्पादन गर्ने"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "लग फाइल मेटाउने"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "यन्त्रहरु"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "त्रुटि"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(फाइल)हरु मेटाउन खोज्दा %(त्रुटि)हरु भयो"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "लग कलेक्टर : XO लाइ सूचना पठाउने"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +92,28 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"लग कलेक्टरले सिस्टमको र चलिरहेका प्रोसेसहरुको बारेमा सूचना \n"
+" केन्द्रीय सर्भरमा पठाउँछ । केहि समस्या वर्णन गर्नु छ भने यो छनाइ \n"
+" प्रयोग गर्नु ।"
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "सुचना पठाऊ"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "लगहरु पठाईयो"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "लगहरु सर्भरमा अप्लोड भयो"
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "लगहरु पठाईएन"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
-msgstr ""
+msgstr "लगहरु सर्भरमा अप्लोड भएन । कृपया आफ्नो नेटवर्क प्रमाणित गर्नुहोस् ।"
