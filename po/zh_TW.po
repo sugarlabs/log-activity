@@ -45,7 +45,7 @@ msgstr "錯誤：'%(file)s' 檔案無法讀取"
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "錯誤：檔案 '%s' 無法開啟"
+msgstr "錯誤：檔案 '%s' 無法開啟\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
