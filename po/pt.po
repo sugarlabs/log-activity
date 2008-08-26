@@ -2,88 +2,87 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-08-26 08:33-0400\n"
+"Last-Translator: Eduardo H. Silva <HoboPrimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "Registar"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "Ficheiros de registo"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "Outros"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "ERRO: Falhou na visualização de ficheiros em '%(path)s'."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "ERRO: Ficheiro '%(file)s' não existe."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "ERRO: Incapaz de ler o ficheiro '%(file)s'."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "ERRO: Não foi possível abrir o ficheiro '%s'\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr ""
+msgstr "Ajustar Texto"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "Anterior"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "Seguinte"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "Apagar Ficheiro de Registo"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "Ferramentas"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(erro)s ao apagar %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "Colector de Registos: Enviar informação do XO"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +90,30 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"O Colector de Registos envia informação sobre o sistema\n"
+"e os processos em execução para um servidor central.  Utiliza\n"
+"esta opção se quiseres relatar um problema."
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "Enviar informação"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "Registos enviados"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "Foi feito o upload dos registos para o servidor."
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "Os registos não foram enviados"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
+"Não foi possível fazer o upload dos registos para o servidor. Por favor "
+"verifica a tua ligação de rede."
