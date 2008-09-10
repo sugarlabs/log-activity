@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-09-10 08:35-0400\n"
+"PO-Revision-Date: 2008-09-10 08:43-0400\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr "Journal"
+msgstr "Log"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr "Fichiers journaux"
+msgstr "Fichiers logs"
 
 #: logviewer.py:87
 msgid "Other"
@@ -65,7 +65,7 @@ msgstr "Éditer"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr "Supprimer le fichier journal"
+msgstr "Supprimer le fichier log"
 
 #: logviewer.py:425
 msgid "Tools"
@@ -82,7 +82,7 @@ msgstr "%(error)s lors de la suppression de %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr "Collecteur du journal : Envoyer d'information sur le  XO"
+msgstr "Collecteur de logs : Envoyer d'information sur le  XO"
 
 #: logviewer.py:498
 msgid ""
@@ -90,7 +90,7 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
-"Le collecteur du journal envoie les informations sur le système\n"
+"Le collecteur de logs envoie les informations sur le système\n"
 "les les processus en cours à un serveur central.  Utiliser\n"
 "cette option pour signaler un problème."
 
@@ -100,20 +100,20 @@ msgstr "Envoyer l'information"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr "Journaux envoyés"
+msgstr "Logs envoyés"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr "Les journaux ont été transmis au serveur."
+msgstr "Les logs ont été transmis au serveur."
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr "Journaux pas envoyés"
+msgstr "Logs pas envoyés"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
-"Les journaux ne peuvent pas être transmis au serveur. Contrôler la connexion "
+"Les logs ne peuvent pas être transmis au serveur. Contrôler la connexion "
 "réseau."
