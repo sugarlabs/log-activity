@@ -1,6 +1,6 @@
 [Activity]
 name = Log
-activity_version = 14
+activity_version = 15
 service_name = org.laptop.Log
 exec = sugar-activity logviewer.LogActivity -s
 icon = activity-log
