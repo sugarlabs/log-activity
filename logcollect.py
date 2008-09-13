@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-#
 # Copyright (C) 2007, Pascal Scheffers <pascal@scheffers.net> 
 #
 # Permission is hereby granted, free of charge, to any person
