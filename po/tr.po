@@ -30,22 +30,22 @@ msgstr "diğer"
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "hata: %(path)'in içindeki dosyalara bakamıyor."
+msgstr "hata: '%(path)s'in içindeki dosyalara bakamıyor."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "hata: %(dosya)'sı yok."
+msgstr "hata: '%(file)s' yok."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "hata: %(dosya)'yı okuyamıyor."
+msgstr "hata: %(file)s'yı okuyamıyor."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "hata: %s dosyasını açamıyor."
+msgstr "hata: %s dosyasını açamıyor.\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
@@ -78,7 +78,7 @@ msgstr "hata"
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(dosya)'sını silerken %(hata)'sı oluştu."
+msgstr "%(error)s sını silerken %(file)s oluştu."
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
