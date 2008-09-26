@@ -2,88 +2,87 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2008-07-18 06:51-0400\n"
+"Last-Translator: Rashan Anushka <rashan.uoc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "ලොගය"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr ""
+msgstr "ලොගන ගොනු"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr ""
+msgstr "වෙනත්"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "දෝෂයක්: '%(path)s' හි ගොනු බැලීම අසමත් විය."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "දෝෂයක්: '%(file)s' ගොනුව නොපවතී."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "දෝෂයක්: '%(file)s' ගොනුව කියවීමට නොහැක."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "දෝෂයක්: '%s' ගොනුව විවෘත කළ නොහැක\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr ""
+msgstr "පද එතීම"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr ""
+msgstr "පෙර"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr ""
+msgstr "ඊලඟ"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr ""
+msgstr "සංස්කරණය කරන්න"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr ""
+msgstr "ලොගන ගොනුව මකා දමන්න"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr ""
+msgstr "මෙවලම්"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr ""
+msgstr "දෝෂයක්"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(file)s ගොනුව මැකීමේදී %(error)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "ලොගන සංග්‍රාහකය: XO විස්තර යවන්න"
 
 #: logviewer.py:498
 msgid ""
@@ -91,25 +90,30 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"ලොගන සංග්‍රාහකය මගින් පද්ධතිය ගැන විස්තර\n"
+"හා ක්‍රියාත්මක වන පැසුරුම් මධ්‍යම සේවාදායකයකට යැවේ. \n"
+"ඔබට කිසියම් ප්‍රශ්නයක් වාර්ථා කිරීමට අවශ්‍ය විටදී මෙය භාවිතා කරන්න."
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr ""
+msgstr "විස්තර යවන්න"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr ""
+msgstr "ලොගනයන් යවන ලදි"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "ලොගනයන් සේවාදායකයට උඩුගත කරන ලදි."
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr ""
+msgstr "ලොගනයන් යවන නොලදි"
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
+"ලොගනයන් සේවාදායකයට උඩුගත කළ නොහැකි විය. කරුණාකර ඔබගේ ජාල සම්බන්ධතාව පරික්ෂා "
+"කරන්න."
