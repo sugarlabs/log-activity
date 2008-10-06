@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-08-26 06:22-0400\n"
+"PO-Revision-Date: 2008-08-27 10:54-0400\n"
 "Last-Translator: abdullah kocabas <abdullah.kocabas@abcdizustu.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr "kaydetmek"
+msgstr "kaydediniz."
 
 #: logviewer.py:79
 msgid "Log Files"
@@ -30,22 +30,22 @@ msgstr "diğer"
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "hata: %(path)'in içindeki dosyalara bakamıyor."
+msgstr "hata: '%(path)s'in içindeki dosyalara bakamıyor."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "hata: %(dosya)'sı yoktur."
+msgstr "hata: '%(file)s' yok."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "hata: %(dosya)'yı okuyamıyor."
+msgstr "hata: %(file)s'yı okuyamıyor."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "hata: %s dosyasını açamıyor."
+msgstr "hata: %s dosyasını açamıyor.\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
@@ -57,11 +57,11 @@ msgstr "önceki"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr "sonraki"
+msgstr "diğer"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr "düzenlemek"
+msgstr "düzenleyiniz."
 
 #: logviewer.py:406
 msgid "Delete Log File"
@@ -78,7 +78,7 @@ msgstr "hata"
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(dosya)'sını silerken %(hata)'sı oluşmuştur."
+msgstr "%(error)s sını silerken %(file)s oluştu."
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
@@ -99,15 +99,15 @@ msgstr "bilgi yollayınız."
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr "kayıtlar yollanmıştır."
+msgstr "kayıtlar yollandı."
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr "kayıtlar sunucuya yüklenmiştir."
+msgstr "kayıtlar sunucuya yüklendi."
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr "kayıtlar yollanmamıştır."
+msgstr "kayıtlar yollanmadı."
 
 #: logviewer.py:531
 msgid ""
