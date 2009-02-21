@@ -7,82 +7,82 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-10-20 04:31-0400\n"
-"Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
+"PO-Revision-Date: 2008-10-08 06:07-0400\n"
+"Last-Translator: Mattias Ohlsson <mattias_oh@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"X-Generator: Translate Toolkit 1.1.1rc4\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr "Log"
+msgstr "Loggbok"
 
 #: logviewer.py:79
 msgid "Log Files"
-msgstr "File di Log"
+msgstr "loggfiler"
 
 #: logviewer.py:87
 msgid "Other"
-msgstr "Altro"
+msgstr "Annat"
 
 #: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "ERRORE: File in '%(path)s' non trovati."
+msgstr "Fel: Kunde inte söka efter filer i '%(path)s'."
 
 #: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "ERRORE: I File '%(file)s' non esistono."
+msgstr "Fel: Filen '%(file)s' finns inte."
 
 #: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "ERRORE: Non posso leggere i file '%(file)s'."
+msgstr "Fel: Kunde inte läsa fil '%(file)s'."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "Errore: Non posso aprire il file '%s'\n"
+msgstr "Fel: Kunde inte öppna fil '%s'\n"
 
 #: logviewer.py:356
 msgid "Word Wrap"
-msgstr "Parole a capo"
+msgstr "radbrytning"
 
 #: logviewer.py:385
 msgid "Previous"
-msgstr "Precedente"
+msgstr "Föregående"
 
 #: logviewer.py:392
 msgid "Next"
-msgstr "Successivo"
+msgstr "Nästa"
 
 #: logviewer.py:401
 msgid "Edit"
-msgstr "Modifica"
+msgstr "Redigera"
 
 #: logviewer.py:406
 msgid "Delete Log File"
-msgstr "Elimina il file di Log"
+msgstr "Ta bort loggfiler"
 
 #: logviewer.py:425
 msgid "Tools"
-msgstr "Strumenti"
+msgstr "Verktyg"
 
 #: logviewer.py:478
 msgid "Error"
-msgstr "Errore"
+msgstr "Fel"
 
 #: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(error)s durante la cancellazione di %(file)s"
+msgstr "%(error)s vid borttagning av %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr "Log Collector: Invia informazioni su XO"
+msgstr "Logginsamlare: Skicka XO-information"
 
 #: logviewer.py:498
 msgid ""
@@ -90,30 +90,30 @@ msgid ""
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
-"Log collector (Collettore di registrazioni) invia informazioni sul sistema\n"
-"e sui processi in esecuzione ad un server centrale.  Usa\n"
-"questa opzione per riferire di un problema del sistema."
+"Logginsamlaren skickar information om systemet\n"
+" och aktiva aktiviteter till en central server. Använd \n"
+"detta alternativ om du vill raportera ett problem."
 
 #: logviewer.py:502
 msgid "Send information"
-msgstr "Invia informazioni"
+msgstr "Skicka information"
 
 #: logviewer.py:527
 msgid "Logs sent"
-msgstr "Registrazioni inviate"
+msgstr "Loggfiler skickade"
 
 #: logviewer.py:528
 msgid "The logs were uploaded to the server."
-msgstr "Le registrazioni sono state trasferite al server."
+msgstr "Loggfilerna laddades upp till servern."
 
 #: logviewer.py:530
 msgid "Logs not sent"
-msgstr "Le registrazioni non sono state inviate"
+msgstr "Loggfilerna skickades inte."
 
 #: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
-"Non è stato possibile trasferire le registrazioni al server. Per cortesia "
-"verificare la propria connessione di rete."
+"Loggfilerna kunde inte skickas till serrvern. Kontrollera dina "
+"nätverksinställningar."

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-09-10 08:47-0400\n"
+"PO-Revision-Date: 2008-09-10 08:43-0400\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr "%(error)s lors de la suppression de %(file)s"
 
 #: logviewer.py:491
 msgid "Log Collector: Send XO information"
-msgstr "Collecteur du journal : Envoyer d'information sur le  XO"
+msgstr "Collecteur de logs : Envoyer d'information sur le  XO"
 
 #: logviewer.py:498
 msgid ""
