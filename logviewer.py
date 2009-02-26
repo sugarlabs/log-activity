@@ -38,9 +38,9 @@ from logcollect import LogCollect, LogSend
 def _notify_response_cb(notify, response, activity):
     activity.remove_alert(notify)
 
-class MultiLogView(gtk.HBox):
+class MultiLogView(gtk.HPaned):
     def __init__(self, paths, extra_files):
-        gtk.HBox.__init__(self, False, 3)
+        gtk.Paned.__init__(self)
         
         self.paths = paths
         self.extra_files = extra_files
@@ -87,7 +87,7 @@ class MultiLogView(gtk.HBox):
         scroll.add(self._treeview)
 
         scroll.set_size_request(gtk.gdk.screen_width()*30/100, 0)
-        self.pack_start(scroll, True, True, 0)
+        self.add1(scroll)
 
     def _build_textview(self):
         self._textview = gtk.TextView()
@@ -114,7 +114,7 @@ class MultiLogView(gtk.HBox):
         scroll.add(self._textview)
 
         scroll.set_size_request(gtk.gdk.screen_width()*70/100, 0)
-        self.pack_start(scroll, True, True, 0)
+        self.add2(scroll)
         
     def _sort_logfile(self, treemodel, itera, iterb):
         a = treemodel.get_value(itera, 0)
