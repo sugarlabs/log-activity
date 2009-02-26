@@ -93,7 +93,7 @@ class MultiLogView(gtk.HPaned):
         self._textview = gtk.TextView()
         self._textview.set_wrap_mode(gtk.WRAP_NONE)
         
-        pangoFont = pango.FontDescription('Courier 8')
+        pangoFont = pango.FontDescription('Mono')
         self._textview.modify_font(pangoFont)
 
         bgcolor = gtk.gdk.color_parse('#FFFFFF')
