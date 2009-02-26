@@ -23,7 +23,7 @@ import re
 import gtk
 import pango
 import gobject
-import gnomevfs
+import gio 
 
 from sugar.activity import activity
 from sugar import env
@@ -141,29 +141,26 @@ class MultiLogView(gtk.HBox):
             return 0
 
     def _configure_watcher(self):
-        # Setting where gnomeVFS will be watching
+        # Setting where GIO will be watching
         for p in self.paths:
-            gnomevfs.monitor_add('file://' + p,
-                                 gnomevfs.MONITOR_DIRECTORY,
-                                 self._log_file_changed_cb)
+            monitor = gio.File(p).monitor_directory()
+            monitor.connect('changed', self._log_file_changed_cb)
 
         for f in self.extra_files:
-            gnomevfs.monitor_add('file://' + f,
-                             gnomevfs.MONITOR_FILE,
-                             self._log_file_changed_cb)
+            monitor = gio.File(f).monitor_file()
+            monitor.connect('changed', self._log_file_changed_cb)
 
-    def _log_file_changed_cb(self, monitor_uri, info_uri, event):
-        path = info_uri.split('file://')[-1]
-        dir, logfile = os.path.split(path)
+    def _log_file_changed_cb(self, monitor, file, other_file, event):
+        logfile = file.get_basename()
 
-        if event == gnomevfs.MONITOR_EVENT_CHANGED:
+        if event == gio.FILE_MONITOR_EVENT_CHANGED:
             if self.logs.has_key(logfile):
                 self.logs[logfile].update()
-        elif event == gnomevfs.MONITOR_EVENT_DELETED:
+        elif event == gio.FILE_MONITOR_EVENT_DELETED:
             if self.logs.has_key(logfile):
                 self._remove_log_file(logfile)
-        elif event == gnomevfs.MONITOR_EVENT_CREATED:
-            self._add_log_file(path)
+        elif event == gio.FILE_MONITOR_EVENT_CREATED:
+            self._add_log_file(file.get_path())
 
     def _cursor_changed_cb(self, treeview):
         treestore, iter = self._treeview.get_selection().get_selected()
