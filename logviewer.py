@@ -1,4 +1,5 @@
 # Copyright (C) 2006-2007, Eduardo Silva <edsiper@gmail.com>
+# Copyright (C) 2009 Simon Schampijer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -44,6 +45,8 @@ class MultiLogView(gtk.HPaned):
         
         self.paths = paths
         self.extra_files = extra_files
+        # Hold a reference to the monitors so they don't get disposed
+        self._gio_monitors = []
 
         self.active_log = None
         self.logs = {}
@@ -145,10 +148,12 @@ class MultiLogView(gtk.HPaned):
         for p in self.paths:
             monitor = gio.File(p).monitor_directory()
             monitor.connect('changed', self._log_file_changed_cb)
+            self._gio_monitors.append(monitor)
 
         for f in self.extra_files:
             monitor = gio.File(f).monitor_file()
             monitor.connect('changed', self._log_file_changed_cb)
+            self._gio_monitors.append(monitor)
 
     def _log_file_changed_cb(self, monitor, file, other_file, event):
         logfile = file.get_basename()
