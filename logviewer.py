@@ -89,7 +89,7 @@ class MultiLogView(gtk.HPaned):
         scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         scroll.add(self._treeview)
 
-        scroll.set_size_request(gtk.gdk.screen_width()*30/100, 0)
+        self.props.position = gtk.gdk.screen_width() * 30 / 100 
         self.add1(scroll)
 
     def _build_textview(self):
@@ -116,7 +116,6 @@ class MultiLogView(gtk.HPaned):
         scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         scroll.add(self._textview)
 
-        scroll.set_size_request(gtk.gdk.screen_width()*70/100, 0)
         self.add2(scroll)
         
     def _sort_logfile(self, treemodel, itera, iterb):
