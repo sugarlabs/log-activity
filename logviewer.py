@@ -34,6 +34,8 @@ from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.palette import Palette
 from sugar.graphics.alert import NotifyAlert
 from logcollect import LogCollect, LogSend
+from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from sugar.activity.widgets import *
 
 # Should be builtin to sugar.graphics.alert.NotifyAlert...
 def _notify_response_cb(notify, response, activity):
@@ -41,8 +43,8 @@ def _notify_response_cb(notify, response, activity):
 
 class MultiLogView(gtk.HPaned):
     def __init__(self, paths, extra_files):
-        gtk.Paned.__init__(self)
-        
+        gtk.HPaned.__init__(self)
+
         self.paths = paths
         self.extra_files = extra_files
         # Hold a reference to the monitors so they don't get disposed
@@ -52,10 +54,10 @@ class MultiLogView(gtk.HPaned):
         self.logs = {}
 
         self.search_text = ''
-        
+
         self._build_treeview()
         self._build_textview()
-        
+
         self.show_all()
 
         self._configure_watcher()
@@ -88,14 +90,14 @@ class MultiLogView(gtk.HPaned):
         scroll = gtk.ScrolledWindow()
         scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         scroll.add(self._treeview)
+        scroll.set_size_request(gtk.gdk.screen_width() * 30 / 100, -1)
 
-        self.props.position = gtk.gdk.screen_width() * 30 / 100 
         self.add1(scroll)
 
     def _build_textview(self):
         self._textview = gtk.TextView()
         self._textview.set_wrap_mode(gtk.WRAP_NONE)
-        
+
         pangoFont = pango.FontDescription('Mono')
         self._textview.modify_font(pangoFont)
 
@@ -111,13 +113,13 @@ class MultiLogView(gtk.HPaned):
         select_tag = gtk.TextTag('search-select')
         select_tag.props.background = '#B0B0FF'
         self._tagtable.add(select_tag)
-        
+
         scroll = gtk.ScrolledWindow()
         scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
         scroll.add(self._textview)
 
         self.add2(scroll)
-        
+
     def _sort_logfile(self, treemodel, itera, iterb):
         a = treemodel.get_value(itera, 0)
         b = treemodel.get_value(iterb, 0)
@@ -125,7 +127,7 @@ class MultiLogView(gtk.HPaned):
             return 0
         a = a.lower()
         b = b.lower()
-        
+
         # Filenames are parased as xxxx-YYY.log
         # Sort first by xxxx, then numerically by YYY.
         logre = re.compile(r'(.*)-(\d+)\.log', re.IGNORECASE)
@@ -334,103 +336,95 @@ class LogActivity(activity.Activity):
 
         self.viewer = MultiLogView(paths, ext_files)
         self.set_canvas(self.viewer)
+        self.viewer.grab_focus()
 
         self._build_toolbox()
-        
+
         self.show()
 
     def _build_toolbox(self):
-        toolbox = activity.ActivityToolbox(self)
+        toolbar_box = ToolbarBox()
 
-        edit_toolbar = activity.EditToolbar()
-        
-        edit_toolbar.paste.props.visible = False
-        edit_toolbar.undo.props.visible = False
-        edit_toolbar.redo.props.visible = False
-        edit_toolbar.separator.props.visible = False
-        edit_toolbar.copy.connect('clicked', self._copy_cb)
-        
+        activity_button = ActivityToolbarButton(self)
+        activity_button.props.page.share.hide()
+        activity_button.props.page.keep.hide()
+        toolbar_box.toolbar.insert(activity_button, -1)
+
+        separator = gtk.SeparatorToolItem()
+        separator.set_draw(False)
+        toolbar_box.toolbar.insert(separator, -1)
+
+        copy = CopyButton()
+        copy.connect('clicked', self.__copy_clicked_cb)
+        toolbar_box.toolbar.insert(copy, -1)
+
         wrap_btn = ToggleToolButton('format-justify-left')
         wrap_btn.set_tooltip(_('Word Wrap'))
         wrap_btn.connect('clicked', self._wrap_cb)
-        wrap_btn.show()
-        edit_toolbar.insert(wrap_btn, -1)
-        
+        toolbar_box.toolbar.insert(wrap_btn, -1)
+
         separator = gtk.SeparatorToolItem()
         separator.set_draw(False)
-        separator.set_expand(True)
-        edit_toolbar.insert(separator, -1)
-        separator.show()
+        toolbar_box.toolbar.insert(separator, -1)
 
+        search_entry = iconentry.IconEntry()
+        search_entry.set_size_request(gtk.gdk.screen_width() / 3, -1)
+        search_entry.set_icon_from_name(
+                iconentry.ICON_ENTRY_PRIMARY, 'system-search')
+        search_entry.add_clear_button()
+        search_entry.connect('activate', self._search_entry_activate_cb)
+        search_entry.connect('changed', self._search_entry_changed_cb)
         search_item = gtk.ToolItem()
-
-        self._search_entry = iconentry.IconEntry()
-        self._search_entry.set_icon_from_name(iconentry.ICON_ENTRY_PRIMARY,
-                                                'system-search')
-        self._search_entry.add_clear_button()
-        self._search_entry.connect('activate', self._search_entry_activate_cb)
-        self._search_entry.connect('changed', self._search_entry_changed_cb)
-
-        width = int(gtk.gdk.screen_width() / 3)
-        self._search_entry.set_size_request(width, -1)
-        self._search_entry.show()
-        search_item.add(self._search_entry)
-
-        search_item.show()
-        edit_toolbar.insert(search_item, -1)
+        search_item.add(search_entry)
+        toolbar_box.toolbar.insert(search_item, -1)
 
         self._search_prev = ToolButton('go-previous-paired')
         self._search_prev.set_tooltip(_('Previous'))
-        #self._search_prev.props.sensitive = False
         self._search_prev.connect('clicked', self._search_prev_cb)
-        self._search_prev.show()
-        edit_toolbar.insert(self._search_prev, -1)
+        toolbar_box.toolbar.insert(self._search_prev, -1)
 
         self._search_next = ToolButton('go-next-paired')
         self._search_next.set_tooltip(_('Next'))
-        #self._search_next.props.sensitive = False
         self._search_next.connect('clicked', self._search_next_cb)
-        self._search_next.show()
-        edit_toolbar.insert(self._search_next, -1)
-        
-        self._update_search_buttons()
-        
-        edit_toolbar.show()
-        toolbox.add_toolbar(_('Edit'), edit_toolbar)
+        toolbar_box.toolbar.insert(self._search_next, -1)
 
-        tools_toolbar = gtk.Toolbar()
+        self._update_search_buttons()
+
+        separator = gtk.SeparatorToolItem()
+        toolbar_box.toolbar.insert(separator, -1)
+
+        edit_toolbar = gtk.Toolbar()
 
         delete_btn = ToolButton('list-remove')
         delete_btn.set_tooltip(_('Delete Log File'))
         delete_btn.connect('clicked', self._delete_log_cb)
-        delete_btn.show()
-        tools_toolbar.insert(delete_btn, -1)
+        edit_toolbar.insert(delete_btn, -1)
 
-        separator = gtk.SeparatorToolItem()
-        separator.set_expand(True)
-        separator.set_draw(False)
-        separator.show()
-        tools_toolbar.insert(separator, -1)
-        
         self.collector_palette = CollectorPalette(self)
         collector_btn = ToolButton('zoom-best-fit')
         collector_btn.set_palette(self.collector_palette)
         collector_btn.connect('clicked', self._logviewer_cb)
-        collector_btn.show()
-        tools_toolbar.insert(collector_btn, -1)
+        edit_toolbar.insert(collector_btn, -1)
 
-        tools_toolbar.show()
-        toolbox.add_toolbar(_('Tools'), tools_toolbar)
-        
-        toolbox.show()
-        self.set_toolbox(toolbox)
+        edit_toolbar.show_all()
 
-        # Hide unsupported Activity tools.
-        toolbar = toolbox.get_activity_toolbar()
-        toolbar.share.hide()
-        toolbar.keep.hide()
-        
-    def _copy_cb(self, button):
+        edit_button = ToolbarButton()
+        edit_button.props.page = edit_toolbar
+        edit_button.props.label = _('Tools')
+        edit_button.props.icon_name = 'view-source'
+        toolbar_box.toolbar.insert(edit_button, -1)
+
+        separator = gtk.SeparatorToolItem()
+        separator.set_expand(True)
+        separator.set_draw(False)
+        toolbar_box.toolbar.insert(separator, -1)
+
+        toolbar_box.toolbar.insert(StopButton(self), -1)
+
+        toolbar_box.show_all()
+        self.set_toolbar_box(toolbar_box)
+
+    def __copy_clicked_cb(self, button):
         if self.viewer.active_log:
             self.viewer.active_log.copy_clipboard(gtk.clipboard_get())
 
@@ -447,15 +441,15 @@ class LogActivity(activity.Activity):
     def _search_entry_changed_cb(self, entry):
         self.viewer.set_search_text(entry.props.text)
         self._update_search_buttons()
-    
+
     def _search_prev_cb(self, button):
         self.viewer.search_next('backward')
         self._update_search_buttons()
-    
+
     def _search_next_cb(self, button):
         self.viewer.search_next('forward')
         self._update_search_buttons()
-    
+
     def _update_search_buttons(self,):
         if len(self.viewer.search_text) == 0:
             self._search_prev.props.sensitive = False
