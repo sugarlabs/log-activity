@@ -345,9 +345,8 @@ class LogActivity(activity.Activity):
     def _build_toolbox(self):
         toolbar_box = ToolbarBox()
 
+        self.max_participants = 1
         activity_button = ActivityToolbarButton(self)
-        activity_button.props.page.share.hide()
-        activity_button.props.page.keep.hide()
         toolbar_box.toolbar.insert(activity_button, -1)
 
         separator = gtk.SeparatorToolItem()
