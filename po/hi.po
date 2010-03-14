@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"POT-Creation-Date: 2009-08-18 00:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,98 +18,98 @@ msgstr ""
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr ""
+msgstr "लॉग"
 
-#: logviewer.py:79
+#: logviewer.py:80
 msgid "Log Files"
-msgstr ""
+msgstr "लॉग फ़ाइलें"
 
-#: logviewer.py:87
+#: logviewer.py:88
 msgid "Other"
-msgstr ""
+msgstr "अन्य"
 
-#: logviewer.py:188
+#: logviewer.py:187
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "त्रुटि: फ़ाइलों को '%(path)s' में देखने में असफल."
 
-#: logviewer.py:203
+#: logviewer.py:202
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "त्रुटि: फ़ाइल '%(file)s' मौज़ूद नहीं है."
 
-#: logviewer.py:207
+#: logviewer.py:206
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "त्रुटि: '%(file)s' पढ़ने में अक्षम."
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "त्रुटि: फ़ाइल '%s' खोला नहीं जा सका\n"
 
-#: logviewer.py:356
+#: logviewer.py:362
 msgid "Word Wrap"
-msgstr ""
+msgstr "वर्ड रैप"
 
-#: logviewer.py:385
+#: logviewer.py:382
 msgid "Previous"
-msgstr ""
+msgstr "पिछला"
 
-#: logviewer.py:392
+#: logviewer.py:387
 msgid "Next"
-msgstr ""
+msgstr "अगला"
 
-#: logviewer.py:401
-msgid "Edit"
-msgstr ""
-
-#: logviewer.py:406
+#: logviewer.py:399
 msgid "Delete Log File"
-msgstr ""
+msgstr "लॉग फ़ाइल मिटाएँ"
 
-#: logviewer.py:425
+#: logviewer.py:413
 msgid "Tools"
-msgstr ""
+msgstr "औज़ार"
 
-#: logviewer.py:478
+#: logviewer.py:470
 msgid "Error"
-msgstr ""
+msgstr "त्रुटि"
 
-#: logviewer.py:479
+#: logviewer.py:471
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(error)s त्रुटियाँ फ़ाइलें %(file)s मिटाने के दौरान"
 
-#: logviewer.py:491
+#: logviewer.py:483
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "लॉग संग्राहक: एक्सओ जानकारी भेजें"
 
-#: logviewer.py:498
+#: logviewer.py:490
 msgid ""
 "Log collector sends information about the system\n"
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"तंत्र तथा चलते हुए प्रक्रियाओं के बारे में जानकारियाँ लॉग संग्राहक\n"
+"केंद्रीय सर्वर को जानकारी भेजता है.\n"
+"यदि आप किसी समस्या की रपट देना चाहते हैं तो इस विकल्प का प्रयोग करें."
 
-#: logviewer.py:502
+#: logviewer.py:494
 msgid "Send information"
-msgstr ""
+msgstr "जानकारी भेजें"
 
-#: logviewer.py:527
+#: logviewer.py:519
 msgid "Logs sent"
-msgstr ""
+msgstr "लॉग भेजा"
 
-#: logviewer.py:528
+#: logviewer.py:520
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "लॉग सर्वर पर अपलोड किया गया."
 
-#: logviewer.py:530
+#: logviewer.py:522
 msgid "Logs not sent"
-msgstr ""
+msgstr "लॉग भेजा नहीं गया"
 
-#: logviewer.py:531
+#: logviewer.py:523
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
+"लॉग को सर्वर पर अपलोड नहीं किया जा सका. कृपया अपना नेटवर्क कनेक्शन जाँचें."
