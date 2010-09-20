@@ -10,12 +10,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-08-18 00:30-0400\n"
-"PO-Revision-Date: 2010-03-28 23:18+0200\n"
+"PO-Revision-Date: 2010-09-20 21:29+0200\n"
 "Last-Translator: Markus <m.slg@gmx.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: de\n"
@@ -55,7 +59,7 @@ msgstr "FEHLER: Kann Datei '%(file)s' nicht lesen."
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "FEHLER: Kann Datei '%s' nicht öffnen\n"
+msgstr "FEHLER: Kann Datei '%s' nicht öffnen.\n"
 
 #: logviewer.py:362
 msgid "Word Wrap"
