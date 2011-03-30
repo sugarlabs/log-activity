@@ -1,7 +1,7 @@
 [Activity]
 name = Log
 activity_version = 24
-service_name = org.laptop.Log
+bundle_id = org.laptop.Log
 exec = sugar-activity logviewer.LogActivity -s
 icon = activity-log
 license = GPLv2+
