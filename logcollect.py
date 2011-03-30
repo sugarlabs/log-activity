@@ -484,10 +484,8 @@ if sys.argv[0].endswith('logcollect.py') or \
         print """logcollect.py - send your XO logs to OLPC
         
 Usage:
-    logcollect.py http  - send logs to default server
-    
     logcollect.py http://server.name/submit.php
-                         - submit logs to alternative server
+                         - submit logs to a server
                          
     logcollect.py file:/media/xxxx-yyyy/mylog.zip
                          - save the zip file on a USB device or SD card
@@ -536,7 +534,8 @@ Usage:
     if mode.startswith('http'):
         print "Trying to send the logs using HTTP (web)"
         if len(mode) == 4:
-            url = 'http://olpc.scheffers.net/olpc/submit.tcl'
+            print "No default log destination, aborting"
+            sys.exit(1)
         else:
             url = mode
             
