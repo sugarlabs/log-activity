@@ -24,7 +24,8 @@ import re
 import gtk
 import pango
 import gobject
-import gio 
+import gio
+import gconf
 
 from sugar.activity import activity
 from sugar import env
@@ -476,8 +477,6 @@ class LogActivity(activity.Activity):
         self.collector_palette.popup(True)
 
 class CollectorPalette(Palette):
-    _DEFAULT_SERVER = 'http://olpc.scheffers.net/olpc/submit.tcl'
-
     def __init__(self, handler):
         Palette.__init__(self, _('Log Collector: Send XO information'))
 
@@ -492,6 +491,13 @@ class CollectorPalette(Palette):
         
         send_button = gtk.Button(_('Send information'))
         send_button.connect('clicked', self._on_send_button_clicked_cb)
+        client = gconf.client_get_default()
+        if client.get_bool('/desktop/sugar/privacy/log_send_enable'):
+            self._default_server = \
+                client.get_string('/desktop/sugar/privacy/log_send_server')
+        else:
+            send_button.set_sensitive(False)
+            self._default_server = None
 
         vbox = gtk.VBox(False, 5)
         vbox.pack_start(label)
@@ -505,7 +511,7 @@ class CollectorPalette(Palette):
         try:
             data = self._collector.write_logs()
             sender = LogSend()
-            success = sender.http_post_logs(self._DEFAULT_SERVER, data)
+            success = sender.http_post_logs(self._default_server, data)
         except:
             success = False
 
