@@ -16,6 +16,7 @@
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 import os
+import time
 import logging
 from gettext import gettext as _
 
@@ -25,7 +26,6 @@ import gtk
 import pango
 import gobject
 import gio
-import gconf
 
 from sugar.activity import activity
 from sugar import env
@@ -37,6 +37,7 @@ from sugar.graphics.alert import NotifyAlert
 from logcollect import LogCollect, LogSend
 from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar.activity.widgets import *
+from sugar.datastore import datastore
 
 # Should be builtin to sugar.graphics.alert.NotifyAlert...
 def _notify_response_cb(notify, response, activity):
@@ -322,9 +323,8 @@ class LogBuffer(gtk.TextBuffer):
             self._written = 0
 
 class LogActivity(activity.Activity):
-    def __init__(self, handle):
-        activity.Activity.__init__(self, handle)
-        self.set_title(_('Log'))
+    def __init__(self, handle, create_jobject=True):
+        activity.Activity.__init__(self, handle, False)
 
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
         paths = []
@@ -347,8 +347,25 @@ class LogActivity(activity.Activity):
         toolbar_box = ToolbarBox()
 
         self.max_participants = 1
-        activity_button = ActivityToolbarButton(self)
+
+        try:
+            activity_button = ActivityToolbarButton(self)
+        except AttributeError:
+            # in Sugar 0.92, ActivityToolbarButton will only work
+            # correctly if create_jobject=True for the activity, since
+            # it relies on metadata being present.  Here we workaround
+            # that by creating a temporary journal object for the
+            # duration of the call.
+            self._jobject = datastore.create()
+            self._jobject.metadata['title'] = 'Log Activity'
+            activity_button = ActivityToolbarButton(self)
+            self._jobject = None
         toolbar_box.toolbar.insert(activity_button, -1)
+
+        # prevent title from being edited, and prevent keep
+        activity_toolbar = activity_button.get_page()
+        activity_toolbar.title.set_sensitive(False)
+        activity_toolbar.keep.set_sensitive(False)
 
         separator = gtk.SeparatorToolItem()
         separator.set_draw(False)
@@ -477,27 +494,20 @@ class LogActivity(activity.Activity):
         self.collector_palette.popup(True)
 
 class CollectorPalette(Palette):
-    def __init__(self, handler):
-        Palette.__init__(self, _('Log Collector: Send XO information'))
+    def __init__(self, activity):
+        Palette.__init__(self, _('Log Collector: Capture information'))
 
-        self._handler = handler
-        
+        self._activity = activity
+
         self._collector = LogCollect()
-        
+
         label = gtk.Label(
-            _('Log collector sends information about the system\n'\
-              'and running processes to a central server.  Use\n'\
-              'this option if you want to report a problem.'))
-        
-        send_button = gtk.Button(_('Send information'))
+            _('This captures information about the system\n'\
+              'and running processes to a journal entry.\n'\
+              'Use this to improve a problem report.'))
+
+        send_button = gtk.Button(_('Capture information'))
         send_button.connect('clicked', self._on_send_button_clicked_cb)
-        client = gconf.client_get_default()
-        if client.get_bool('/desktop/sugar/privacy/log_send_enable'):
-            self._default_server = \
-                client.get_string('/desktop/sugar/privacy/log_send_server')
-        else:
-            send_button.set_sensitive(False)
-            self._default_server = None
 
         vbox = gtk.VBox(False, 5)
         vbox.pack_start(label)
@@ -507,30 +517,38 @@ class CollectorPalette(Palette):
         self.set_content(vbox)
 
     def _on_send_button_clicked_cb(self, button):
+        identifier = str(int(time.time()))
+        filename = '%s.zip' % identifier
         success = True
         try:
-            data = self._collector.write_logs()
-            sender = LogSend()
-            success = sender.http_post_logs(self._default_server, data)
+            filename = self._collector.write_logs(archive=filename, logbytes=0)
         except:
             success = False
 
-        os.remove(data)
         self.popdown(True)
 
-        title = ''
-        msg = ''
-        if success:
-            title = _('Logs sent')
-            msg = _('The logs were uploaded to the server.')
-        else:
-            title = _('Logs not sent')
-            msg = _('The logs could not be uploaded to the server. '\
-                    'Please check your network connection.')
+        if not success:
+            title = _('Logs not captured')
+            msg = _('The logs could not be captured.')
 
-        notify = NotifyAlert()
-        notify.props.title = title
-        notify.props.msg = msg
-        notify.connect('response', _notify_response_cb, self._handler)
-        self._handler.add_alert(notify)
+            notify = NotifyAlert()
+            notify.props.title = title
+            notify.props.msg = msg
+            notify.connect('response', _notify_response_cb, self._activity)
+            self._activity.add_alert(notify)
 
+        jobject = datastore.create()
+        metadata = {
+            'title': _('log-%s') % filename,
+            'title_set_by_user': '0',
+            'suggested_filename': filename,
+            'mime_type': 'application/zip',
+            }
+        for k, v in metadata.items():
+            jobject.metadata[k] = v
+        jobject.file_path = os.path.join(activity.get_bundle_path(), filename)
+        datastore.write(jobject)
+        self._last_log = jobject.object_id
+        jobject.destroy()
+        activity.show_object_in_journal(self._last_log)
+        os.remove(filename)
