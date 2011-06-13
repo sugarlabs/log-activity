@@ -2,43 +2,53 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2009-08-18 00:30-0400\n"
+"PO-Revision-Date: 2008-12-19 23:36-0500\n"
+"Last-Translator: Chris Leonard <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
+#, fuzzy
 msgid "Log"
-msgstr ""
+msgstr "רישום"
 
-#: logviewer.py:79
+#: logviewer.py:80
+#, fuzzy
 msgid "Log Files"
-msgstr ""
+msgstr "קבצי רישום"
 
-#: logviewer.py:87
+#: logviewer.py:88
+#, fuzzy
 msgid "Other"
-msgstr ""
+msgstr "אחר"
 
-#: logviewer.py:188
+#: logviewer.py:187
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr ""
 
-#: logviewer.py:203
+#: logviewer.py:202
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr ""
 
-#: logviewer.py:207
+#: logviewer.py:206
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr ""
@@ -48,68 +58,84 @@ msgstr ""
 msgid "Error: Can't open file '%s'\n"
 msgstr ""
 
-#: logviewer.py:356
+#: logviewer.py:362
+#, fuzzy
 msgid "Word Wrap"
-msgstr ""
+msgstr "מעטפת מילים"
 
-#: logviewer.py:385
+#: logviewer.py:382
+#, fuzzy
 msgid "Previous"
-msgstr ""
+msgstr "הקודם"
 
-#: logviewer.py:392
+#: logviewer.py:387
+#, fuzzy
 msgid "Next"
-msgstr ""
+msgstr "הבא"
 
-#: logviewer.py:401
-msgid "Edit"
-msgstr ""
-
-#: logviewer.py:406
+#: logviewer.py:399
+#, fuzzy
 msgid "Delete Log File"
-msgstr ""
+msgstr "מחיקת קובץ רישום"
 
-#: logviewer.py:425
+#: logviewer.py:413
+#, fuzzy
 msgid "Tools"
-msgstr ""
+msgstr "כלים"
 
-#: logviewer.py:478
+#: logviewer.py:470
+#, fuzzy
 msgid "Error"
-msgstr ""
+msgstr "שגיאה"
 
-#: logviewer.py:479
+#: logviewer.py:471
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:491
+#: logviewer.py:483
+#, fuzzy
 msgid "Log Collector: Send XO information"
-msgstr ""
+msgstr "איסוף רישומים: שלחו מידע אודות ה-XO"
 
-#: logviewer.py:498
+#: logviewer.py:490
+#, fuzzy
 msgid ""
 "Log collector sends information about the system\n"
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
+"איסוף הרישומים שולח מידע על המערכת שלך\n"
+" ומריץ תהליכים לשרת המרכזי. יש להשתמש\n"
+" באפשרות הזאת אם ברצונך לדווח על הבעייה."
 
-#: logviewer.py:502
+#: logviewer.py:494
+#, fuzzy
 msgid "Send information"
-msgstr ""
+msgstr "שלח מידע"
 
-#: logviewer.py:527
+#: logviewer.py:519
+#, fuzzy
 msgid "Logs sent"
-msgstr ""
+msgstr "הרישום נשלח"
 
-#: logviewer.py:528
+#: logviewer.py:520
+#, fuzzy
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "הרישומים הועלו לשרת."
 
-#: logviewer.py:530
+#: logviewer.py:522
+#, fuzzy
 msgid "Logs not sent"
-msgstr ""
+msgstr "הרישום לא נשלח"
 
-#: logviewer.py:531
+#: logviewer.py:523
+#, fuzzy
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
-msgstr ""
+msgstr "לא מצליח לעלות את הרישומים לשרת. יש לוודא שחיבור הרשת תקין."
+
+#, fuzzy
+#~ msgid "Edit"
+#~ msgstr "עריכה"

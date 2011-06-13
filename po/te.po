@@ -2,43 +2,50 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-07-24 14:26+0100\n"
+"POT-Creation-Date: 2009-08-18 00:30-0400\n"
+"PO-Revision-Date: 2008-11-05 06:43-0500\n"
 "Last-Translator: Satyanarayana Murthy Saladi <saladism@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
-#: activity/activity.info:2
-#: logviewer.py:326
+#: activity/activity.info:2 logviewer.py:326
 msgid "Log"
-msgstr "లెఖ్ఖాపత్రము"
+msgstr "లాగ్"
 
-#: logviewer.py:79
+#: logviewer.py:80
 msgid "Log Files"
-msgstr "లెఖ్ఖాపత్రము ఫైలులు"
+msgstr "లాగ్ ఫైలులు"
 
-#: logviewer.py:87
+#: logviewer.py:88
 msgid "Other"
 msgstr "మరియొక"
 
-#: logviewer.py:188
+#: logviewer.py:187
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "దోషణ:  '%(path)s' లో ఫైలులగురించి చూచుటకుదరలేదు"
+msgstr "దోషణ:  '%(path)s' లో ఫైలులగురించి చూడడంకుదరలేదు"
 
-#: logviewer.py:203
+#: logviewer.py:202
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "దోషణ:  ఫైలు '%(file)s' లేదు "
 
-#: logviewer.py:207
+#: logviewer.py:206
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "దోషణ:  ఫైలు '%(file)s' చదవటంకుదరలేదు "
@@ -48,68 +55,67 @@ msgstr "దోషణ:  ఫైలు '%(file)s' చదవటంకుదరలే
 msgid "Error: Can't open file '%s'\n"
 msgstr "దోషణ:  ఫైలు '%s' తెరవడంకుదరలేదు \n"
 
-#: logviewer.py:356
+#: logviewer.py:362
 msgid "Word Wrap"
-msgstr ""
+msgstr "వచన పొట్లము"
 
-#: logviewer.py:385
+#: logviewer.py:382
 msgid "Previous"
 msgstr "ముందు"
 
-#: logviewer.py:392
+#: logviewer.py:387
 msgid "Next"
 msgstr "తర్వాత"
 
-#: logviewer.py:401
-msgid "Edit"
-msgstr "కూర్చు"
-
-#: logviewer.py:406
+#: logviewer.py:399
 msgid "Delete Log File"
-msgstr "లెఖ్ఖాపత్రమును తీసివేయుము"
+msgstr "లాగ్ ఫైల్ ను తీసివేయుము"
 
-#: logviewer.py:425
+#: logviewer.py:413
 msgid "Tools"
 msgstr "పనిముట్లు"
 
-#: logviewer.py:478
+#: logviewer.py:470
 msgid "Error"
 msgstr "దోషం:"
 
-#: logviewer.py:479
+#: logviewer.py:471
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:491
+#: logviewer.py:483
 msgid "Log Collector: Send XO information"
 msgstr ""
 
-#: logviewer.py:498
+#: logviewer.py:490
 msgid ""
 "Log collector sends information about the system\n"
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
 
-#: logviewer.py:502
+#: logviewer.py:494
 msgid "Send information"
 msgstr "సమాచారాన్ని పంపు"
 
-#: logviewer.py:527
+#: logviewer.py:519
 msgid "Logs sent"
-msgstr ""
+msgstr "పంపిన లాగ్​లు"
 
-#: logviewer.py:528
+#: logviewer.py:520
 msgid "The logs were uploaded to the server."
-msgstr ""
+msgstr "లాగ్ లు సెర్వరుకు ఎగుమతి చేయబడినవి"
 
-#: logviewer.py:530
+#: logviewer.py:522
 msgid "Logs not sent"
-msgstr ""
+msgstr "లాగ్ లు పంపబడలేదు"
 
-#: logviewer.py:531
+#: logviewer.py:523
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
-msgstr ""
+msgstr "లాగ్ లు సెర్వరు కు ఎగుమతి చేయబడలేదు.  నెట్​వర్క్ జతచేయడము తనిఖీచేయండి"
+
+#~ msgid "Edit"
+#~ msgstr "కూర్చు"
