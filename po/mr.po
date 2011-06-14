@@ -2,89 +2,95 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-05-17 23:36+0000\n"
-"PO-Revision-Date: 2008-07-10 04:23-0400\n"
-"Last-Translator: Sayamindu Dasgupta <sayamindu@gmail.com>\n"
+"POT-Creation-Date: 2009-08-18 00:30-0400\n"
+"PO-Revision-Date: 2010-03-27 08:29+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
 msgstr "लॉग"
 
-#: logviewer.py:79
+#: logviewer.py:80
 msgid "Log Files"
 msgstr "लॉग फाइल"
 
-#: logviewer.py:87
+#: logviewer.py:88
 msgid "Other"
 msgstr "दुसरे"
 
-#: logviewer.py:188
+#: logviewer.py:187
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "चुक : '%(path)s' मधे फाइल शोधू शकला नाही"
 
-#: logviewer.py:203
+#: logviewer.py:202
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "चुक : '%(path)s' फाइल नाही"
+msgstr "चुक : '%(file)s' फाइल नाही"
 
-#: logviewer.py:207
+#: logviewer.py:206
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "चुक :' %(path)s' फाइल वाचू शकत नाही"
+msgstr "चुक :' %(file)s' फाइल वाचू शकत नाही"
 
 #: logviewer.py:320
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "चुक : '%s' इल उघडू शकत नाही\n"
 
-#: logviewer.py:356
+#: logviewer.py:362
 msgid "Word Wrap"
 msgstr "शब्द झाकने"
 
-#: logviewer.py:385
+#: logviewer.py:382
 msgid "Previous"
 msgstr "अगोदरचा"
 
-#: logviewer.py:392
+#: logviewer.py:387
 msgid "Next"
 msgstr "यानंतर"
 
-#: logviewer.py:401
-msgid "Edit"
-msgstr "संपादन करणे "
-
-#: logviewer.py:406
+#: logviewer.py:399
 msgid "Delete Log File"
 msgstr "लॉग फाइल मिटावा"
 
-#: logviewer.py:425
+#: logviewer.py:413
 msgid "Tools"
 msgstr "साधने"
 
-#: logviewer.py:478
+#: logviewer.py:470
 msgid "Error"
 msgstr "चुक"
 
-#: logviewer.py:479
+#: logviewer.py:471
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(file)s मिटवताना चुक"
 
-#: logviewer.py:491
+#: logviewer.py:483
 msgid "Log Collector: Send XO information"
 msgstr "लॉग अधिकारी : एक्स ओची माहिती पाठवा"
 
-#: logviewer.py:498
+#: logviewer.py:490
 msgid ""
 "Log collector sends information about the system\n"
 "and running processes to a central server.  Use\n"
@@ -95,25 +101,28 @@ msgstr ""
 "काहीही अडचण असल्यावर\n"
 "हा विकलप वापरा"
 
-#: logviewer.py:502
+#: logviewer.py:494
 msgid "Send information"
 msgstr "माहिती पाठवा"
 
-#: logviewer.py:527
+#: logviewer.py:519
 msgid "Logs sent"
 msgstr "लॉग पाठविले"
 
-#: logviewer.py:528
+#: logviewer.py:520
 msgid "The logs were uploaded to the server."
 msgstr "लॉग सर्वर वर अपलॉड केले"
 
-#: logviewer.py:530
+#: logviewer.py:522
 msgid "Logs not sent"
 msgstr "लॉग नाही पाठवले"
 
-#: logviewer.py:531
+#: logviewer.py:523
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr ""
 "लॉग सर्वर वर अपलॉड केले नाही जाउ शकत. कृपया आपले नेटवॉरकचे संपर्क तपासा."
+
+#~ msgid "Edit"
+#~ msgstr "संपादन करणे "

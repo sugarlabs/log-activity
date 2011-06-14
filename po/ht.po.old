@@ -2,52 +2,42 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-18 00:30-0400\n"
-"PO-Revision-Date: 2010-02-03 05:34+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2008-05-17 23:36+0000\n"
+"PO-Revision-Date: 2008-07-02 08:59-0400\n"
+"Last-Translator: Jude Augusma <jayme2901@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ht\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n !=1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 1.1.0rc2\n"
 
 #: activity/activity.info:2 logviewer.py:326
 msgid "Log"
 msgstr "Jounal"
 
-#: logviewer.py:80
+#: logviewer.py:79
 msgid "Log Files"
 msgstr "Fichye jounal yo"
 
-#: logviewer.py:88
+#: logviewer.py:87
 msgid "Other"
 msgstr "Lòt"
 
-#: logviewer.py:187
+#: logviewer.py:188
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "Erè: Pa ka jwen'n fichye nan '%(path)s'."
 
-#: logviewer.py:202
+#: logviewer.py:203
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "Erè: fichye '%(file)s' pa egziste."
 
-#: logviewer.py:206
+#: logviewer.py:207
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "Erè: Pa ka li fichye '%(file)s'."
@@ -57,70 +47,71 @@ msgstr "Erè: Pa ka li fichye '%(file)s'."
 msgid "Error: Can't open file '%s'\n"
 msgstr "Erè: Pa ka louvri fichye '%s'\n"
 
-#: logviewer.py:362
+#: logviewer.py:356
 msgid "Word Wrap"
 msgstr "Retounen a la liy"
 
-#: logviewer.py:382
+#: logviewer.py:385
 msgid "Previous"
 msgstr "Presedan"
 
-#: logviewer.py:387
+#: logviewer.py:392
 msgid "Next"
 msgstr "Pwochen"
 
-#: logviewer.py:399
+#: logviewer.py:401
+msgid "Edit"
+msgstr "Korije"
+
+#: logviewer.py:406
 msgid "Delete Log File"
 msgstr "Efase fichye jounal"
 
-#: logviewer.py:413
+#: logviewer.py:425
 msgid "Tools"
 msgstr "Zouti"
 
-#: logviewer.py:470
+#: logviewer.py:478
 msgid "Error"
 msgstr "Erè"
 
-#: logviewer.py:471
+#: logviewer.py:479
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(error)s lè wap efase %(file)s"
+msgstr "%(erè)s lè wap efase %(file)s"
 
-#: logviewer.py:483
+#: logviewer.py:491
 msgid "Log Collector: Send XO information"
 msgstr "Kolektè jounal: Voye enfòmasyon sou XO"
 
-#: logviewer.py:490
+#: logviewer.py:498
 msgid ""
 "Log collector sends information about the system\n"
 "and running processes to a central server.  Use\n"
 "this option if you want to report a problem."
 msgstr ""
 "Kolektè jounal voye enfòmasyon sou sistèm lan\n"
-"epi fè pwosesis la mache sou sèvè santral la.  Sèvi\n"
+"epi fè pwosesis la mache sou sèvè santral la._ Sèvi\n"
 "opsyon sa si ou vle repòte yon pwoblè."
 
-#: logviewer.py:494
+#: logviewer.py:502
 msgid "Send information"
 msgstr "Voye enfòmasyon"
 
-#: logviewer.py:519
+#: logviewer.py:527
 msgid "Logs sent"
 msgstr "Jounal yo ale"
 
-#: logviewer.py:520
+#: logviewer.py:528
 msgid "The logs were uploaded to the server."
 msgstr "Jounal yo te transmèt sou sèvè-a."
 
-#: logviewer.py:522
+#: logviewer.py:530
 msgid "Logs not sent"
 msgstr "Jounal yo pat voye ale"
 
-#: logviewer.py:523
+#: logviewer.py:531
 msgid ""
 "The logs could not be uploaded to the server. Please check your network "
 "connection."
 msgstr "Jounal yo pa kapab transmèt sou sèvè. Chekte koneksyon rezo ou souple."
-
-#~ msgid "Edit"
-#~ msgstr "Korije"
