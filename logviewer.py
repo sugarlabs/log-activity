@@ -28,12 +28,14 @@ import gobject
 import gio
 
 from sugar.activity import activity
+from sugar import profile
 from sugar import env
 from sugar.graphics import iconentry
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.palette import Palette
 from sugar.graphics.alert import NotifyAlert
+from sugar.graphics.icon import Icon
 from logcollect import LogCollect, LogSend
 from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
 from sugar.activity.widgets import *
@@ -323,7 +325,7 @@ class LogBuffer(gtk.TextBuffer):
             self._written = 0
 
 class LogActivity(activity.Activity):
-    def __init__(self, handle, create_jobject=True):
+    def __init__(self, handle, create_jobject=False):
         activity.Activity.__init__(self, handle, False)
 
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
@@ -348,24 +350,14 @@ class LogActivity(activity.Activity):
 
         self.max_participants = 1
 
-        try:
-            activity_button = ActivityToolbarButton(self)
-        except AttributeError:
-            # in Sugar 0.92, ActivityToolbarButton will only work
-            # correctly if create_jobject=True for the activity, since
-            # it relies on metadata being present.  Here we workaround
-            # that by creating a temporary journal object for the
-            # duration of the call.
-            self._jobject = datastore.create()
-            self._jobject.metadata['title'] = 'Log Activity'
-            activity_button = ActivityToolbarButton(self)
-            self._jobject = None
-        toolbar_box.toolbar.insert(activity_button, -1)
+        activity_button = ToolButton()
+        color = profile.get_color()
+        bundle = ActivityBundle(activity.get_bundle_path())
+        icon = Icon(file=bundle.get_icon(), xo_color=color)
+        activity_button.set_icon_widget(icon)
+        activity_button.show()
 
-        # prevent title from being edited, and prevent keep
-        activity_toolbar = activity_button.get_page()
-        activity_toolbar.title.set_sensitive(False)
-        activity_toolbar.keep.set_sensitive(False)
+        toolbar_box.toolbar.insert(activity_button, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.set_draw(False)
