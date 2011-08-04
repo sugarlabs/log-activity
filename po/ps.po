@@ -54,8 +54,8 @@ msgstr "تیروتنه: د دوتنې '%(file)s' د لوست توان نلری"
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr ""
-"تیروتنه: دوتنه '%s'\n"
-" نشی پرانیستی"
+"تیروتنه: دوتنه '%s'"
+" نشی پرانیستی\n"
 
 #: logviewer.py:362
 msgid "Word Wrap"
