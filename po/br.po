@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"PO-Revision-Date: 2011-08-29 07:39+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#: activity/activity.info:2
+msgid "Log"
+msgstr ""
+
+#: logviewer.py:84
+msgid "Log Files"
+msgstr ""
+
+#: logviewer.py:92
+msgid "Other"
+msgstr ""
+
+#: logviewer.py:191
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr ""
+
+#: logviewer.py:206
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr ""
+
+#: logviewer.py:210
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr ""
+
+#: logviewer.py:324
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr ""
+
+#: logviewer.py:371
+msgid "Word Wrap"
+msgstr ""
+
+#: logviewer.py:391
+msgid "Previous"
+msgstr ""
+
+#: logviewer.py:396
+msgid "Next"
+msgstr "War-lerc'h"
+
+#: logviewer.py:408
+msgid "Delete Log File"
+msgstr ""
+
+#: logviewer.py:422
+msgid "Tools"
+msgstr ""
+
+#: logviewer.py:479
+msgid "Error"
+msgstr "Fazi"
+
+#: logviewer.py:480
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr ""
+
+#: logviewer.py:490
+msgid "Log Collector: Capture information"
+msgstr ""
+
+#: logviewer.py:497
+msgid ""
+"This captures information about the system\n"
+"and running processes to a journal entry.\n"
+"Use this to improve a problem report."
+msgstr ""
+
+#: logviewer.py:501
+msgid "Capture information"
+msgstr ""
+
+#: logviewer.py:523
+msgid "Logs not captured"
+msgstr ""
+
+#: logviewer.py:524
+msgid "The logs could not be captured."
+msgstr ""
+
+#: logviewer.py:534
+#, python-format
+msgid "log-%s"
+msgstr ""
