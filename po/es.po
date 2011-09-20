@@ -26,113 +26,136 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-18 00:30-0400\n"
-"PO-Revision-Date: 2009-03-07 23:28-0500\n"
-"Last-Translator: Chris Leonard <cjl@laptop.org>\n"
+"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"PO-Revision-Date: 2011-08-29 20:31+0200\n"
+"Last-Translator: Gonzalo <godiard@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
 
-#: activity/activity.info:2 logviewer.py:326
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Registro"
 
-#: logviewer.py:80
+#: logviewer.py:84
 msgid "Log Files"
 msgstr "Archivos registrados"
 
-#: logviewer.py:88
+#: logviewer.py:92
 msgid "Other"
 msgstr "Otro"
 
-#: logviewer.py:187
+#: logviewer.py:191
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "ERROR: No se ha podido buscar por archivos en '%(path)s'."
 
-#: logviewer.py:202
+#: logviewer.py:206
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "ERROR: No existe el archivo '%(file)s'."
+msgstr "ERROR: El archivo '%(file)s' no existe."
 
-#: logviewer.py:206
+#: logviewer.py:210
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "ERROR: No se puede leer el archivo '%(file)s'."
 
-#: logviewer.py:320
+#: logviewer.py:324
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "Error: No se puede abrir el archivo '%s'\n"
 
-#: logviewer.py:362
+#: logviewer.py:371
 msgid "Word Wrap"
 msgstr "Ajuste de línea"
 
-#: logviewer.py:382
+#: logviewer.py:391
 msgid "Previous"
 msgstr "Anterior"
 
-#: logviewer.py:387
+#: logviewer.py:396
 msgid "Next"
 msgstr "Siguiente"
 
-#: logviewer.py:399
+#: logviewer.py:408
 msgid "Delete Log File"
 msgstr "Borrar el archivo de registro"
 
-#: logviewer.py:413
+#: logviewer.py:422
 msgid "Tools"
 msgstr "Herramientas"
 
-#: logviewer.py:470
+#: logviewer.py:479
 msgid "Error"
 msgstr "Error"
 
-#: logviewer.py:471
+#: logviewer.py:480
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s borrando %(file)s"
 
-#: logviewer.py:483
-msgid "Log Collector: Send XO information"
-msgstr "Colector de Registros: Envía información del XO"
-
 #: logviewer.py:490
+msgid "Log Collector: Capture information"
+msgstr "Colector de Registros: Captura información"
+
+#: logviewer.py:497
 msgid ""
-"Log collector sends information about the system\n"
-"and running processes to a central server.  Use\n"
-"this option if you want to report a problem."
+"This captures information about the system\n"
+"and running processes to a journal entry.\n"
+"Use this to improve a problem report."
 msgstr ""
-"Colector de Registros envía información sobre el sistema\n"
-"y procesos en ejecución a un servidor central.  Use\n"
-"esta opción si quiere reportar un problema."
+"Esto captura información acerca del sistema\n"
+"y los procesos ejecutándose en una entrada del Diario.\n"
+"Úsela para mejorar el reporte de un error."
 
-#: logviewer.py:494
-msgid "Send information"
-msgstr "Enviar información"
-
-#: logviewer.py:519
-msgid "Logs sent"
-msgstr "Registros enviados"
-
-#: logviewer.py:520
-msgid "The logs were uploaded to the server."
-msgstr "Los registros fueron cargados al servidor."
-
-#: logviewer.py:522
-msgid "Logs not sent"
-msgstr "Registros no enviados"
+#: logviewer.py:501
+msgid "Capture information"
+msgstr "Capture información"
 
 #: logviewer.py:523
-msgid ""
-"The logs could not be uploaded to the server. Please check your network "
-"connection."
-msgstr ""
-"Los registros no pudieron ser cargados al servidor. Por favor verifique su "
-"conexión de red."
+msgid "Logs not captured"
+msgstr "Registros no capturados"
+
+#: logviewer.py:524
+msgid "The logs could not be captured."
+msgstr "Los registros no pudieron ser capturados."
+
+#: logviewer.py:534
+#, python-format
+msgid "log-%s"
+msgstr "log-%s"
+
+#~ msgid ""
+#~ "Log collector sends information about the system\n"
+#~ "and running processes to a central server.  Use\n"
+#~ "this option if you want to report a problem."
+#~ msgstr ""
+#~ "Colector de Registros envía información sobre el sistema\n"
+#~ "y procesos en ejecución a un servidor central.  Use\n"
+#~ "esta opción si quiere reportar un problema."
+
+#~ msgid "Send information"
+#~ msgstr "Enviar información"
+
+#~ msgid "Logs sent"
+#~ msgstr "Registros enviados"
+
+#~ msgid "The logs were uploaded to the server."
+#~ msgstr "Los registros fueron cargados al servidor."
+
+#~ msgid "Logs not sent"
+#~ msgstr "Registros no enviados"
+
+#~ msgid ""
+#~ "The logs could not be uploaded to the server. Please check your network "
+#~ "connection."
+#~ msgstr ""
+#~ "Los registros no pudieron ser cargados al servidor. Por favor verifique su "
+#~ "conexión de red."
 
 #~ msgid "Edit"
 #~ msgstr "Editar"
