@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"PO-Revision-Date: 2011-09-04 09:34+0200\n"
+"Last-Translator: Francisco <fordazmx@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#: activity/activity.info:2
+msgid "Log"
+msgstr "Dhuchlab"
+
+#: logviewer.py:84
+msgid "Log Files"
+msgstr "Tamkudh dhuchlab"
+
+#: logviewer.py:92
+msgid "Other"
+msgstr "Júnakej"
+
+#: logviewer.py:191
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "K'ibts'ontaláb: Yab i ejtowamal ki aliy i dhuchlab ti '%(path)s'."
+
+#: logviewer.py:206
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "K'ibts'ontaláb: An dhuchlab '%(file)s' yab wa'ats."
+
+#: logviewer.py:210
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "K'ibts'ontaláb: Yab ka ejtow ka ajiy an dhuchlab '%(file)s'."
+
+#: logviewer.py:324
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "K'ibts'ontaláb: Yab ka ejtow ka japiy an dhuchlab '%s'\n"
+
+#: logviewer.py:371
+msgid "Word Wrap"
+msgstr "Junkuy an kits'lab"
+
+#: logviewer.py:391
+msgid "Previous"
+msgstr "Ok'xidh"
+
+# las dos formas pueden indicar lo mismo. el otro o el quesigue o el siguiente de...
+#: logviewer.py:396
+msgid "Next"
+msgstr "Júnakej"
+
+#: logviewer.py:408
+msgid "Delete Log File"
+msgstr "Pakuw an tamkudh dhuchlab"
+
+#: logviewer.py:422
+msgid "Tools"
+msgstr "Ayixtaláb"
+
+#: logviewer.py:479
+msgid "Error"
+msgstr "K'ibts'ontaláb"
+
+#: logviewer.py:480
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s tam pakuwabak %(file)s"
+
+#: logviewer.py:490
+msgid "Log Collector: Capture information"
+msgstr "Tamkux Dhuchlab: Ka abna' in olchixtalabil a XO"
+
+#: logviewer.py:497
+msgid ""
+"This captures information about the system\n"
+"and running processes to a journal entry.\n"
+"Use this to improve a problem report."
+msgstr ""
+"This captures information about the system\n"
+" and running processes to a journal entry.\n"
+" Use this to improve a problem report."
+
+#: logviewer.py:501
+msgid "Capture information"
+msgstr "Ki yak'wa' an ólchixtaláb"
+
+#: logviewer.py:523
+msgid "Logs not captured"
+msgstr "Inbáj ki yak'wa' an dhuchlab"
+
+#: logviewer.py:524
+msgid "The logs could not be captured."
+msgstr "Yab i ejtowal ki yak'wa'an dhuchlab."
+
+#: logviewer.py:534
+#, python-format
+msgid "log-%s"
+msgstr "log-%s"
+
+# es posible que k'ibat tsalap tambien se pueda escribir k'ibat kaw, refireindose a algo complicado o dificil, relacionandose a un problema.
+#~ msgid ""
+#~ "Log collector sends information about the system\n"
+#~ "and running processes to a central server.  Use\n"
+#~ "this option if you want to report a problem."
+#~ msgstr ""
+#~ "An tamkux dhuchlab in abnal i olchixtalab tin ebal an puweltal\n"
+#~ " ani an bel ab k'al jun i t´jlab ma ti bajudh tolmix. Ka ayendha'\n"
+#~ " axé xi jolat takudhtaláb max a le' ka olna' jun i k'ibat tsalap."
+
+#~ msgid "Send information"
+#~ msgstr "Abna' i olchixtaláb"
+
+#~ msgid "Logs sent"
+#~ msgstr "Ábnadhits dhuchlab"
+
+#~ msgid "The logs were uploaded to the server."
+#~ msgstr "An dhuchlab abanits ti al an tólmix buk'ul uw."
+
+#~ msgid "Logs not sent"
+#~ msgstr "Yab abnadh dhuchlab"
+
+#~ msgid ""
+#~ "The logs could not be uploaded to the server. Please check your network "
+#~ "connection."
+#~ msgstr ""
+#~ "An dhuchlabchick yab ejtowat ka k'adhbáj ti al an tolmix buk'ul uw. Ti jun i "
+#~ "alwa'taláb ka met'a' jant'odha' k'wajat a ts'ot'k'oxtal."
