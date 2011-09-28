@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"PO-Revision-Date: 2011-07-19 21:02+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#: activity/activity.info:2
+msgid "Log"
+msgstr "Մատյան"
+
+#: logviewer.py:84
+msgid "Log Files"
+msgstr "Մատյանի ֆայլեր"
+
+#: logviewer.py:92
+msgid "Other"
+msgstr "Այլ"
+
+#: logviewer.py:191
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "ՎՐԻՊՈՒՄ. Հնարավոր չէ ֆայլեր փնտրէլ '%(path)s' -ում:"
+
+#: logviewer.py:206
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "ՎՐԻՊՈՒՄ. '%(file)s' ֆայլը գոյություն չունի:"
+
+#: logviewer.py:210
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "ՎՐԻՊՈՒՄ. Հնարավոր չէ կարդալ '%(file)s' ֆայլը:"
+
+#: logviewer.py:324
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "ՎՐԻՊՈՒՄ. Հնարավոր չէ բացել '%s' ֆայլը\n"
+
+#: logviewer.py:371
+msgid "Word Wrap"
+msgstr "Բառերի տողադարձ"
+
+#: logviewer.py:391
+msgid "Previous"
+msgstr "Նախորդ"
+
+#: logviewer.py:396
+msgid "Next"
+msgstr "Հաջորդ"
+
+#: logviewer.py:408
+msgid "Delete Log File"
+msgstr "Ջնջել մատյանի ֆայլը"
+
+#: logviewer.py:422
+msgid "Tools"
+msgstr "Գործիքներ"
+
+#: logviewer.py:479
+msgid "Error"
+msgstr "Վրիպում"
+
+#: logviewer.py:480
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s սխալ %(file)s ջնջելիս"
+
+#: logviewer.py:490
+#, fuzzy
+msgid "Log Collector: Capture information"
+msgstr "Մատյանների կուտակիչ. ՈՒղարկել XO տեղեկատվություն"
+
+#: logviewer.py:497
+msgid ""
+"This captures information about the system\n"
+"and running processes to a journal entry.\n"
+"Use this to improve a problem report."
+msgstr ""
+
+#: logviewer.py:501
+msgid "Capture information"
+msgstr ""
+
+#: logviewer.py:523
+msgid "Logs not captured"
+msgstr ""
+
+#: logviewer.py:524
+msgid "The logs could not be captured."
+msgstr ""
+
+#: logviewer.py:534
+#, python-format
+msgid "log-%s"
+msgstr ""
+
+#~ msgid ""
+#~ "Log collector sends information about the system\n"
+#~ "and running processes to a central server.  Use\n"
+#~ "this option if you want to report a problem."
+#~ msgstr ""
+#~ "Մատյանների կուտակիչը ուղարկում է համակարգի և առկա պրոցեսների մասին "
+#~ "տեղեկույտը\n"
+#~ "կենտրոնական սերվերին. Օգտագործել\n"
+#~ "այս տարբերակ եթե դուք ցանկանում եք տեղեկացնել խնդրի մասին:"
+
+#~ msgid "Send information"
+#~ msgstr "Ուղարկել տեղեկատվություն"
+
+#~ msgid "Logs sent"
+#~ msgstr "Մատյաններն ուղարկված են"
+
+#~ msgid "The logs were uploaded to the server."
+#~ msgstr "Մատյանները վերբեռնավորվեցին սերվեր:"
+
+#~ msgid "Logs not sent"
+#~ msgstr "Մատյանները չուղարկվեցին"
+
+#~ msgid ""
+#~ "The logs could not be uploaded to the server. Please check your network "
+#~ "connection."
+#~ msgstr ""
+#~ "Մատյաններ չի հաջողվում վերբեռնավորել սերվեր: Խնդրում ենք ստուգել ցանցային "
+#~ "միացումը:"
