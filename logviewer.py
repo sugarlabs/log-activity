@@ -359,22 +359,14 @@ class LogActivity(activity.Activity):
 
         toolbar_box.toolbar.insert(activity_button, -1)
 
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(False)
-        toolbar_box.toolbar.insert(separator, -1)
-
         copy = CopyButton()
         copy.connect('clicked', self.__copy_clicked_cb)
         toolbar_box.toolbar.insert(copy, -1)
 
-        wrap_btn = ToggleToolButton('format-justify-left')
+	wrap_btn = ToggleToolButton("format-wrap")
         wrap_btn.set_tooltip(_('Word Wrap'))
         wrap_btn.connect('clicked', self._wrap_cb)
         toolbar_box.toolbar.insert(wrap_btn, -1)
-
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(False)
-        toolbar_box.toolbar.insert(separator, -1)
 
         search_entry = iconentry.IconEntry()
         search_entry.set_size_request(gtk.gdk.screen_width() / 3, -1)
@@ -398,9 +390,6 @@ class LogActivity(activity.Activity):
         toolbar_box.toolbar.insert(self._search_next, -1)
 
         self._update_search_buttons()
-
-        separator = gtk.SeparatorToolItem()
-        toolbar_box.toolbar.insert(separator, -1)
 
         edit_toolbar = gtk.Toolbar()
 
