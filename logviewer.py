@@ -28,18 +28,16 @@ import gobject
 import gio
 
 from sugar.activity import activity
-from sugar import profile
+from sugar.activity.widgets import ActivityToolbarButton
 from sugar import env
 from sugar.graphics import iconentry
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.palette import Palette
 from sugar.graphics.alert import NotifyAlert
-from sugar.graphics.icon import Icon
 from logcollect import LogCollect
-from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+from sugar.graphics.toolbarbox import ToolbarBox
 from sugar.activity.widgets import CopyButton, StopButton
-from sugar.bundle.activitybundle import ActivityBundle
 from sugar.datastore import datastore
 
 
@@ -371,12 +369,8 @@ class LogActivity(activity.Activity):
 
         self.max_participants = 1
 
-        activity_button = ToolButton()
-        color = profile.get_color()
-        bundle = ActivityBundle(activity.get_bundle_path())
-        icon = Icon(file=bundle.get_icon(), xo_color=color)
-        activity_button.set_icon_widget(icon)
-        activity_button.show()
+        activity_button = ActivityToolbarButton(self)
+        activity_toolbar = activity_button.page
 
         toolbar_box.toolbar.insert(activity_button, -1)
 
@@ -412,26 +406,17 @@ class LogActivity(activity.Activity):
 
         self._update_search_buttons()
 
-        edit_toolbar = gtk.Toolbar()
+        self.collector_palette = CollectorPalette(self)
+        collector_btn = ToolButton('log-export')
+        collector_btn.set_palette(self.collector_palette)
+        collector_btn.connect('clicked', self._logviewer_cb)
+        collector_btn.show()
+        activity_toolbar.insert(collector_btn, -1)
 
         delete_btn = ToolButton('list-remove')
         delete_btn.set_tooltip(_('Delete Log File'))
         delete_btn.connect('clicked', self._delete_log_cb)
-        edit_toolbar.insert(delete_btn, -1)
-
-        self.collector_palette = CollectorPalette(self)
-        collector_btn = ToolButton('zoom-best-fit')
-        collector_btn.set_palette(self.collector_palette)
-        collector_btn.connect('clicked', self._logviewer_cb)
-        edit_toolbar.insert(collector_btn, -1)
-
-        edit_toolbar.show_all()
-
-        edit_button = ToolbarButton()
-        edit_button.props.page = edit_toolbar
-        edit_button.props.label = _('Tools')
-        edit_button.props.icon_name = 'view-source'
-        toolbar_box.toolbar.insert(edit_button, -1)
+        toolbar_box.toolbar.insert(delete_btn, -1)
 
         separator = gtk.SeparatorToolItem()
         separator.set_expand(True)
