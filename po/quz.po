@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"PO-Revision-Date: 2011-10-14 20:11+0200\n"
+"Last-Translator: Irma  <sankaypillo@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#  "Registro"
+#  [es] "Registro"
+#: activity/activity.info:2
+msgid "Log"
+msgstr "Khipu yuyarina"
+
+#  "Archivos registrados"
+#  [es] "Archivos registrados"
+#: logviewer.py:84
+msgid "Log Files"
+msgstr "Khipukuna yuyarina"
+
+#  "Otro"
+#  [es] "Otro"
+#: logviewer.py:92
+msgid "Other"
+msgstr "Wak"
+
+#  "ERROR: No se ha podido buscar por archivos en '%(path)s'."
+#  [es] "ERROR: No se ha podido buscar por archivos en '%(path)s'."
+#: logviewer.py:191
+#, python-format
+msgid "ERROR: Failed to look for files in '%(path)s'."
+msgstr "PANTAY: Mana tarikunchu sapam khipukunapi '%(path)s'."
+
+#  "ERROR: El archivo '%(file)s' no existe."
+#  [es] "ERROR: No existe el archivo '%(file)s'."
+#: logviewer.py:206
+#, python-format
+msgid "ERROR: File '%(file)s' does not exist."
+msgstr "PANTAY: Manam kanchu kay khipuqa '%(file)s'."
+
+#  "ERROR: No se puede leer el archivo '%(file)s'."
+#  [es] "ERROR: No se puede leer el archivo '%(file)s'."
+#: logviewer.py:210
+#, python-format
+msgid "ERROR: Unable to read file '%(file)s'."
+msgstr "PANTAY: Manam ñawichayta atikunchu kay khipuqa '%(file)s'."
+
+#  "Error: No se puede abrir el archivo '%s'\n"
+#  [es] "Error: No se puede abrir el archivo '%s'\n"
+#: logviewer.py:324
+#, python-format
+msgid "Error: Can't open file '%s'\n"
+msgstr "Pantay: Manam kay khipuqa kichachikunchu '%s'\n"
+
+#  "Ajuste de línea"
+#  [es] "Ajuste de línea"
+#: logviewer.py:371
+msgid "Word Wrap"
+msgstr "Ura siq'ipi qillqa t'akyachina"
+
+#  "Anterior"
+#  [es] "Anterior"
+#: logviewer.py:391
+msgid "Previous"
+msgstr "Qhipa"
+
+#  "Siguiente"
+#  [es] "Siguiente"
+#: logviewer.py:396
+msgid "Next"
+msgstr "Hamuq"
+
+#  "Borrar el archivo de registro"
+#  [es] "Borrar el archivo de registro"
+#: logviewer.py:408
+msgid "Delete Log File"
+msgstr "Khipu yuyarinata pichay"
+
+#  "Herramientas"
+#  [es] "Herramientas"
+#: logviewer.py:422
+msgid "Tools"
+msgstr "Llamk'anakuna"
+
+#  "Error"
+#  [es] "Error"
+#: logviewer.py:479
+msgid "Error"
+msgstr "Pantay"
+
+#  "%(error)s borrando %(file)s"
+#  [es] "%(error)s borrando %(file)s"
+#: logviewer.py:480
+#, python-format
+msgid "%(error)s when deleting %(file)s"
+msgstr "%(error)s pichachkan %(file)s"
+
+# [es] "Colector de Registros: Envía información del XO"
+#: logviewer.py:490
+msgid "Log Collector: Capture information"
+msgstr "Khipu yuyarinata huñuq: XO nisqamanta willa apachiy"
+
+#: logviewer.py:497
+msgid ""
+"This captures information about the system\n"
+"and running processes to a journal entry.\n"
+"Use this to improve a problem report."
+msgstr ""
+
+#: logviewer.py:501
+msgid "Capture information"
+msgstr ""
+
+#: logviewer.py:523
+msgid "Logs not captured"
+msgstr ""
+
+#: logviewer.py:524
+msgid "The logs could not be captured."
+msgstr ""
+
+#: logviewer.py:534
+#, python-format
+msgid "log-%s"
+msgstr ""
+
+#  [es] "Enviar información"
+#~ msgid "Send information"
+#~ msgstr "Willanata apachiy"
+
+#  [es] "Los registros fueron cargados al servidor."
+#~ msgid "The logs were uploaded to the server."
+#~ msgstr "Khipu yuyarinaqa servidormanqa wicharichikunñam."
+
+#  [es] ""
+#  [es] "Los registros no pudieron ser cargados al servidor. Por favor verifique su "
+#  [es] "conexión de red."
+#~ msgid "The logs could not be uploaded to the server. Please check your network connection."
+#~ msgstr "Khipu yuyarinaqa manam servidormanqa wichayta  atinchu. Ama hina kaychu  qhawaykuy, manapaschá red nisqamanqa t'inkichkanchu."
+
+#  [es] "Registros enviados"
+#~ msgid "Logs sent"
+#~ msgstr "khipu yuyarinata apachikunñam "
+
+#  [es] "Registros no enviados"
+#~ msgid "Logs not sent"
+#~ msgstr "khipu yuyarina mana apachisqaraq"
+
+#  [es] ""
+#  [es] "Colector de Registros envía información sobre el sistema\n"
+#  [es] "y procesos en ejecución a un servidor central.  Use\n"
+#  [es] "esta opción si quiere reportar un problema."
+#~ msgid ""
+#~ "Log collector sends information about the system\n"
+#~ "and running processes to a central server.  Use\n"
+#~ "this option if you want to report a problem."
+#~ msgstr ""
+#~ "Khipu yuyarina Huñuqqa sistemap willayninta hinallataq ima ruwasqantapas\n"
+#~ "kuraq servidor nisqamanmi apachin.\n"
+#~ "Kayta akllariy pantay kasqta willarinapaq."
