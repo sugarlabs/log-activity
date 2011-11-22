@@ -51,6 +51,9 @@ import httplib
 import mimetypes
 import urlparse
 
+MFG_DATA_PATHS = ['/ofw/mfg-data/', '/proc/device-tree/mfg-data/']
+
+
 class MachineProperties:
     """Various machine properties in easy to access chunks.
     """
@@ -111,12 +114,17 @@ class MachineProperties:
                 return line[8:].strip()
 
     def _mfg_data(self, item):
-        """Return mfg data item from /ofw/mfg-data/"""
-        
-        if not os.path.exists('/ofw/mfg-data/'+item):
+        """Return mfg data item from mfg-data directory"""
+
+        mfg_path = None
+        for test_path in MFG_DATA_PATHS:
+            if os.path.exists(test_path + item):
+                mfg_path = test_path + item
+                break
+        if mfg_path == None:
             return ''
-        
-        v = self.__read_file('/ofw/mfg-data/'+item)
+
+        v = self.__read_file(mfg_path)
         # Remove trailing 0 character, if any:
         if v != '' and ord(v[len(v)-1]) == 0:
             v = v[:len(v)-1]
