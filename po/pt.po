@@ -14,106 +14,107 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 10:53-0300\n"
-"PO-Revision-Date: 2009-09-12 13:46-0400\n"
-"Last-Translator: Chris Leonard <cjl@laptop.org>\n"
+"POT-Creation-Date: 2011-11-24 00:32-0500\n"
+"PO-Revision-Date: 2012-01-19 20:08+0200\n"
+"Last-Translator: Eduardo H. <hoboprimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Log"
 msgstr "Registar"
 
-#: logviewer.py:84
+#: logviewer.py:86
 msgid "Log Files"
 msgstr "Ficheiros de registo"
 
-#: logviewer.py:92
+#: logviewer.py:94
 msgid "Other"
 msgstr "Outros"
 
-#: logviewer.py:191
+#: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "ERRO: Falhou na visualização de ficheiros em '%(path)s'."
 
-#: logviewer.py:206
+#: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "ERRO: Ficheiro '%(file)s' não existe."
 
-#: logviewer.py:210
+#: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "ERRO: Incapaz de ler o ficheiro '%(file)s'."
 
-#: logviewer.py:324
+#: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "ERRO: Não foi possível abrir o ficheiro '%s'\n"
 
-#: logviewer.py:371
+#: logviewer.py:382
 msgid "Word Wrap"
 msgstr "Arrumar o texto"
 
-#: logviewer.py:391
+#: logviewer.py:398
 msgid "Previous"
 msgstr "Anterior"
 
-#: logviewer.py:396
+#: logviewer.py:403
 msgid "Next"
 msgstr "Seguinte"
 
-#: logviewer.py:408
+#: logviewer.py:417
 msgid "Delete Log File"
 msgstr "Apagar o ficheiro de registo"
 
-#: logviewer.py:422
-msgid "Tools"
-msgstr "Ferramentas"
-
-#: logviewer.py:479
+#: logviewer.py:474
 msgid "Error"
 msgstr "Erro"
 
-#: logviewer.py:480
+#: logviewer.py:475
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s ao apagar %(file)s"
 
-#: logviewer.py:490
-#, fuzzy
+#: logviewer.py:486
 msgid "Log Collector: Capture information"
-msgstr "Colector de registos: Enviar informação do XO"
+msgstr "Colector de registos: Capturar informação"
 
-#: logviewer.py:497
+#: logviewer.py:493
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Isto captura informação sobre o sistema\n"
+"e processos em execução numa entrada no Diário.\n"
+"Usa para melhorar o relatório de um problema."
 
-#: logviewer.py:501
+#: logviewer.py:497
 msgid "Capture information"
-msgstr ""
+msgstr "Capturar informação"
 
-#: logviewer.py:523
+#: logviewer.py:519
 msgid "Logs not captured"
-msgstr ""
+msgstr "Registos não capturados"
 
-#: logviewer.py:524
+#: logviewer.py:520
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "Os registos não poderam ser capturados."
 
-#: logviewer.py:534
+#: logviewer.py:530
 #, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "registo-%s"
+
+#~ msgid "Tools"
+#~ msgstr "Ferramentas"
 
 #~ msgid ""
 #~ "Log collector sends information about the system\n"
