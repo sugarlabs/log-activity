@@ -344,8 +344,8 @@ class LogBuffer(gtk.TextBuffer):
 
 
 class LogActivity(activity.Activity):
-    def __init__(self, handle, create_jobject=False):
-        activity.Activity.__init__(self, handle, False)
+    def __init__(self, handle):
+        activity.Activity.__init__(self, handle)
 
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
         paths = []
