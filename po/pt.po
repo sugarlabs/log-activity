@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2012-01-19 20:08+0200\n"
+"PO-Revision-Date: 2012-03-23 20:56+0200\n"
 "Last-Translator: Eduardo H. <hoboprimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Log"
-msgstr "Registar"
+msgstr "Registo"
 
 #: logviewer.py:86
 msgid "Log Files"
-msgstr "Ficheiros de registo"
+msgstr "Ficheiros de Registo"
 
 #: logviewer.py:94
 msgid "Other"
@@ -40,7 +40,7 @@ msgstr "Outros"
 #: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "ERRO: Falhou na visualização de ficheiros em '%(path)s'."
+msgstr "ERRO: Não foi possível ver os ficheiros em '%(path)s'."
 
 #: logviewer.py:216
 #, python-format
@@ -55,11 +55,11 @@ msgstr "ERRO: Incapaz de ler o ficheiro '%(file)s'."
 #: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "ERRO: Não foi possível abrir o ficheiro '%s'\n"
+msgstr "Erro: Não foi possível abrir o ficheiro '%s'\n"
 
 #: logviewer.py:382
 msgid "Word Wrap"
-msgstr "Arrumar o texto"
+msgstr "Quebrar Linhas"
 
 #: logviewer.py:398
 msgid "Previous"
@@ -71,7 +71,7 @@ msgstr "Seguinte"
 
 #: logviewer.py:417
 msgid "Delete Log File"
-msgstr "Apagar o ficheiro de registo"
+msgstr "Apagar Ficheiro de Registo"
 
 #: logviewer.py:474
 msgid "Error"
@@ -84,7 +84,7 @@ msgstr "%(error)s ao apagar %(file)s"
 
 #: logviewer.py:486
 msgid "Log Collector: Capture information"
-msgstr "Colector de registos: Capturar informação"
+msgstr "Coletor do Registo: Capturar informação"
 
 #: logviewer.py:493
 msgid ""
@@ -93,8 +93,8 @@ msgid ""
 "Use this to improve a problem report."
 msgstr ""
 "Isto captura informação sobre o sistema\n"
-"e processos em execução numa entrada no Diário.\n"
-"Usa para melhorar o relatório de um problema."
+"e processos em execução para uma entrada no Diário.\n"
+"Utiliza isto para melhorar o relatório de um problema."
 
 #: logviewer.py:497
 msgid "Capture information"
