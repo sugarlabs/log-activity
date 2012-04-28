@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2012-03-25 06:04+0200\n"
+"PO-Revision-Date: 2012-04-28 13:23+0200\n"
 "Last-Translator: Xin <dram.wang@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
@@ -27,11 +27,11 @@ msgstr ""
 
 #: activity/activity.info:2
 msgid "Log"
-msgstr "日志"
+msgstr "系统日志"
 
 #: logviewer.py:86
 msgid "Log Files"
-msgstr "日志文件"
+msgstr "系统日志文件"
 
 #: logviewer.py:94
 msgid "Other"
