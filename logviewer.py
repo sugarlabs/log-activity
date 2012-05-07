@@ -41,6 +41,9 @@ from sugar.activity.widgets import CopyButton, StopButton
 from sugar.datastore import datastore
 
 
+_AUTOSEARCH_TIMEOUT = 1000
+
+
 # Should be builtin to sugar.graphics.alert.NotifyAlert...
 def _notify_response_cb(notify, response, activity):
     activity.remove_alert(notify)
@@ -347,6 +350,8 @@ class LogActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
 
+        self._autosearch_timer = None
+
         # Paths to watch: ~/.sugar/someuser/logs, /var/log
         paths = []
         paths.append(env.get_profile_path('logs'))
@@ -383,15 +388,15 @@ class LogActivity(activity.Activity):
         wrap_btn.connect('clicked', self._wrap_cb)
         toolbar_box.toolbar.insert(wrap_btn, -1)
 
-        search_entry = iconentry.IconEntry()
-        search_entry.set_size_request(gtk.gdk.screen_width() / 3, -1)
-        search_entry.set_icon_from_name(
+        self.search_entry = iconentry.IconEntry()
+        self.search_entry.set_size_request(gtk.gdk.screen_width() / 3, -1)
+        self.search_entry.set_icon_from_name(
                 iconentry.ICON_ENTRY_PRIMARY, 'system-search')
-        search_entry.add_clear_button()
-        search_entry.connect('activate', self._search_entry_activate_cb)
-        search_entry.connect('changed', self._search_entry_changed_cb)
+        self.search_entry.add_clear_button()
+        self.search_entry.connect('activate', self._search_entry_activate_cb)
+        self.search_entry.connect('changed', self._search_entry_changed_cb)
         search_item = gtk.ToolItem()
-        search_item.add(search_entry)
+        search_item.add(self.search_entry)
         toolbar_box.toolbar.insert(search_item, -1)
 
         self._search_prev = ToolButton('go-previous-paired')
@@ -439,12 +444,21 @@ class LogActivity(activity.Activity):
             self.viewer._textview.set_wrap_mode(gtk.WRAP_NONE)
 
     def _search_entry_activate_cb(self, entry):
+        if self._autosearch_timer:
+            gobject.source_remove(self._autosearch_timer)
         self.viewer.set_search_text(entry.props.text)
         self._update_search_buttons()
 
     def _search_entry_changed_cb(self, entry):
-        self.viewer.set_search_text(entry.props.text)
-        self._update_search_buttons()
+        if self._autosearch_timer:
+            gobject.source_remove(self._autosearch_timer)
+        self._autosearch_timer = gobject.timeout_add(_AUTOSEARCH_TIMEOUT,
+            self.__autosearch_timer_cb)
+
+    def __autosearch_timer_cb(self):
+        self._autosearch_timer = None
+        self.search_entry.activate()
+        return False
 
     def _search_prev_cb(self, button):
         self.viewer.search_next('backward')
