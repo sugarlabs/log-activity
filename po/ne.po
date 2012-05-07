@@ -14,85 +14,81 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 10:53-0300\n"
-"PO-Revision-Date: 2011-09-08 11:33+0200\n"
-"Last-Translator:  <aman.maharjan@olenepal.org>\n"
+"POT-Creation-Date: 2011-11-24 00:32-0500\n"
+"PO-Revision-Date: 2011-10-18 06:37+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Log"
 msgstr "लग"
 
-#: logviewer.py:84
+#: logviewer.py:86
 msgid "Log Files"
 msgstr "लग फाईलहरु"
 
-#: logviewer.py:92
+#: logviewer.py:94
 msgid "Other"
 msgstr "अरु"
 
-#: logviewer.py:191
+#: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "त्रुटि: '%(path)s' मा फाइलहरु खोज्न सकिएन।"
 
-#: logviewer.py:206
+#: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "त्रुटि: '%(file)s' फाइल विद्यमान छैनन्।"
 
-#: logviewer.py:210
+#: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "त्रुटि: '%(file)s' खोल्न असमर्थ।"
 
-#: logviewer.py:324
+#: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "त्रुटि : '%s' खोल्न मिलेन\n"
 
-#: logviewer.py:371
+#: logviewer.py:382
 msgid "Word Wrap"
 msgstr "शब्द र्रेयाप(हरेक लाइनलाई स्क्रिनमा अटाउने गरि देखाउने)"
 
-#: logviewer.py:391
+#: logviewer.py:398
 msgid "Previous"
 msgstr "पहिलाको"
 
-#: logviewer.py:396
+#: logviewer.py:403
 msgid "Next"
 msgstr "यसपछिको"
 
-#: logviewer.py:408
+#: logviewer.py:417
 msgid "Delete Log File"
 msgstr "लग फाइल मेटाउने"
 
-#: logviewer.py:422
-msgid "Tools"
-msgstr "यन्त्रहरु"
-
-#: logviewer.py:479
+#: logviewer.py:474
 msgid "Error"
 msgstr "त्रुटि"
 
 # Do not translate %(error)s and %(file)s they are variables
-#: logviewer.py:480
+#: logviewer.py:475
 #, python-format
 #, python-format,
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(file)s मेटाउन खोज्दा %(error)s भयो"
 
-#: logviewer.py:490
+#: logviewer.py:486
 msgid "Log Collector: Capture information"
 msgstr "लग कलेक्टर : सूचना संकल्न गर"
 
-#: logviewer.py:497
+#: logviewer.py:493
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -100,24 +96,27 @@ msgid ""
 msgstr ""
 "पंजिका प्रविष्टिमा गएको प्रक्रियाहरुको\n"
 "र प्रणालीको बारेमा सूचना संकल्न गर्छ।\n"
-"समस्या प्रतिवेदन सुधार्न यो प्रयोग गर। "
+"समस्या प्रतिवेदन सुधार्न यो प्रयोग गर।"
 
-#: logviewer.py:501
+#: logviewer.py:497
 msgid "Capture information"
 msgstr "सूचना संकल्न गर"
 
-#: logviewer.py:523
+#: logviewer.py:519
 msgid "Logs not captured"
-msgstr "संकल्न नगरेको लगहरु "
+msgstr "संकल्न नगरेको लगहरु"
 
-#: logviewer.py:524
+#: logviewer.py:520
 msgid "The logs could not be captured."
 msgstr "लगहरु संकल्न गर्न सकिएन।"
 
-#: logviewer.py:534
+#: logviewer.py:530
 #, python-format
 msgid "log-%s"
 msgstr "लग-%s"
+
+#~ msgid "Tools"
+#~ msgstr "यन्त्रहरु"
 
 #~ msgid ""
 #~ "Log collector sends information about the system\n"
