@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"POT-Creation-Date: 2011-11-24 00:32-0500\n"
 "PO-Revision-Date: 2008-07-18 06:51-0400\n"
 "Last-Translator: Rashan Anushka <rashan.uoc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,68 +28,64 @@ msgstr ""
 msgid "Log"
 msgstr "ලොගය"
 
-#: logviewer.py:84
+#: logviewer.py:86
 msgid "Log Files"
 msgstr "ලොගන ගොනු"
 
-#: logviewer.py:92
+#: logviewer.py:94
 msgid "Other"
 msgstr "වෙනත්"
 
-#: logviewer.py:191
+#: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "දෝෂයක්: '%(path)s' හි ගොනු බැලීම අසමත් විය."
 
-#: logviewer.py:206
+#: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "දෝෂයක්: '%(file)s' ගොනුව නොපවතී."
 
-#: logviewer.py:210
+#: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "දෝෂයක්: '%(file)s' ගොනුව කියවීමට නොහැක."
 
-#: logviewer.py:324
+#: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "දෝෂයක්: '%s' ගොනුව විවෘත කළ නොහැක\n"
 
-#: logviewer.py:371
+#: logviewer.py:382
 msgid "Word Wrap"
 msgstr "පද එතීම"
 
-#: logviewer.py:391
+#: logviewer.py:398
 msgid "Previous"
 msgstr "පෙර"
 
-#: logviewer.py:396
+#: logviewer.py:403
 msgid "Next"
 msgstr "ඊලඟ"
 
-#: logviewer.py:408
+#: logviewer.py:417
 msgid "Delete Log File"
 msgstr "ලොගන ගොනුව මකා දමන්න"
 
-#: logviewer.py:422
-msgid "Tools"
-msgstr "මෙවලම්"
-
-#: logviewer.py:479
+#: logviewer.py:474
 msgid "Error"
 msgstr "දෝෂයක්"
 
-#: logviewer.py:480
+#: logviewer.py:475
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(file)s ගොනුව මැකීමේදී %(error)s"
 
-#: logviewer.py:490
+#: logviewer.py:486
 msgid "Log Collector: Capture information"
 msgstr "ලොග සංග්‍රාහකය: තොරතුරු ග්‍රහණය කරන්න"
 
-#: logviewer.py:497
+#: logviewer.py:493
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -99,22 +95,25 @@ msgstr ""
 "ග්‍රහණය කරයි\n"
 "ගැටළු වාර්තාවක් වැඩි දියුණු කිරීම සඳහා මෙය භාවිතා කරන්න."
 
-#: logviewer.py:501
+#: logviewer.py:497
 msgid "Capture information"
 msgstr "තොරතුරු ග්‍රහණය කරන්න"
 
-#: logviewer.py:523
+#: logviewer.py:519
 msgid "Logs not captured"
 msgstr "ලොග ගහණය කර නැත"
 
-#: logviewer.py:524
+#: logviewer.py:520
 msgid "The logs could not be captured."
 msgstr "ලොග ග්‍රහණය කර ගැනීමට නොහැකි විය."
 
-#: logviewer.py:534
+#: logviewer.py:530
 #, python-format
 msgid "log-%s"
 msgstr "ලොග-%s"
+
+#~ msgid "Tools"
+#~ msgstr "මෙවලම්"
 
 #~ msgid ""
 #~ "Log collector sends information about the system\n"

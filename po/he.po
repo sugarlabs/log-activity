@@ -14,127 +14,146 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-18 00:30-0400\n"
-"PO-Revision-Date: 2008-12-19 23:36-0500\n"
-"Last-Translator: Chris Leonard <cjl@laptop.org>\n"
+"POT-Creation-Date: 2011-11-24 00:32-0500\n"
+"PO-Revision-Date: 2011-12-29 00:41+0200\n"
+"Last-Translator: 623633 <623633@gmx.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2 logviewer.py:326
+#: activity/activity.info:2
 #, fuzzy
 msgid "Log"
 msgstr "רישום"
 
-#: logviewer.py:80
+#: logviewer.py:86
 #, fuzzy
 msgid "Log Files"
 msgstr "קבצי רישום"
 
-#: logviewer.py:88
+#: logviewer.py:94
 #, fuzzy
 msgid "Other"
 msgstr "אחר"
 
-#: logviewer.py:187
+#: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr ""
 
-#: logviewer.py:202
+#: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr ""
 
-#: logviewer.py:206
+#: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr ""
 
-#: logviewer.py:320
+#: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "אין אפשרות לפתוח את הקובץ '%s'\n"
 
-#: logviewer.py:362
+#: logviewer.py:382
 #, fuzzy
 msgid "Word Wrap"
 msgstr "מעטפת מילים"
 
-#: logviewer.py:382
+#: logviewer.py:398
 #, fuzzy
 msgid "Previous"
 msgstr "הקודם"
 
-#: logviewer.py:387
+#: logviewer.py:403
 #, fuzzy
 msgid "Next"
 msgstr "הבא"
 
-#: logviewer.py:399
+#: logviewer.py:417
 #, fuzzy
 msgid "Delete Log File"
 msgstr "מחיקת קובץ רישום"
 
-#: logviewer.py:413
-#, fuzzy
-msgid "Tools"
-msgstr "כלים"
-
-#: logviewer.py:470
+#: logviewer.py:474
 #, fuzzy
 msgid "Error"
 msgstr "שגיאה"
 
-#: logviewer.py:471
+#: logviewer.py:475
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:483
+#: logviewer.py:486
 #, fuzzy
-msgid "Log Collector: Send XO information"
+msgid "Log Collector: Capture information"
 msgstr "איסוף רישומים: שלחו מידע אודות ה-XO"
 
-#: logviewer.py:490
-#, fuzzy
+#: logviewer.py:493
 msgid ""
-"Log collector sends information about the system\n"
-"and running processes to a central server.  Use\n"
-"this option if you want to report a problem."
+"This captures information about the system\n"
+"and running processes to a journal entry.\n"
+"Use this to improve a problem report."
 msgstr ""
-"איסוף הרישומים שולח מידע על המערכת שלך\n"
-" ומריץ תהליכים לשרת המרכזי. יש להשתמש\n"
-" באפשרות הזאת אם ברצונך לדווח על הבעייה."
 
-#: logviewer.py:494
-#, fuzzy
-msgid "Send information"
-msgstr "שלח מידע"
+#: logviewer.py:497
+msgid "Capture information"
+msgstr ""
 
 #: logviewer.py:519
-#, fuzzy
-msgid "Logs sent"
-msgstr "הרישום נשלח"
+msgid "Logs not captured"
+msgstr ""
 
 #: logviewer.py:520
-#, fuzzy
-msgid "The logs were uploaded to the server."
-msgstr "הרישומים הועלו לשרת."
+msgid "The logs could not be captured."
+msgstr ""
 
-#: logviewer.py:522
-#, fuzzy
-msgid "Logs not sent"
-msgstr "הרישום לא נשלח"
+#: logviewer.py:530
+#, python-format
+msgid "log-%s"
+msgstr ""
 
-#: logviewer.py:523
 #, fuzzy
-msgid ""
-"The logs could not be uploaded to the server. Please check your network "
-"connection."
-msgstr "לא מצליח לעלות את הרישומים לשרת. יש לוודא שחיבור הרשת תקין."
+#~ msgid "Tools"
+#~ msgstr "כלים"
+
+#, fuzzy
+#~ msgid ""
+#~ "Log collector sends information about the system\n"
+#~ "and running processes to a central server.  Use\n"
+#~ "this option if you want to report a problem."
+#~ msgstr ""
+#~ "איסוף הרישומים שולח מידע על המערכת שלך\n"
+#~ " ומריץ תהליכים לשרת המרכזי. יש להשתמש\n"
+#~ " באפשרות הזאת אם ברצונך לדווח על הבעייה."
+
+#, fuzzy
+#~ msgid "Send information"
+#~ msgstr "שלח מידע"
+
+#, fuzzy
+#~ msgid "Logs sent"
+#~ msgstr "הרישום נשלח"
+
+#, fuzzy
+#~ msgid "The logs were uploaded to the server."
+#~ msgstr "הרישומים הועלו לשרת."
+
+#, fuzzy
+#~ msgid "Logs not sent"
+#~ msgstr "הרישום לא נשלח"
+
+#, fuzzy
+#~ msgid ""
+#~ "The logs could not be uploaded to the server. Please check your network "
+#~ "connection."
+#~ msgstr "לא מצליח לעלות את הרישומים לשרת. יש לוודא שחיבור הרשת תקין."
 
 #, fuzzy
 #~ msgid "Edit"

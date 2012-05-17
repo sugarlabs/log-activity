@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2011-10-16 21:01+0200\n"
+"PO-Revision-Date: 2012-04-05 06:25+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: rw\n"
@@ -67,7 +67,7 @@ msgstr "Ibibanziriza"
 
 #: logviewer.py:403
 msgid "Next"
-msgstr "ibikurikira"
+msgstr "Ibikurikira"
 
 #: logviewer.py:417
 msgid "Delete Log File"
@@ -108,8 +108,9 @@ msgstr ""
 
 #: logviewer.py:530
 #, python-format
+#, python-format, fuzzy
 msgid "log-%s"
-msgstr ""
+msgstr "log-%s"
 
 #~ msgid "Tools"
 #~ msgstr "Ibikoresho"

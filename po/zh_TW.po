@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-05 10:53-0300\n"
+"POT-Creation-Date: 2011-11-24 00:32-0500\n"
 "PO-Revision-Date: 2011-08-29 08:32+0200\n"
 "Last-Translator: Yuan Chao <yuanchao@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,68 +29,64 @@ msgstr ""
 msgid "Log"
 msgstr "系統日誌"
 
-#: logviewer.py:84
+#: logviewer.py:86
 msgid "Log Files"
 msgstr "系統日誌檔案"
 
-#: logviewer.py:92
+#: logviewer.py:94
 msgid "Other"
 msgstr "其它"
 
-#: logviewer.py:191
+#: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "錯誤：在 '%(path)s' 目錄下找到找不到檔案"
 
-#: logviewer.py:206
+#: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "錯誤：'%(file)s' 檔案不存在"
 
-#: logviewer.py:210
+#: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "錯誤：'%(file)s' 檔案無法讀取"
 
-#: logviewer.py:324
+#: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "錯誤：檔案 '%s' 無法開啟\n"
 
-#: logviewer.py:371
+#: logviewer.py:382
 msgid "Word Wrap"
 msgstr "自動折行"
 
-#: logviewer.py:391
+#: logviewer.py:398
 msgid "Previous"
 msgstr "上一個"
 
-#: logviewer.py:396
+#: logviewer.py:403
 msgid "Next"
 msgstr "下一個"
 
-#: logviewer.py:408
+#: logviewer.py:417
 msgid "Delete Log File"
 msgstr "刪除系統日誌檔案"
 
-#: logviewer.py:422
-msgid "Tools"
-msgstr "工具"
-
-#: logviewer.py:479
+#: logviewer.py:474
 msgid "Error"
 msgstr "錯誤"
 
-#: logviewer.py:480
+#: logviewer.py:475
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "刪除 %(file)s 時發生 %(error)s 錯誤"
 
-#: logviewer.py:490
+#: logviewer.py:486
 msgid "Log Collector: Capture information"
 msgstr "系統日誌收集器：捕捉 XO 資料"
 
-#: logviewer.py:497
+#: logviewer.py:493
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -100,22 +96,25 @@ msgstr ""
 "保存至日誌當中。\n"
 "用來改進問題回報。"
 
-#: logviewer.py:501
+#: logviewer.py:497
 msgid "Capture information"
 msgstr "收集資料"
 
-#: logviewer.py:523
+#: logviewer.py:519
 msgid "Logs not captured"
 msgstr "未收集到系統紀錄"
 
-#: logviewer.py:524
+#: logviewer.py:520
 msgid "The logs could not be captured."
 msgstr "無法收集系統紀錄"
 
-#: logviewer.py:534
+#: logviewer.py:530
 #, python-format
 msgid "log-%s"
 msgstr "系統紀錄-%s"
+
+#~ msgid "Tools"
+#~ msgstr "工具"
 
 #~ msgid ""
 #~ "Log collector sends information about the system\n"

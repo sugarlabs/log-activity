@@ -79,7 +79,7 @@ msgstr "ข้อผิดพลาด"
 
 #: logviewer.py:475
 #, python-format
-#, python-format, 
+#, python-format,
 msgid "%(error)s when deleting %(file)s"
 msgstr "เกิดข้อผิดพลาด %(error)s เมื่อลบไฟล์ %(file)s"
 
