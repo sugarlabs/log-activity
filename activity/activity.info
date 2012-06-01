@@ -1,6 +1,6 @@
 [Activity]
 name = Log
-activity_version = 28
+activity_version = 29
 bundle_id = org.laptop.Log
 exec = sugar-activity logviewer.LogActivity -s
 icon = activity-log
