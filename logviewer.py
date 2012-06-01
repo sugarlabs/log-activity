@@ -492,7 +492,7 @@ class LogActivity(activity.Activity):
                 self.add_alert(notify)
 
     def _logviewer_cb(self, widget):
-        self.collector_palette.popup(True)
+        self.collector_palette.popup(True, self.collector_palette.SECONDARY)
 
 
 class CollectorPalette(Palette):
