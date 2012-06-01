@@ -230,10 +230,11 @@ class MachineProperties:
         
     def installed_activities(self):        
         s = ''        
-        for path in glob.glob('/usr/share/activities/*.activity'):
+        for path in glob.glob('/usr/share/sugar/activities/*.activity'):
             s += os.path.basename(path) + '\n'
 
-        for path in glob.glob('/home/olpc/Activities/*'):
+        home = os.path.expanduser('~')
+        for path in glob.glob(os.path.join(home, 'Activities', '*')):
             s += '~' + os.path.basename(path) + '\n'
             
         return s
@@ -295,7 +296,9 @@ class LogCollect:
                                    "logcollect: could not add %s: %s" % (fn, e))
                         
                 # Include all current ones from sugar/logs
-                for path in glob.glob('/home/olpc/.sugar/default/logs/*.log'):
+                home = os.path.expanduser('~')
+                for path in glob.glob(os.path.join(home, '.sugar', 'default',
+                                                   'logs', '*.log')):
                     try:
                         if os.access(path, os.F_OK):
                             if logbytes == 0:
