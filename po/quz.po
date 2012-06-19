@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2012-05-16 02:24+0200\n"
-"Last-Translator: Irma  <sankaypillo@gmail.com>\n"
+"PO-Revision-Date: 2012-06-16 03:36+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: quz\n"
 "MIME-Version: 1.0\n"
@@ -112,9 +112,9 @@ msgstr "Willakuyqa mana apachikunchu"
 
 #: logviewer.py:520
 msgid "The logs could not be captured."
-msgstr "Willakuyqa manam apachikuytaqa atichikunmanchu karan"
+msgstr "Willakuyqa manam apachikuytaqa atichikunmanchu karan."
 
 #: logviewer.py:530
 #, python-format
 msgid "log-%s"
-msgstr "Qallarirunña-%s"
+msgstr "qallarirunña-%s"
