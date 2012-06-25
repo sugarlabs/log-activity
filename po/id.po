@@ -15,55 +15,55 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2010-02-11 06:52+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2012-06-20 08:31+0200\n"
+"Last-Translator: andika <andika@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 #: logviewer.py:86
 msgid "Log Files"
-msgstr ""
+msgstr "Berkas Log"
 
 #: logviewer.py:94
 msgid "Other"
-msgstr ""
+msgstr "Lainnya"
 
 #: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "GALAT: Gagal mencari berkas dalam '%(path)s'."
 
 #: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "GALAT: Berkas '%(file)s' tak ada."
 
 #: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "GALAT: Tak bisa membaca berkas '%(file)s'."
 
 #: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "GALAT: Tak bisa membuka berkas '%s'\n"
 
 #: logviewer.py:382
 msgid "Word Wrap"
-msgstr ""
+msgstr "Pelipatan Kata"
 
 #: logviewer.py:398
 msgid "Previous"
-msgstr ""
+msgstr "Sebelumnya"
 
 #: logviewer.py:403
 msgid "Next"
@@ -71,7 +71,7 @@ msgstr "Selanjutnya"
 
 #: logviewer.py:417
 msgid "Delete Log File"
-msgstr ""
+msgstr "Hapus Berkas Log"
 
 #: logviewer.py:474
 msgid "Error"
@@ -80,11 +80,11 @@ msgstr "Kesalahan"
 #: logviewer.py:475
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(error)s ketika menghapus %(file)s"
 
 #: logviewer.py:486
 msgid "Log Collector: Capture information"
-msgstr ""
+msgstr "Pengumpul Log: Menangkap informasi"
 
 #: logviewer.py:493
 msgid ""
@@ -92,20 +92,23 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Ini menangkap informasi tentang sistem\n"
+"dan proses yang berjalan ke entri jurnal.\n"
+"Pakai ini untuk memperbaiki laporan masalah."
 
 #: logviewer.py:497
 msgid "Capture information"
-msgstr ""
+msgstr "Tangkap informasi"
 
 #: logviewer.py:519
 msgid "Logs not captured"
-msgstr ""
+msgstr "Log tak ditangkap"
 
 #: logviewer.py:520
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "Log tak dapat ditangkap."
 
 #: logviewer.py:530
 #, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "log-%s"
