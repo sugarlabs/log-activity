@@ -2,14 +2,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -112,35 +104,3 @@ msgstr "Գրանցումները չեն կարող հայտնաբերվել:"
 #, python-format
 msgid "log-%s"
 msgstr "մատյան-%s"
-
-#~ msgid "Tools"
-#~ msgstr "Գործիքներ"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "Մատյանների կուտակիչը ուղարկում է համակարգի և առկա պրոցեսների մասին "
-#~ "տեղեկույտը\n"
-#~ "կենտրոնական սերվերին. Օգտագործել\n"
-#~ "այս տարբերակ եթե դուք ցանկանում եք տեղեկացնել խնդրի մասին:"
-
-#~ msgid "Send information"
-#~ msgstr "Ուղարկել տեղեկատվություն"
-
-#~ msgid "Logs sent"
-#~ msgstr "Մատյաններն ուղարկված են"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "Մատյանները վերբեռնավորվեցին սերվեր:"
-
-#~ msgid "Logs not sent"
-#~ msgstr "Մատյանները չուղարկվեցին"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "Մատյաններ չի հաջողվում վերբեռնավորել սերվեր: Խնդրում ենք ստուգել ցանցային "
-#~ "միացումը:"
