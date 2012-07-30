@@ -22,23 +22,24 @@ from gettext import gettext as _
 
 import re
 
-import gtk
-import pango
-import gobject
-import gio
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import Pango
+from gi.repository import GObject
+from gi.repository import Gio
 
-from sugar.activity import activity
-from sugar.activity.widgets import ActivityToolbarButton
-from sugar import env
-from sugar.graphics import iconentry
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.toggletoolbutton import ToggleToolButton
-from sugar.graphics.palette import Palette
-from sugar.graphics.alert import NotifyAlert
+from sugar3.activity import activity
+from sugar3.activity.widgets import ActivityToolbarButton
+from sugar3 import env
+from sugar3.graphics import iconentry
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.toggletoolbutton import ToggleToolButton
+from sugar3.graphics.palette import Palette
+from sugar3.graphics.alert import NotifyAlert
 from logcollect import LogCollect
-from sugar.graphics.toolbarbox import ToolbarBox
-from sugar.activity.widgets import CopyButton, StopButton
-from sugar.datastore import datastore
+from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.activity.widgets import CopyButton, StopButton
+from sugar3.datastore import datastore
 
 
 _AUTOSEARCH_TIMEOUT = 1000
@@ -49,10 +50,10 @@ def _notify_response_cb(notify, response, activity):
     activity.remove_alert(notify)
 
 
-class MultiLogView(gtk.HPaned):
+class MultiLogView(Gtk.HPaned):
 
     def __init__(self, paths, extra_files):
-        gtk.HPaned.__init__(self)
+        GObject.GObject.__init__(self)
 
         self.paths = paths
         self.extra_files = extra_files
@@ -73,20 +74,21 @@ class MultiLogView(gtk.HPaned):
         self._find_logs()
 
     def _build_treeview(self):
-        self._treeview = gtk.TreeView()
+        self._treeview = Gtk.TreeView()
 
         self._treeview.set_rules_hint(True)
         self._treeview.connect('cursor-changed', self._cursor_changed_cb)
 
-        self._treemodel = gtk.TreeStore(gobject.TYPE_STRING)
+        self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING)
 
-        sorted = gtk.TreeModelSort(self._treemodel)
-        sorted.set_sort_column_id(0, gtk.SORT_ASCENDING)
+        # README: https://bugzilla.gnome.org/show_bug.cgi?id=680009
+        sorted = self._treemodel.sort_new_with_model()
+        sorted.set_sort_column_id(0, Gtk.SortType.ASCENDING)
         sorted.set_sort_func(0, self._sort_logfile)
         self._treeview.set_model(sorted)
 
-        renderer = gtk.CellRendererText()
-        col = gtk.TreeViewColumn(_('Log Files'), renderer, text=0)
+        renderer = Gtk.CellRendererText()
+        col = Gtk.TreeViewColumn(_('Log Files'), renderer, text=0)
         self._treeview.append_column(col)
 
         self.path_iter = {}
@@ -96,40 +98,32 @@ class MultiLogView(gtk.HPaned):
         if len(self.extra_files):
             self.extra_iter = self._treemodel.append(None, [_('Other')])
 
-        scroll = gtk.ScrolledWindow()
-        scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        scroll = Gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         scroll.add(self._treeview)
-        scroll.set_size_request(gtk.gdk.screen_width() * 30 / 100, -1)
+        scroll.set_size_request(Gdk.Screen.width() * 30 / 100, -1)
 
         self.add1(scroll)
 
     def _build_textview(self):
-        self._textview = gtk.TextView()
-        self._textview.set_wrap_mode(gtk.WRAP_NONE)
+        self._textview = Gtk.TextView()
+        self._textview.set_wrap_mode(Gtk.WrapMode.NONE)
 
-        pangoFont = pango.FontDescription('Mono')
+        pangoFont = Pango.FontDescription('Mono')
         self._textview.modify_font(pangoFont)
 
-        bgcolor = gtk.gdk.color_parse('#FFFFFF')
-        self._textview.modify_base(gtk.STATE_NORMAL, bgcolor)
+        bgcolor = Gdk.color_parse('#FFFFFF')
+        self._textview.modify_base(Gtk.StateType.NORMAL, bgcolor)
 
         self._textview.set_editable(False)
 
-        self._tagtable = gtk.TextTagTable()
-        hilite_tag = gtk.TextTag('search-hilite')
-        hilite_tag.props.background = '#FFFFB0'
-        self._tagtable.add(hilite_tag)
-        select_tag = gtk.TextTag('search-select')
-        select_tag.props.background = '#B0B0FF'
-        self._tagtable.add(select_tag)
-
-        scroll = gtk.ScrolledWindow()
-        scroll.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
+        scroll = Gtk.ScrolledWindow()
+        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         scroll.add(self._textview)
 
         self.add2(scroll)
 
-    def _sort_logfile(self, treemodel, itera, iterb):
+    def _sort_logfile(self, treemodel, itera, iterb, user_data=None):
         a = treemodel.get_value(itera, 0)
         b = treemodel.get_value(iterb, 0)
         if a == None or b == None:
@@ -162,36 +156,41 @@ class MultiLogView(gtk.HPaned):
     def _configure_watcher(self):
         # Setting where GIO will be watching
         for p in self.paths:
-            monitor = gio.File(p).monitor_directory()
+            monitor = Gio.File.new_for_path(p)\
+                .monitor_directory(Gio.FileMonitorFlags.NONE, None)
             monitor.connect('changed', self._log_file_changed_cb)
             self._gio_monitors.append(monitor)
 
         for f in self.extra_files:
-            monitor = gio.File(f).monitor_file()
+            monitor = Gio.File.new_for_path(f)\
+                .monitor_file(Gio.FileMonitorFlags.NONE, None)
             monitor.connect('changed', self._log_file_changed_cb)
             self._gio_monitors.append(monitor)
 
     def _log_file_changed_cb(self, monitor, log_file, other_file, event):
         logfile = log_file.get_basename()
 
-        if event == gio.FILE_MONITOR_EVENT_CHANGED:
+        if event == Gio.FileMonitorEvent.CHANGED:
             if logfile in self.logs:
                 self.logs[logfile].update()
-        elif event == gio.FILE_MONITOR_EVENT_DELETED:
+        elif event == Gio.FileMonitorEvent.DELETED:
             if logfile in self.logs:
                 self._remove_log_file(logfile)
-        elif event == gio.FILE_MONITOR_EVENT_CREATED:
+        elif event == Gio.FileMonitorEvent.CREATED:
             self._add_log_file(log_file.get_path())
 
     def _cursor_changed_cb(self, treeview):
-        treestore, text_iter = self._treeview.get_selection().get_selected()
-        self._show_log(treestore.get_value(text_iter, 0))
+        selection = self._treeview.get_selection()
+        if selection is not None:
+            treestore, text_iter = selection.get_selected()
+            self._show_log(treestore.get_value(text_iter, 0))
 
     def _show_log(self, logfile):
         if logfile in self.logs:
             log = self.logs[logfile]
             self._textview.set_buffer(log)
-            self._textview.scroll_to_mark(log.get_insert(), 0)
+            self._textview.scroll_to_mark(
+                log.get_insert(), 0, use_align=False, xalign=0.5, yalign=0.5)
             self.active_log = log
 
     def _find_logs(self):
@@ -233,7 +232,7 @@ class MultiLogView(gtk.HPaned):
                 parent = self.path_iter[directory]
             tree_iter = self._treemodel.append(parent, [logfile])
 
-            model = LogBuffer(self._tagtable, path, tree_iter)
+            model = LogBuffer(path, tree_iter)
             self.logs[logfile] = model
 
         log = self.logs[logfile]
@@ -243,13 +242,13 @@ class MultiLogView(gtk.HPaned):
         if self.active_log == None:
             self.active_log = log
             self._show_log(logfile)
-            log_iter = \
-                self._treeview.get_model().convert_child_iter_to_iter(None,
-                log.iter)
+            success, log_iter = \
+                self._treeview.get_model().convert_child_iter_to_iter(log.iter)
             self._treeview.get_selection().select_iter(log_iter)
 
         if written > 0 and self.active_log == log:
-            self._textview.scroll_to_mark(log.get_insert(), 0)
+            self._textview.scroll_to_mark(
+                log.get_insert(), 0, use_align=False, xalign=0.5, yalign=0.5)
 
     def _remove_log_file(self, logfile):
         log = self.logs[logfile]
@@ -268,8 +267,9 @@ class MultiLogView(gtk.HPaned):
         _buffer.remove_tag_by_name('search-select', start, end)
 
         text_iter = _buffer.get_start_iter()
+
         while True:
-            next_found = text_iter.forward_search(text, 0)
+            next_found = text_iter.forward_search(text, 0, None)
             if next_found is None:
                 break
             start, end = next_found
@@ -291,9 +291,9 @@ class MultiLogView(gtk.HPaned):
             text_iter = _buffer.get_iter_at_mark(_buffer.get_insert())
 
         if direction == 'backward':
-            return text_iter.backward_search(self.search_text, 0)
+            return text_iter.backward_search(self.search_text, 0, None)
         else:
-            return text_iter.forward_search(self.search_text, 0)
+            return text_iter.forward_search(self.search_text, 0, None)
 
     def search_next(self, direction):
         next_found = self.get_next_result(direction)
@@ -308,14 +308,24 @@ class MultiLogView(gtk.HPaned):
 
             _buffer.place_cursor(start)
 
-            self._textview.scroll_to_iter(start, 0.1)
-            self._textview.scroll_to_iter(end, 0.1)
+            self._textview.scroll_to_iter(start, 0.1, use_align=False,
+                                          xalign=0.5, yalign=0.5)
+            self._textview.scroll_to_iter(end, 0.1, use_align=False,
+                                          xalign=0.5, yalign=0.5)
 
 
-class LogBuffer(gtk.TextBuffer):
+class LogBuffer(Gtk.TextBuffer):
 
-    def __init__(self, tagtable, logfile, iterator):
-        gtk.TextBuffer.__init__(self, tagtable)
+    def __init__(self, logfile, iterator):
+        GObject.GObject.__init__(self)
+
+        _tagtable = self.get_tag_table()
+        hilite_tag = Gtk.TextTag.new('search-hilite')
+        hilite_tag.props.background = '#FFFFB0'
+        _tagtable.add(hilite_tag)
+        select_tag = Gtk.TextTag.new('search-select')
+        select_tag.props.background = '#B0B0FF'
+        _tagtable.add(select_tag)
 
         self.logfile = logfile
         self._pos = 0
@@ -367,6 +377,8 @@ class LogActivity(activity.Activity):
 
         self._build_toolbox()
 
+        # Get Sugar's clipboard
+        self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         self.show()
 
     def _build_toolbox(self):
@@ -389,13 +401,13 @@ class LogActivity(activity.Activity):
         toolbar_box.toolbar.insert(wrap_btn, -1)
 
         self.search_entry = iconentry.IconEntry()
-        self.search_entry.set_size_request(gtk.gdk.screen_width() / 3, -1)
+        self.search_entry.set_size_request(Gdk.Screen.width() / 3, -1)
         self.search_entry.set_icon_from_name(
                 iconentry.ICON_ENTRY_PRIMARY, 'system-search')
         self.search_entry.add_clear_button()
         self.search_entry.connect('activate', self._search_entry_activate_cb)
         self.search_entry.connect('changed', self._search_entry_changed_cb)
-        search_item = gtk.ToolItem()
+        search_item = Gtk.ToolItem()
         search_item.add(self.search_entry)
         toolbar_box.toolbar.insert(search_item, -1)
 
@@ -423,7 +435,7 @@ class LogActivity(activity.Activity):
         delete_btn.connect('clicked', self._delete_log_cb)
         toolbar_box.toolbar.insert(delete_btn, -1)
 
-        separator = gtk.SeparatorToolItem()
+        separator = Gtk.SeparatorToolItem()
         separator.set_expand(True)
         separator.set_draw(False)
         toolbar_box.toolbar.insert(separator, -1)
@@ -435,24 +447,24 @@ class LogActivity(activity.Activity):
 
     def __copy_clicked_cb(self, button):
         if self.viewer.active_log:
-            self.viewer.active_log.copy_clipboard(gtk.clipboard_get())
+            self.viewer.active_log.copy_clipboard(self.clipboard)
 
     def _wrap_cb(self, button):
         if button.get_active():
-            self.viewer._textview.set_wrap_mode(gtk.WRAP_WORD_CHAR)
+            self.viewer._textview.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
         else:
-            self.viewer._textview.set_wrap_mode(gtk.WRAP_NONE)
+            self.viewer._textview.set_wrap_mode(Gtk.WrapMode.NONE)
 
     def _search_entry_activate_cb(self, entry):
         if self._autosearch_timer:
-            gobject.source_remove(self._autosearch_timer)
+            GObject.source_remove(self._autosearch_timer)
         self.viewer.set_search_text(entry.props.text)
         self._update_search_buttons()
 
     def _search_entry_changed_cb(self, entry):
         if self._autosearch_timer:
-            gobject.source_remove(self._autosearch_timer)
-        self._autosearch_timer = gobject.timeout_add(_AUTOSEARCH_TIMEOUT,
+            GObject.source_remove(self._autosearch_timer)
+        self._autosearch_timer = GObject.timeout_add(_AUTOSEARCH_TIMEOUT,
             self.__autosearch_timer_cb)
 
     def __autosearch_timer_cb(self):
@@ -503,17 +515,17 @@ class CollectorPalette(Palette):
 
         self._collector = LogCollect()
 
-        label = gtk.Label(
+        label = Gtk.Label(label=
             _('This captures information about the system\n'\
               'and running processes to a journal entry.\n'\
               'Use this to improve a problem report.'))
 
-        send_button = gtk.Button(_('Capture information'))
+        send_button = Gtk.Button(_('Capture information'))
         send_button.connect('clicked', self._on_send_button_clicked_cb)
 
-        vbox = gtk.VBox(False, 5)
-        vbox.pack_start(label)
-        vbox.pack_start(send_button)
+        vbox = Gtk.VBox(False, 5)
+        vbox.pack_start(label, True, True, 0)
+        vbox.pack_start(send_button, True, True, 0)
         vbox.show_all()
 
         self.set_content(vbox)
