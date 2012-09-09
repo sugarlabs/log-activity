@@ -15,15 +15,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2010-02-15 22:04+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2012-09-08 10:26+0200\n"
+"Last-Translator: Yannis <kiolalis@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Log"
@@ -84,9 +84,8 @@ msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s κατά τη διαγραφή %(file)s"
 
 #: logviewer.py:486
-#, fuzzy
 msgid "Log Collector: Capture information"
-msgstr "Συλλέκτης καταγραφών: Αποστολή πληροφοριών του XO"
+msgstr "Συλλέκτης καταγραφών: Συλλογή πληροφοριών"
 
 #: logviewer.py:493
 msgid ""
@@ -94,23 +93,26 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Συλλέγει πληροφορίες για το σύστημα\n"
+"και τις τρέχουσες διαδικασίες σε μία εγγραφή ημερολογίου.\n"
+"Χρησιμοποιήστε το για να βελτιώσετε μία αναφορά προβλήματος."
 
 #: logviewer.py:497
 msgid "Capture information"
-msgstr ""
+msgstr "Συλλογή πληροφοριών"
 
 #: logviewer.py:519
 msgid "Logs not captured"
-msgstr ""
+msgstr "Δεν έγιναν καταγραφές"
 
 #: logviewer.py:520
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "Οι καταγραφές δεν μπόρεσαν να γίνουν"
 
 #: logviewer.py:530
 #, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "Καταγραφή-%s"
 
 #~ msgid "Tools"
 #~ msgstr "Εργαλεία"
