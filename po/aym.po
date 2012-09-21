@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: 2011-11-19 19:34+0200\n"
+"PO-Revision-Date: 2012-09-21 19:56+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: aym\n"
@@ -124,7 +124,7 @@ msgstr "Qillqantata janiwa puni katuqaskiti."
 #: logviewer.py:530
 #, python-format
 msgid "log-%s"
-msgstr "Qillqantata-%s"
+msgstr "qillqantata-%s"
 
 #  "Herramientas"
 #~ msgid "Tools"
