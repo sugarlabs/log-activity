@@ -2,89 +2,81 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-11-24 00:32-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-09-19 06:04+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: mi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Log"
-msgstr ""
+msgstr "Rangitaki"
 
 #: logviewer.py:86
 msgid "Log Files"
-msgstr ""
+msgstr "Ngā Kōnae Rangitaki"
 
 #: logviewer.py:94
 msgid "Other"
-msgstr ""
+msgstr "Ētahi Atu"
 
 #: logviewer.py:200
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "HAPA: I rahu te rapu kōnae i roto '%(path)s'."
 
 #: logviewer.py:216
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "HAPA: Kāore i te tīari te kōnae '%(file)s'."
 
 #: logviewer.py:221
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "HAPA: Kāore e taea te pānui i te kōnae '%(file)s'."
 
 #: logviewer.py:342
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "Hapa: Kāore e taea te whakatūwhera i te kōnae '%s'\n"
 
 #: logviewer.py:382
 msgid "Word Wrap"
-msgstr ""
+msgstr "Tākai Kupu"
 
 #: logviewer.py:398
 msgid "Previous"
-msgstr ""
+msgstr "Tōmua"
 
 #: logviewer.py:403
 msgid "Next"
-msgstr ""
+msgstr "Panuku"
 
 #: logviewer.py:417
 msgid "Delete Log File"
-msgstr ""
+msgstr "Muku Kōnae Rangitaki"
 
 #: logviewer.py:474
 msgid "Error"
-msgstr ""
+msgstr "Hapa"
 
 #: logviewer.py:475
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(error)s i te wā muku %(file)s"
 
 #: logviewer.py:486
 msgid "Log Collector: Capture information"
-msgstr ""
+msgstr "Pūkohi Rangitahi: Hopu mōhiohio"
 
 #: logviewer.py:493
 msgid ""
@@ -92,20 +84,23 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Ka hopu tēnei i ngā mōhiohio mō te pūnaha\n"
+"me te whakahaere tukanga ki tētahi tāurunga tuhitaka.\n"
+"Whakamahia tēnei hei whakatika pūrongo raru."
 
 #: logviewer.py:497
 msgid "Capture information"
-msgstr ""
+msgstr "Hopu mōhiohio"
 
 #: logviewer.py:519
 msgid "Logs not captured"
-msgstr ""
+msgstr "Ngā rangitaki kāore i hopukina"
 
 #: logviewer.py:520
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "Kāore i taea te hopu rangitaki."
 
 #: logviewer.py:530
 #, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "rangitaki-%s"
