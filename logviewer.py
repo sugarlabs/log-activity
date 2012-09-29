@@ -183,7 +183,8 @@ class MultiLogView(Gtk.HPaned):
         selection = self._treeview.get_selection()
         if selection is not None:
             treestore, text_iter = selection.get_selected()
-            self._show_log(treestore.get_value(text_iter, 0))
+            if text_iter is not None:
+                self._show_log(treestore.get_value(text_iter, 0))
 
     def _show_log(self, logfile):
         if logfile in self.logs:
