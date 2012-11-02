@@ -5,3 +5,4 @@ bundle_id = org.laptop.Log
 exec = sugar-activity logviewer.LogActivity -s
 icon = activity-log
 license = GPLv2+
+summary = This is an activity designed for anyone who wants to troubleshoot a complicated program on the computer.
