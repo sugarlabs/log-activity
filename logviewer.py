@@ -185,6 +185,12 @@ class MultiLogView(Gtk.HPaned):
             treestore, text_iter = selection.get_selected()
             if text_iter is not None:
                 self._show_log(treestore.get_value(text_iter, 0))
+                if treestore.iter_has_child(text_iter):
+                    path = treestore.get_path(text_iter)
+                    if treeview.row_expanded(path):
+                        treeview.collapse_row(path)
+                    else:
+                        treeview.expand_row(path, False)
 
     def _show_log(self, logfile):
         if logfile in self.logs:
