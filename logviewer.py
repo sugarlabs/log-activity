@@ -78,6 +78,7 @@ class MultiLogView(Gtk.HPaned):
 
         self._treeview.set_rules_hint(True)
         self._treeview.connect('cursor-changed', self._cursor_changed_cb)
+        self._treeview.set_enable_search(False)
 
         self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING)
 
