@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-24 00:32-0500\n"
+"POT-Creation-Date: 2012-11-03 00:30-0400\n"
 "PO-Revision-Date: 2012-02-07 02:21+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,68 +17,75 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Log"
 msgstr "Մատյան"
 
-#: logviewer.py:86
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"This is an activity designed for anyone who wants to troubleshoot a "
+"complicated program on the computer."
+msgstr ""
+
+#: logviewer.py:91
 msgid "Log Files"
 msgstr "Մատյանի ֆայլեր"
 
-#: logviewer.py:94
+#: logviewer.py:99
 msgid "Other"
 msgstr "Այլ"
 
-#: logviewer.py:200
+#: logviewer.py:203
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "Ձախողում. Հնարավոր չէ ֆայլեր փնտրէլ '%(path)s' -ում:"
 
-#: logviewer.py:216
+#: logviewer.py:219
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "Ձախողում. '%(file)s' ֆայլը գոյություն չունի:"
 
-#: logviewer.py:221
+#: logviewer.py:224
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "ՁԱԽՈՂՈՒՄ. Հնարավոր չէ կարդալ '%(file)s' ֆայլը:"
 
-#: logviewer.py:342
+#: logviewer.py:356
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "Ձախողում. Հնարավոր չէ բացել '%s' ֆայլը\n"
 
-#: logviewer.py:382
+#: logviewer.py:400
 msgid "Word Wrap"
 msgstr "Բառերի հարմարեցում"
 
-#: logviewer.py:398
+#: logviewer.py:416
 msgid "Previous"
 msgstr "Նախորդ"
 
-#: logviewer.py:403
+#: logviewer.py:421
 msgid "Next"
 msgstr "Հաջորդ"
 
-#: logviewer.py:417
+#: logviewer.py:435
 msgid "Delete Log File"
 msgstr "Ջնջել մուտքագրված ֆայլը"
 
-#: logviewer.py:474
+#: logviewer.py:501
 msgid "Error"
 msgstr "Ձախողում"
 
-#: logviewer.py:475
+#: logviewer.py:502
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s սխալ %(file)s ջնջելիս"
 
-#: logviewer.py:486
+#: logviewer.py:513
 msgid "Log Collector: Capture information"
 msgstr "Գրանցումների մատյան. Տեղեկատվության ընդունում"
 
-#: logviewer.py:493
+#: logviewer.py:520
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -88,19 +95,19 @@ msgstr ""
 "և մատյան մուտք գործող գործարկվող գործընթացը\n"
 "Կիրառեք այն` խնդրի վերաբերյալ զեկույցը բարելավելու նպատակով:"
 
-#: logviewer.py:497
+#: logviewer.py:524
 msgid "Capture information"
 msgstr "Տեղեկատվության ընդունում"
 
-#: logviewer.py:519
+#: logviewer.py:546
 msgid "Logs not captured"
 msgstr "Մուտքագրումները հայտնաբերված չեն"
 
-#: logviewer.py:520
+#: logviewer.py:547
 msgid "The logs could not be captured."
 msgstr "Գրանցումները չեն կարող հայտնաբերվել:"
 
-#: logviewer.py:530
+#: logviewer.py:557
 #, python-format
 msgid "log-%s"
 msgstr "մատյան-%s"
