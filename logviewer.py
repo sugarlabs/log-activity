@@ -411,7 +411,7 @@ class LogActivity(activity.Activity):
         self.search_entry = iconentry.IconEntry()
         self.search_entry.set_size_request(Gdk.Screen.width() / 3, -1)
         self.search_entry.set_icon_from_name(
-                iconentry.ICON_ENTRY_PRIMARY, 'system-search')
+                iconentry.ICON_ENTRY_PRIMARY, 'entry-search')
         self.search_entry.add_clear_button()
         self.search_entry.connect('activate', self._search_entry_activate_cb)
         self.search_entry.connect('changed', self._search_entry_changed_cb)
