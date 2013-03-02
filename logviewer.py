@@ -50,10 +50,11 @@ def _notify_response_cb(notify, response, activity):
     activity.remove_alert(notify)
 
 
-class MultiLogView(Gtk.HPaned):
+class MultiLogView(Gtk.Paned):
 
     def __init__(self, paths, extra_files):
         GObject.GObject.__init__(self)
+        self.set_orientation(Gtk.Orientation.HORIZONTAL)
 
         self.paths = paths
         self.extra_files = extra_files
@@ -99,12 +100,12 @@ class MultiLogView(Gtk.HPaned):
         if len(self.extra_files):
             self.extra_iter = self._treemodel.append(None, [_('Other')])
 
-        scroll = Gtk.ScrolledWindow()
-        scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        scroll.add(self._treeview)
-        scroll.set_size_request(Gdk.Screen.width() * 30 / 100, -1)
+        self.list_scroll = Gtk.ScrolledWindow()
+        self.list_scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.list_scroll.add(self._treeview)
+        self.list_scroll.set_size_request(Gdk.Screen.width() * 30 / 100, -1)
 
-        self.add1(scroll)
+        self.add1(self.list_scroll)
 
     def _build_textview(self):
         self._textview = Gtk.TextView()
@@ -399,6 +400,13 @@ class LogActivity(activity.Activity):
 
         toolbar_box.toolbar.insert(activity_button, -1)
 
+        show_list = ToggleToolButton('view-list')
+        show_list.set_active(True)
+        show_list.set_tooltip(_('Show list of files'))
+        show_list.connect('toggled', self._list_toggled_cb)
+        toolbar_box.toolbar.insert(show_list, -1)
+        show_list.show()
+
         copy = CopyButton()
         copy.connect('clicked', self.__copy_clicked_cb)
         toolbar_box.toolbar.insert(copy, -1)
@@ -452,6 +460,12 @@ class LogActivity(activity.Activity):
 
         toolbar_box.show_all()
         self.set_toolbar_box(toolbar_box)
+
+    def _list_toggled_cb(self, widget):
+        if widget.get_active():
+            self.viewer.list_scroll.show()
+        else:
+            self.viewer.list_scroll.hide()
 
     def __copy_clicked_cb(self, button):
         if self.viewer.active_log:
