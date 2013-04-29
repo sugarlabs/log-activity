@@ -81,7 +81,8 @@ class MultiLogView(Gtk.Paned):
         self._treeview.connect('cursor-changed', self._cursor_changed_cb)
         self._treeview.set_enable_search(False)
 
-        self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING)
+        self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING,
+                                        GObject.TYPE_STRING)
 
         # README: https://bugzilla.gnome.org/show_bug.cgi?id=680009
         sorted = self._treemodel.sort_new_with_model()
@@ -93,12 +94,17 @@ class MultiLogView(Gtk.Paned):
         col = Gtk.TreeViewColumn(_('Log Files'), renderer, text=0)
         self._treeview.append_column(col)
 
+        renderer = Gtk.CellRendererText()
+        col = Gtk.TreeViewColumn('', renderer, text=1)
+        self._treeview.append_column(col)
+        col.props.visible = False
+
         self.path_iter = {}
         for p in self.paths:
-            self.path_iter[p] = self._treemodel.append(None, [p])
+            self.path_iter[p] = self._treemodel.append(None, [p, ''])
 
         if len(self.extra_files):
-            self.extra_iter = self._treemodel.append(None, [_('Other')])
+            self.extra_iter = self._treemodel.append(None, [_('Other'), ''])
 
         self.list_scroll = Gtk.ScrolledWindow()
         self.list_scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
@@ -163,6 +169,8 @@ class MultiLogView(Gtk.Paned):
             monitor.connect('changed', self._log_file_changed_cb)
             self._gio_monitors.append(monitor)
 
+        # We don't need monitor old logs, them will no change
+
         for f in self.extra_files:
             monitor = Gio.File.new_for_path(f)\
                 .monitor_file(Gio.FileMonitorFlags.NONE, None)
@@ -186,7 +194,7 @@ class MultiLogView(Gtk.Paned):
         if selection is not None:
             treestore, text_iter = selection.get_selected()
             if text_iter is not None:
-                self._show_log(treestore.get_value(text_iter, 0))
+                self._show_log(treestore.get_value(text_iter, 1))
                 if treestore.iter_has_child(text_iter):
                     path = treestore.get_path(text_iter)
                     if treeview.row_expanded(path):
@@ -219,8 +227,12 @@ class MultiLogView(Gtk.Paned):
 
         self._treeview.expand_all()
 
-    def _add_log_file(self, path):
+    def _add_log_file(self, path, parent=None, _dir=None):
         if os.path.isdir(path):
+            pdir, _dir = os.path.split(path)
+            if pdir == self.paths[0]:
+                self._add_old_logs_dir(pdir, _dir)
+
             return False
 
         if not os.path.exists(path):
@@ -234,14 +246,20 @@ class MultiLogView(Gtk.Paned):
             return False
 
         directory, logfile = os.path.split(path)
+        name = logfile
 
-        if not logfile in self.logs:
-            parent = self.extra_iter
-            if directory in self.path_iter:
-                parent = self.path_iter[directory]
-            tree_iter = self._treemodel.append(parent, [logfile])
+        if _dir:
+            logfile = '%s/%s' % (_dir, logfile)
+
+        if not logfile in self.logs or _dir:
+            if not parent:
+                parent = self.extra_iter
+                if directory in self.path_iter:
+                    parent = self.path_iter[directory]
+            tree_iter = self._treemodel.append(parent, [name, logfile])
 
             model = LogBuffer(path, tree_iter)
+
             self.logs[logfile] = model
 
         log = self.logs[logfile]
@@ -258,6 +276,16 @@ class MultiLogView(Gtk.Paned):
         if written > 0 and self.active_log == log:
             self._textview.scroll_to_mark(
                 log.get_insert(), 0, use_align=False, xalign=0.5, yalign=0.5)
+
+    def _add_old_logs_dir(self, path, _dir):
+        # Add a directory with their respective logs
+        complete = os.path.join(path, _dir)
+        name = time.ctime(float(_dir))
+        parent = self._treemodel.append(self.path_iter[path], [name, ''])
+        for p in os.listdir(complete):
+            self._add_log_file(os.path.join(complete, p), parent, _dir)
+
+        return parent
 
     def _remove_log_file(self, logfile):
         log = self.logs[logfile]
