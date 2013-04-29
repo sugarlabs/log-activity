@@ -155,6 +155,12 @@ class MultiLogView(Gtk.Paned):
                 return -1
             return 0
         else:
+            # Put first the files and later the directories
+            if a.endswith('.log') and not b.endswith('.log'):
+                return -1
+            if b.endswith('.log') and not a.endswith('.log'):
+                return 1
+
             if a > b:
                 return 1
             if a < b:
