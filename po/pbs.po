@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-03 00:30-0400\n"
+"POT-Creation-Date: 2013-04-11 00:31-0400\n"
 "PO-Revision-Date: 2012-06-26 19:58+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,64 +28,68 @@ msgid ""
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:91
+#: logviewer.py:93
 msgid "Log Files"
 msgstr "matsjau ndakjaat ngk'uix"
 
-#: logviewer.py:99
+#: logviewer.py:101
 msgid "Other"
 msgstr "tsukuetnda"
 
-#: logviewer.py:203
+#: logviewer.py:211
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "NDICH'U: kad-ep mvania'at mata'au ndakjaat ngk'uix kiñkie %(path)s'."
 
-#: logviewer.py:219
+#: logviewer.py:227
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "NDICH'U: pu ndakjaat ngk'uix '%(file)s' nip limi."
 
-#: logviewer.py:224
+#: logviewer.py:232
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "NDICH'U: nip mvania'at k'ua lad-ajau ne ndakjaat ngk'uix '%(file)s'."
 
-#: logviewer.py:356
+#: logviewer.py:364
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "Ndich'u: Nip mvania'at maseiñ ne ndakjaat ngk'uix '%s'\n"
 
-#: logviewer.py:400
+#: logviewer.py:405
+msgid "Show list of files"
+msgstr ""
+
+#: logviewer.py:415
 msgid "Word Wrap"
 msgstr "Matsjau laguejé ne niñ'eje'"
 
-#: logviewer.py:416
+#: logviewer.py:431
 msgid "Previous"
 msgstr "Sevaa"
 
-#: logviewer.py:421
+#: logviewer.py:436
 msgid "Next"
 msgstr "Likiu'uch'"
 
-#: logviewer.py:435
+#: logviewer.py:450
 msgid "Delete Log File"
 msgstr "Mavun ne ndakjaat ngk'uix se me'ets ljuu'p"
 
-#: logviewer.py:501
+#: logviewer.py:522
 msgid "Error"
 msgstr "Ndich'u"
 
-#: logviewer.py:502
+#: logviewer.py:523
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s manaja luvunt %(file)s"
 
-#: logviewer.py:513
+#: logviewer.py:534
 msgid "Log Collector: Capture information"
 msgstr "Ndaveiñ re se me'ets': Lustjau sad-ia kily'e k'ua ma nad-iu'"
 
-#: logviewer.py:520
+#: logviewer.py:541
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -95,19 +99,19 @@ msgstr ""
 " mi'ia lu'ujuñ nama pu ndjei' ne xiñi'iu me'ets' \n"
 " ki't majau k'ua lanu se mep ndich'u."
 
-#: logviewer.py:524
+#: logviewer.py:545
 msgid "Capture information"
 msgstr "Gyist rapu se ki'iu'"
 
-#: logviewer.py:546
+#: logviewer.py:567
 msgid "Logs not captured"
 msgstr "Matsjau nip me'ets"
 
-#: logviewer.py:547
+#: logviewer.py:568
 msgid "The logs could not be captured."
 msgstr "Pu matsjau nip mvania'at me'ets'."
 
-#: logviewer.py:557
+#: logviewer.py:578
 #, python-format
 msgid "log-%s"
 msgstr "Matsjau-%s"
