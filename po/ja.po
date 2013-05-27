@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-03 00:30-0400\n"
+"POT-Creation-Date: 2013-04-11 00:31-0400\n"
 "PO-Revision-Date: 2011-08-26 06:53+0200\n"
 "Last-Translator: korakurider <korakurider@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,64 +36,68 @@ msgid ""
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:91
+#: logviewer.py:93
 msgid "Log Files"
 msgstr "ログファイル"
 
-#: logviewer.py:99
+#: logviewer.py:101
 msgid "Other"
 msgstr "その他"
 
-#: logviewer.py:203
+#: logviewer.py:211
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "エラー: '%(path)s' でファイルが見つかりません"
 
-#: logviewer.py:219
+#: logviewer.py:227
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "エラー: ファイル '%(file)s' がありません。"
 
-#: logviewer.py:224
+#: logviewer.py:232
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "エラー: ファイル '%(file)s' を読み込めません。"
 
-#: logviewer.py:356
+#: logviewer.py:364
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "エラー: ファイル '%s' を開けません\n"
 
-#: logviewer.py:400
+#: logviewer.py:405
+msgid "Show list of files"
+msgstr ""
+
+#: logviewer.py:415
 msgid "Word Wrap"
 msgstr "単語の折り返し"
 
-#: logviewer.py:416
+#: logviewer.py:431
 msgid "Previous"
 msgstr "前へ"
 
-#: logviewer.py:421
+#: logviewer.py:436
 msgid "Next"
 msgstr "次へ"
 
-#: logviewer.py:435
+#: logviewer.py:450
 msgid "Delete Log File"
 msgstr "ログファイルを削除"
 
-#: logviewer.py:501
+#: logviewer.py:522
 msgid "Error"
 msgstr "エラー"
 
-#: logviewer.py:502
+#: logviewer.py:523
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(file)s を削除している時 %(error)s"
 
-#: logviewer.py:513
+#: logviewer.py:534
 msgid "Log Collector: Capture information"
 msgstr "ログコレクタ: 情報を収集"
 
-#: logviewer.py:520
+#: logviewer.py:541
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -102,19 +106,19 @@ msgstr ""
 "システムと実行中のプロセスの情報を収集します。\n"
 "障害報告を改善するのに使ってください。"
 
-#: logviewer.py:524
+#: logviewer.py:545
 msgid "Capture information"
 msgstr "情報を収集"
 
-#: logviewer.py:546
+#: logviewer.py:567
 msgid "Logs not captured"
 msgstr "ログは収集されませんでした。"
 
-#: logviewer.py:547
+#: logviewer.py:568
 msgid "The logs could not be captured."
 msgstr "ログを収集できませんでした。"
 
-#: logviewer.py:557
+#: logviewer.py:578
 #, python-format
 msgid "log-%s"
 msgstr "ログ-%s"

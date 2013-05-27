@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-03 00:30-0400\n"
+"POT-Creation-Date: 2013-04-11 00:31-0400\n"
 "PO-Revision-Date: 2012-09-19 06:04+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,64 +28,68 @@ msgid ""
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:91
+#: logviewer.py:93
 msgid "Log Files"
 msgstr "Ngā Kōnae Rangitaki"
 
-#: logviewer.py:99
+#: logviewer.py:101
 msgid "Other"
 msgstr "Ētahi Atu"
 
-#: logviewer.py:203
+#: logviewer.py:211
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "HAPA: I rahu te rapu kōnae i roto '%(path)s'."
 
-#: logviewer.py:219
+#: logviewer.py:227
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "HAPA: Kāore i te tīari te kōnae '%(file)s'."
 
-#: logviewer.py:224
+#: logviewer.py:232
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "HAPA: Kāore e taea te pānui i te kōnae '%(file)s'."
 
-#: logviewer.py:356
+#: logviewer.py:364
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "Hapa: Kāore e taea te whakatūwhera i te kōnae '%s'\n"
 
-#: logviewer.py:400
+#: logviewer.py:405
+msgid "Show list of files"
+msgstr ""
+
+#: logviewer.py:415
 msgid "Word Wrap"
 msgstr "Tākai Kupu"
 
-#: logviewer.py:416
+#: logviewer.py:431
 msgid "Previous"
 msgstr "Tōmua"
 
-#: logviewer.py:421
+#: logviewer.py:436
 msgid "Next"
 msgstr "Panuku"
 
-#: logviewer.py:435
+#: logviewer.py:450
 msgid "Delete Log File"
 msgstr "Muku Kōnae Rangitaki"
 
-#: logviewer.py:501
+#: logviewer.py:522
 msgid "Error"
 msgstr "Hapa"
 
-#: logviewer.py:502
+#: logviewer.py:523
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s i te wā muku %(file)s"
 
-#: logviewer.py:513
+#: logviewer.py:534
 msgid "Log Collector: Capture information"
 msgstr "Pūkohi Rangitahi: Hopu mōhiohio"
 
-#: logviewer.py:520
+#: logviewer.py:541
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -95,19 +99,19 @@ msgstr ""
 "me te whakahaere tukanga ki tētahi tāurunga tuhitaka.\n"
 "Whakamahia tēnei hei whakatika pūrongo raru."
 
-#: logviewer.py:524
+#: logviewer.py:545
 msgid "Capture information"
 msgstr "Hopu mōhiohio"
 
-#: logviewer.py:546
+#: logviewer.py:567
 msgid "Logs not captured"
 msgstr "Ngā rangitaki kāore i hopukina"
 
-#: logviewer.py:547
+#: logviewer.py:568
 msgid "The logs could not be captured."
 msgstr "Kāore i taea te hopu rangitaki."
 
-#: logviewer.py:557
+#: logviewer.py:578
 #, python-format
 msgid "log-%s"
 msgstr "rangitaki-%s"
