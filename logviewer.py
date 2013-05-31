@@ -38,6 +38,7 @@ from sugar3.graphics.palette import Palette
 from sugar3.graphics.alert import NotifyAlert
 from logcollect import LogCollect
 from sugar3.graphics.toolbarbox import ToolbarBox
+from sugar3.graphics.toolbarbox import ToolbarButton
 from sugar3.activity.widgets import CopyButton, StopButton
 from sugar3.datastore import datastore
 
@@ -424,6 +425,10 @@ class LogActivity(activity.Activity):
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         self.show()
 
+        self._configure_cb(None)
+
+        Gdk.Screen.get_default().connect('size-changed', self._configure_cb)
+
     def _build_toolbox(self):
         toolbar_box = ToolbarBox()
 
@@ -432,23 +437,32 @@ class LogActivity(activity.Activity):
         activity_button = ActivityToolbarButton(self)
         activity_toolbar = activity_button.page
 
-        toolbar_box.toolbar.insert(activity_button, -1)
+        self._toolbar = toolbar_box.toolbar
+        self._toolbar.insert(activity_button, -1)
+
+        self._secondary_toolbar = Gtk.Toolbar()
+        self._secondary_toolbar_button = ToolbarButton(
+            page=self._secondary_toolbar,
+            icon_name='system-search')
+        self._secondary_toolbar.show()
+        self._toolbar.insert(self._secondary_toolbar_button, -1)
+        self._secondary_toolbar_button.hide()
 
         show_list = ToggleToolButton('view-list')
         show_list.set_active(True)
         show_list.set_tooltip(_('Show list of files'))
         show_list.connect('toggled', self._list_toggled_cb)
-        toolbar_box.toolbar.insert(show_list, -1)
+        self._toolbar.insert(show_list, -1)
         show_list.show()
 
         copy = CopyButton()
         copy.connect('clicked', self.__copy_clicked_cb)
-        toolbar_box.toolbar.insert(copy, -1)
+        self._toolbar.insert(copy, -1)
 
         wrap_btn = ToggleToolButton("format-wrap")
         wrap_btn.set_tooltip(_('Word Wrap'))
         wrap_btn.connect('clicked', self._wrap_cb)
-        toolbar_box.toolbar.insert(wrap_btn, -1)
+        self._toolbar.insert(wrap_btn, -1)
 
         self.search_entry = iconentry.IconEntry()
         self.search_entry.set_size_request(Gdk.Screen.width() / 3, -1)
@@ -457,19 +471,19 @@ class LogActivity(activity.Activity):
         self.search_entry.add_clear_button()
         self.search_entry.connect('activate', self._search_entry_activate_cb)
         self.search_entry.connect('changed', self._search_entry_changed_cb)
-        search_item = Gtk.ToolItem()
-        search_item.add(self.search_entry)
-        toolbar_box.toolbar.insert(search_item, -1)
+        self._search_item = Gtk.ToolItem()
+        self._search_item.add(self.search_entry)
+        self._toolbar.insert(self._search_item, -1)
 
         self._search_prev = ToolButton('go-previous-paired')
         self._search_prev.set_tooltip(_('Previous'))
         self._search_prev.connect('clicked', self._search_prev_cb)
-        toolbar_box.toolbar.insert(self._search_prev, -1)
+        self._toolbar.insert(self._search_prev, -1)
 
         self._search_next = ToolButton('go-next-paired')
         self._search_next.set_tooltip(_('Next'))
         self._search_next.connect('clicked', self._search_next_cb)
-        toolbar_box.toolbar.insert(self._search_next, -1)
+        self._toolbar.insert(self._search_next, -1)
 
         self._update_search_buttons()
 
@@ -480,20 +494,54 @@ class LogActivity(activity.Activity):
         collector_btn.show()
         activity_toolbar.insert(collector_btn, -1)
 
-        delete_btn = ToolButton('list-remove')
-        delete_btn.set_tooltip(_('Delete Log File'))
-        delete_btn.connect('clicked', self._delete_log_cb)
-        toolbar_box.toolbar.insert(delete_btn, -1)
+        self._delete_btn = ToolButton('list-remove')
+        self._delete_btn.set_tooltip(_('Delete Log File'))
+        self._delete_btn.connect('clicked', self._delete_log_cb)
+        self._toolbar.insert(self._delete_btn, -1)
 
-        separator = Gtk.SeparatorToolItem()
-        separator.set_expand(True)
-        separator.set_draw(False)
-        toolbar_box.toolbar.insert(separator, -1)
+        self._separator = Gtk.SeparatorToolItem()
+        self._separator.set_expand(True)
+        self._separator.set_draw(False)
+        self._toolbar.insert(self._separator, -1)
 
-        toolbar_box.toolbar.insert(StopButton(self), -1)
+        self._stop_btn = StopButton(self)
+        self._toolbar.insert(self._stop_btn, -1)
 
         toolbar_box.show_all()
         self.set_toolbar_box(toolbar_box)
+
+    def _configure_cb(self, event=None):
+        for control in [self._stop_btn, self._separator, self._delete_btn]:
+            if control in self._toolbar:
+                self._toolbar.remove(control)
+
+        if Gdk.Screen.width() < Gdk.Screen.height():
+            self._secondary_toolbar_button.show()
+            self._secondary_toolbar_button.set_expanded(True)
+            self._remove_controls(self._toolbar)
+            self._add_controls(self._secondary_toolbar)
+        else:
+            self._secondary_toolbar_button.set_expanded(False)
+            self._secondary_toolbar_button.hide()
+            self._remove_controls(self._secondary_toolbar)
+            self._add_controls(self._toolbar)
+
+        for control in [self._delete_btn, self._separator, self._stop_btn]:
+            if not control in self._toolbar:
+                self._toolbar.insert(control, -1)
+
+    def _remove_controls(self, toolbar):
+        for control in [self._search_item, self._search_prev,
+                        self._search_next]:
+            if control in toolbar:
+                toolbar.remove(control)
+
+    def _add_controls(self, toolbar):
+        for control in [self._search_item, self._search_prev,
+                        self._search_next]:
+            if not control in toolbar:
+                toolbar.insert(control, -1)
+                control.show()
 
     def _list_toggled_cb(self, widget):
         if widget.get_active():
