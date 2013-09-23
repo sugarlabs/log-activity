@@ -1,33 +1,32 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# MARISELLE <maber56>, 2013.
+# User <juneleonora@yahoo.com>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2010-10-13 02:28+0200\n"
-"Last-Translator: frannyberry <frannyberry@writeme.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2013-09-03 07:29-0400\n"
+"Last-Translator: User <juneleonora@yahoo.com>\n"
+"Language-Team: JuneLeonora\n"
+"Language: pap\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Log"
-msgstr "Log"
+msgstr "Registro"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -35,10 +34,12 @@ msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
+"Esaki ta un aktividat diseñá pa tur ku ke solushoná un programa kompliká "
+"riba kòmpiuter"
 
 #: logviewer.py:93
 msgid "Log Files"
-msgstr "Log Files"
+msgstr "Failnan registrá"
 
 #: logviewer.py:101
 msgid "Other"
@@ -47,30 +48,31 @@ msgstr "Otro"
 #: logviewer.py:211
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "EROR: No por a buska filenan den '%(path)s'."
+msgstr "EROR: No por a buska failnan den '%(path)s'."
 
 #: logviewer.py:227
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "EROR: File '%(file)s' no ta eksistí."
+msgstr "EROR: Fail '%(file)s' no ta eksistí."
 
 #: logviewer.py:232
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "EROR: Inkapas di lesa file '%(file)s'."
+msgstr "EROR: Inkapas di lesa fail '%(file)s'."
 
 #: logviewer.py:364
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "Eror: No por a habri e file '%s'\n"
+msgstr "Eror: No por a habri e fail '%s'\n"
 
 #: logviewer.py:405
 msgid "Show list of files"
-msgstr ""
+msgstr "Mustra lista di fail"
 
 #: logviewer.py:415
+#, fuzzy
 msgid "Word Wrap"
-msgstr "Transposishon di Palabra"
+msgstr "Ahuste di Palabra"
 
 #: logviewer.py:431
 msgid "Previous"
@@ -82,11 +84,11 @@ msgstr "Siguiente"
 
 #: logviewer.py:450
 msgid "Delete Log File"
-msgstr "Eliminá Log File"
+msgstr "Eliminá Fail Registrá"
 
 #: logviewer.py:522
 msgid "Error"
-msgstr "Erór"
+msgstr "Eror"
 
 #: logviewer.py:523
 #, python-format
@@ -96,7 +98,7 @@ msgstr "%(error)s durante eliminashon di %(file)s"
 #: logviewer.py:534
 #, fuzzy
 msgid "Log Collector: Capture information"
-msgstr "Lòg Akumulador: Manda XO informashon"
+msgstr "Akumulador di Registro: Registrá informashon"
 
 #: logviewer.py:541
 msgid ""
@@ -104,23 +106,27 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Esaki ta registrá informashon tokante e sistema i ta ehekutá prosesonan i "
+"manda nan pa un entrada di diario. Usa esaki pa mehorá informashon di "
+"problema"
 
 #: logviewer.py:545
 msgid "Capture information"
-msgstr ""
+msgstr "Registrá informashon"
 
 #: logviewer.py:567
+#, fuzzy
 msgid "Logs not captured"
-msgstr ""
+msgstr "No a registrá registro"
 
 #: logviewer.py:568
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "No por a registrá registronan"
 
 #: logviewer.py:578
 #, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "Registro-%s"
 
 #~ msgid "Tools"
 #~ msgstr "Toolnan"
