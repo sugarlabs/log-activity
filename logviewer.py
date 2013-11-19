@@ -637,9 +637,10 @@ class CollectorPalette(Palette):
     def _on_send_button_clicked_cb(self, button):
         identifier = str(int(time.time()))
         filename = '%s.zip' % identifier
+        filepath = os.path.join(activity.get_activity_root(), filename)
         success = True
         try:
-            filename = self._collector.write_logs(archive=filename, logbytes=0)
+            self._collector.write_logs(archive=filepath, logbytes=0)
         except:
             success = False
 
@@ -664,9 +665,9 @@ class CollectorPalette(Palette):
             }
         for k, v in metadata.items():
             jobject.metadata[k] = v
-        jobject.file_path = os.path.join(activity.get_bundle_path(), filename)
+        jobject.file_path = filepath
         datastore.write(jobject)
         self._last_log = jobject.object_id
         jobject.destroy()
         activity.show_object_in_journal(self._last_log)
-        os.remove(filename)
+        os.remove(filepath)
