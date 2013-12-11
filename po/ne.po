@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2011-10-18 06:37+0200\n"
+"PO-Revision-Date: 2013-12-11 04:10+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ne\n"
@@ -35,6 +35,8 @@ msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
+"यो कम्प्युटरमा जटिल प्रोग्रामको ट्रबलसुट गर्न चाहने जो सुकैका लागि तयार "
+"पारिएको एउटा क्रियाकलाप हो।"
 
 #: logviewer.py:93
 msgid "Log Files"
@@ -42,7 +44,7 @@ msgstr "लग फाईलहरु"
 
 #: logviewer.py:101
 msgid "Other"
-msgstr "अरु"
+msgstr "अन्य"
 
 #: logviewer.py:211
 #, python-format
@@ -66,15 +68,15 @@ msgstr "त्रुटि : '%s' खोल्न मिलेन\n"
 
 #: logviewer.py:405
 msgid "Show list of files"
-msgstr ""
+msgstr "फाइलहरूको सूची देखाऊ"
 
 #: logviewer.py:415
 msgid "Word Wrap"
-msgstr "शब्द र्रेयाप(हरेक लाइनलाई स्क्रिनमा अटाउने गरि देखाउने)"
+msgstr "वर्ड र्याप (हरेक लाइनलाई स्क्रिनमा अटाउने गरि देखाउने)"
 
 #: logviewer.py:431
 msgid "Previous"
-msgstr "पहिलाको"
+msgstr "यसअघिको"
 
 #: logviewer.py:436
 msgid "Next"
