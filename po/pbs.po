@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2012-06-26 19:58+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2014-01-17 23:10+0200\n"
+"Last-Translator: xavier <proyecto.olpc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pbs\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,8 @@ msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
+"nanji nda ngul'ajau ndutsjau manague'n su'ua se vumag natsjau nda niñjá se "
+"lumei kad-a nak'ujuly nde'ets kily'e"
 
 #: logviewer.py:93
 msgid "Log Files"
@@ -58,7 +60,7 @@ msgstr "Ndich'u: Nip mvania'at maseiñ ne ndakjaat ngk'uix '%s'\n"
 
 #: logviewer.py:405
 msgid "Show list of files"
-msgstr ""
+msgstr "ma'u'up nde'et re ng'uix makjat"
 
 #: logviewer.py:415
 msgid "Word Wrap"
