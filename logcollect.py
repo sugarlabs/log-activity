@@ -390,7 +390,7 @@ class LogCollect:
             # Do not include UUID!
             s += 'laptop-info-version: 1.0\n'
             s += 'clock: %f\n' % time.clock()
-            s += 'date: %s' % time.strftime("%a, %d %b %Y %H:%M:%S +0000",
+            s += 'date: %s\n' % time.strftime("%a, %d %b %Y %H:%M:%S +0000",
                                             time.gmtime())
             s += 'memfree: %s\n' % self._mp.memfree()
             s += 'disksize: %s MB\n' % ( self._mp.disksize('/') / (1024*1024) ) 
