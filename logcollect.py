@@ -113,6 +113,11 @@ class MachineProperties:
             if line.find('MemFree:') > -1:
                 return line[8:].strip()
 
+    def _trim_null(self, v):
+        if v != '' and ord(v[len(v)-1]) == 0:
+            v = v[:len(v)-1]
+        return v
+
     def _mfg_data(self, item):
         """Return mfg data item from mfg-data directory"""
 
@@ -124,13 +129,9 @@ class MachineProperties:
         if mfg_path == None:
             return ''
 
-        v = self.__read_file(mfg_path)
-        # Remove trailing 0 character, if any:
-        if v != '' and ord(v[len(v)-1]) == 0:
-            v = v[:len(v)-1]
-        
+        v = self._trim_null(self.__read_file(mfg_path))
         return v
-            
+
     def laptop_serial_number(self):
         return self._mfg_data('SN')
 
@@ -158,7 +159,28 @@ class MachineProperties:
         return self._mfg_data('WM')
 
     def laptop_bios_version(self):
-        return self._mfg_data('BV')
+        try:
+            d = open('/proc/device-tree/openprom/model', 'r').read()
+            v = self._trim_null(d)
+            return v
+        except:
+            pass
+
+        try:
+            d = open('/ofw/openprom/model', 'r').read()
+            v = self._trim_null(d)
+            return v
+        except:
+            pass
+
+        try:
+            d = open('/sys/class/dmi/id/bios_version', 'r').read()
+            v = self._trim_null(d)
+            return v
+        except:
+            pass
+
+        return ''
 
     def laptop_country(self):
         return self._mfg_data('LA')
