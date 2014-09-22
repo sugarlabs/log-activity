@@ -316,21 +316,37 @@ class LogCollect:
                     except Exception, e:
                         z.writestr('var-log/'+fn,
                                    "logcollect: could not add %s: %s" % (fn, e))
-                        
-                # Include all current ones from sugar/logs
+
                 home = os.path.expanduser('~')
-                for path in glob.glob(os.path.join(home, '.sugar', 'default',
-                                                   'logs', '*.log')):
-                    try:
-                        if os.access(path, os.F_OK):
+                here = os.path.join(home, '.sugar/default/logs/*.log')
+                for path in glob.glob(here):
+                    if os.access(path, os.F_OK):
+                        pref = 'sugar-logs/'
+                        name = os.path.join(pref, os.path.basename(path))
+                        try:
                             if logbytes == 0:
-                                z.write(path, 'sugar-logs/'+os.path.basename(path))
+                                z.write(path, name)
                             else:
-                                z.writestr('sugar-logs/'+os.path.basename(path),
+                                z.writestr(name,
                                            self.file_tail(path, logbytes))
-                    except Exception, e:
-                        z.writestr('sugar-logs/'+fn,
-                                   "logcollect: could not add %s: %s" % (fn, e))
+                        except Exception, e:
+                            z.writestr(name,
+                                       "logcollect: could not add %s: %s" % (name, e))
+                here = os.path.join(home, '.sugar/default/logs/*/*.log')
+                for path in glob.glob(here):
+                    if os.access(path, os.F_OK):
+                        when = os.path.basename(os.path.dirname(path))
+                        pref = 'sugar-logs-%s/' % when
+                        name = os.path.join(pref, os.path.basename(path))
+                        try:
+                            if logbytes == 0:
+                                z.write(path, name)
+                            else:
+                                z.writestr(name,
+                                           self.file_tail(path, logbytes))
+                        except Exception, e:
+                            z.writestr(name,
+                                   "logcollect: could not add %s: %s" % (name, e))
                 try:                 
                     z.write('/etc/resolv.conf')
                 except Exception, e:
