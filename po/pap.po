@@ -128,16 +128,6 @@ msgstr "Registro-%s"
 #~ msgid "Tools"
 #~ msgstr "Toolnan"
 
-# PuOX1N  <a href="http://xoygeowsyoik.com/">xoygeowsyoik</a>, [url=http://gahyrlfwhuhs.com/]gahyrlfwhuhs[/url], [link=http://xonrepfslrqj.com/]xonrepfslrqj[/link], http://adhuwxxwfpop.com/
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "PuOX1N  <a href=\"http://xoygeowsyoik.com/\">xoygeowsyoik</a>, "
-#~ "[url=http://gahyrlfwhuhs.com/]gahyrlfwhuhs[/url], "
-#~ "[link=http://xonrepfslrqj.com/]xonrepfslrqj[/link], http://adhuwxxwfpop.com/"
-
 #~ msgid "Send information"
 #~ msgstr "Manda information"
 
