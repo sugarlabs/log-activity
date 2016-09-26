@@ -10,24 +10,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-09-23 23:32+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: yo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1474673528.000000\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Log"
-msgstr ""
+msgstr "Igbasilẹ"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -35,67 +36,69 @@ msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
+"Eleyi jẹ ẹya aṣayan iṣẹ-ṣiṣe apẹrẹ fun ẹnikẹni ti o fe lati ṣayẹwo isoro a "
+"idiju eto lori awọn kọmputa."
 
 #: logviewer.py:93
 msgid "Log Files"
-msgstr ""
+msgstr "Igbasilẹ faili"
 
 #: logviewer.py:101
 msgid "Other"
-msgstr ""
+msgstr "Miiran"
 
 #: logviewer.py:211
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "Aṣiṣe: kùnà lati wo fun awọn faili ni '%(path)s'."
 
 #: logviewer.py:227
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "Aṣiṣe: faili '%(file)s' ko ni tẹlẹ."
 
 #: logviewer.py:232
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "Aṣiṣe: Lagbara lati ka faili '%(file)s'."
 
 #: logviewer.py:364
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "Aṣiṣe: le ko ìmọ faili ' %s '\n"
 
 #: logviewer.py:405
 msgid "Show list of files"
-msgstr ""
+msgstr "Fihan akojọ ti awọn faili"
 
 #: logviewer.py:415
 msgid "Word Wrap"
-msgstr ""
+msgstr "Ọrọ ipari si"
 
 #: logviewer.py:431
 msgid "Previous"
-msgstr ""
+msgstr "Ti tẹlẹ"
 
 #: logviewer.py:436
 msgid "Next"
-msgstr ""
+msgstr "Itele"
 
 #: logviewer.py:450
 msgid "Delete Log File"
-msgstr ""
+msgstr "Pa iwe iranti faili"
 
 #: logviewer.py:522
 msgid "Error"
-msgstr ""
+msgstr "Aṣiṣe"
 
 #: logviewer.py:523
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(error)s nigbati pipaarẹ %(file)s"
 
 #: logviewer.py:534
 msgid "Log Collector: Capture information"
-msgstr ""
+msgstr "Iwe iranti odè: Yaworan alaye"
 
 #: logviewer.py:541
 msgid ""
@@ -103,20 +106,23 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Eleyi ya alaye nipa awọn eto\n"
+"ati yen lakọkọ to a akosile titẹsi.\n"
+" lilo yi lati mu isoro kan Iroyin."
 
 #: logviewer.py:545
 msgid "Capture information"
-msgstr ""
+msgstr "Yaworan alaye"
 
 #: logviewer.py:567
 msgid "Logs not captured"
-msgstr ""
+msgstr "Àkọọlẹ ko sile"
 
 #: logviewer.py:568
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "Awọn àkọọlẹ ko le wa ni sile."
 
 #: logviewer.py:578
 #, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "iwe iranti- %s"
