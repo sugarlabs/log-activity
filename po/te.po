@@ -2,144 +2,113 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2011-11-27 05:48+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 22:38+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491777537.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "లాగ్"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "లాగ్ ఫైలులు"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "మరియొక"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "దోషణ:  '%(path)s' లో ఫైలులగురించి చూడడంకుదరలేదు"
+msgstr "దోషణ: '%(path)s' లో ఫైలులగురించి చూడడంకుదరలేదు"
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "దోషణ:  ఫైలు '%(file)s' లేదు"
+msgstr "దోషణ: ఫైలు '%(file)s' లేదు"
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "దోషణ:  ఫైలు '%(file)s' చదవటంకుదరలేదు"
+msgstr "దోషణ: ఫైలు '%(file)s' చదవటంకుదరలేదు"
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "దోషణ:  ఫైలు '%s' తెరవడంకుదరలేదు\n"
+msgstr "దోషణ: ఫైలు '%s' తెరవడంకుదరలేదు\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "వచన పొట్లము"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "ముందు"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "తర్వాత"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "లాగ్ ఫైల్ ను తీసివేయుము"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "దోషం:"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr ""
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr ""
-
-#~ msgid "Tools"
-#~ msgstr "పనిముట్లు"
-
-#~ msgid "Send information"
-#~ msgstr "సమాచారాన్ని పంపు"
-
-#~ msgid "Logs sent"
-#~ msgstr "పంపిన లాగ్​లు"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "లాగ్ లు సెర్వరుకు ఎగుమతి చేయబడినవి"
-
-#~ msgid "Logs not sent"
-#~ msgstr "లాగ్ లు పంపబడలేదు"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr "లాగ్ లు సెర్వరు కు ఎగుమతి చేయబడలేదు.  నెట్​వర్క్ జతచేయడము తనిఖీచేయండి"
-
-#~ msgid "Edit"
-#~ msgstr "కూర్చు"

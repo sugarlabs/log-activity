@@ -1,15 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# el_libre <el.libre@gmail.com>, 2009.
-# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015, 2016.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2016-04-26 20:22+0000\n"
-"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
+"Last-Translator: Robert <rbuj@fedoraproject.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -19,12 +18,11 @@ msgstr ""
 "X-Generator: Pootle 2.5.1.1\n"
 "X-POOTLE-MTIME: 1461702163.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Registre"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
@@ -32,68 +30,68 @@ msgstr ""
 "Aquesta és una activitat que està dissenyada per a qualsevol qui vulgui "
 "solucionar un problema d'un programa complicat a l'ordinador."
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "Fitxers del registre"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "Altres"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "ERROR: Ha fallat l'observació dels fitxers a «%(path)s»."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "ERROR: El fitxer «%(file)s» no existeix."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "ERROR: No es pot llegir el fitxer «%(file)s»."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "Error: No es pot obrir el fitxer «%s»\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr "Mostra la llista dels fitxers"
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "Ajust de paraula"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "Anterior"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "Següent"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "Suprimeix el fitxer del registre"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "Error"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s en suprimir %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr "Col·lector de registres: Captura la informació"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -103,19 +101,19 @@ msgstr ""
 "i l'execució dels processos en una entrada del diari.\n"
 "Utilitzeu-ho per a millorar l'informe d'un problema."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr "Captura la informació"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr "Registres sense capturar"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr "No es poden capturar els registres."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr "registre-%s"

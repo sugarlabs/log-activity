@@ -1,19 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
 # Khaled Hosny <khaledhosny@eglug.org>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2011-08-24 08:33+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
-"Language: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,79 +18,78 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Virtaal 0.7.0\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "سجل"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "ملفات السجلات"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "أخرى"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "عطل: فشل التماس الملفات في '%(path)s'."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "عطل: الملف '%(file)s' غير موجود"
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "عطل: تعذّر قراءة الملف '%(file)s'."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "عطل: تعذّر فتح الملف '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "اقطع السطر"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "السابق"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "التالي"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "احذف ملف السجل"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "عطل"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s أثناء حذف الملف %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr "جامع السجلات: اجمع معلومات الجهاز"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -103,51 +99,19 @@ msgstr ""
 "والعمليات المشغلة في مدخلة في الدفتر.\n"
 "استخدم هذه المعلومات لتدعيم البلاغ عن مشكلة."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr "اجمع معلومات الجهاز"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr "لم تُجمع السجلات"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr "تعذّر جمع السجلات."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr "سجل-%s"
-
-#~ msgid "Tools"
-#~ msgstr "أدوات"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "يرسل جامع السجلات معلومات عن النظام\n"
-#~ "والعمليات العاملة إلى خادوم مركزي.  استخدم\n"
-#~ "هذا الخيار إذا أردت الإبلاغ عن مشكلة."
-
-#~ msgid "Send information"
-#~ msgstr "أرسِل المعلومات"
-
-#~ msgid "Logs sent"
-#~ msgstr "أُرسِلت السجلات"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "رُفِعت السجلات إلى الخادوم."
-
-#~ msgid "Logs not sent"
-#~ msgstr "لم تُرسل السجلات"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr "تعذّر رفع السجلات إلى الخادوم. من فضلك راجع اتصالك بالشبكة."
-
-#~ msgid "Edit"
-#~ msgstr "تحرير"

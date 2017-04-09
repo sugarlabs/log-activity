@@ -2,156 +2,114 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2010-07-20 17:52+0200\n"
-"Last-Translator: Zafimamy Gabriella Ralaivao <gabriella@intnet.mu>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 21:55+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: mg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491774952.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Hiditra"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "Rakidaza fidirana"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "Hafa"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "FAHADISOANA: tsy afa-mijery ny tahiry amin'ny '%(leha)s'."
+msgstr "FAHADISOANA: tsy afa-mijery ny tahiry amin'ny '%(path)s'."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "FAHADISOANA: tahiry '%(tahiry)s' tsy misy"
+msgstr "FAHADISOANA: tahiry '%(file)s' tsy misy."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "FAHADISOANA: tsy voavaky ny tahiry '%(tahiry)s'"
+msgstr "FAHADISOANA: tsy voavaky ny tahiry '%(file)s'."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "FAHADISOANA: tsy voasokatra ny tahiry '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "famonosana teny"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "Teo aloha"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "Manaraka"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "Fafao ny raki-tatitra"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "Diso"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s rehefa fafaina %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 #, fuzzy
 msgid "Log Collector: Capture information"
 msgstr "Mpanangon-tatitra: mandefa fampahalalana momba ny XO"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr ""
-
-#~ msgid "Tools"
-#~ msgstr "Fitaovana"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "Ny mpanangon-tatitra dia mandefa fampahalalana momba ny rafitra\n"
-#~ " sy ny zotran-javatra mandeha amin'ny mpizara foibe. Ampiasao\n"
-#~ "ity safidy ity raha toa ianao ka maniry hitatitra olana."
-
-#~ msgid "Send information"
-#~ msgstr "Mandefa fampahalalana"
-
-#~ msgid "Logs sent"
-#~ msgstr "Lasa ireo rakitatitra"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "Tafakatra ao amin'ny mpizara ireo rakitatitra."
-
-#~ msgid "Logs not sent"
-#~ msgstr "Tsy lasa ireo rakitatitra"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "Tsy tafakatra any amin'ny mpizara ny fidirana. Jereo ny fifandraisana "
-#~ "amin'ny tamba-jotra azafady."
-
-#~ msgid "Edit"
-#~ msgstr "amboary"
