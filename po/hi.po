@@ -2,23 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2013-12-06 22:18+0200\n"
 "Last-Translator: Vivek <fxtheme@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,81 +17,80 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "लॉग"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
-"यह क्रिया उन लोगों के लिए बनाया गया है जो एक जटिल प्रोग्राम को कंप्यूटर पर "
-"ठीक करना चाहता है"
+"यह क्रिया उन लोगों के लिए बनाया गया है जो एक जटिल प्रोग्राम को कंप्यूटर पर ठी"
+"क करना चाहता है"
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "लॉग फ़ाइलें"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "अन्य"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "त्रुटि: फ़ाइलों को '%(path)s' में देखने में असफल."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "त्रुटि: फ़ाइल '%(file)s' मौज़ूद नहीं है."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "त्रुटि: '%(file)s' पढ़ने में अक्षम."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "त्रुटि: फ़ाइल '%s' खोला नहीं जा सका\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr "फ़ाइलों की सूची दिखाएँ"
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "वर्ड रैप"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "पिछला"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "अगला"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "लॉग फ़ाइल मिटाएँ"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "त्रुटि"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s त्रुटियाँ फ़ाइलें %(file)s मिटाने के दौरान"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr "लॉग संग्राहक: एक्सओ जानकारी भेजें"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -113,49 +100,19 @@ msgstr ""
 "और एक जर्नल प्रविष्टि के लिए प्रक्रियाओं चल रहा है.\n"
 "इस प्रयोग के लिए एक समस्या की रिपोर्ट में सुधार."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr "जानकारी पकडे"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr "लॉग कब्जा नहीं किया"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr "लॉग कब्जा नहीं किया जा सका."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr "लॉग-%s"
-
-#~ msgid "Tools"
-#~ msgstr "औज़ार"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "तंत्र तथा चलते हुए प्रक्रियाओं के बारे में जानकारियाँ लॉग संग्राहक\n"
-#~ "केंद्रीय सर्वर को जानकारी भेजता है.\n"
-#~ "यदि आप किसी समस्या की रपट देना चाहते हैं तो इस विकल्प का प्रयोग करें."
-
-#~ msgid "Send information"
-#~ msgstr "जानकारी भेजें"
-
-#~ msgid "Logs sent"
-#~ msgstr "लॉग भेजा"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "लॉग सर्वर पर अपलोड किया गया."
-
-#~ msgid "Logs not sent"
-#~ msgstr "लॉग भेजा नहीं गया"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "लॉग को सर्वर पर अपलोड नहीं किया जा सका. कृपया अपना नेटवर्क कनेक्शन जाँचें."

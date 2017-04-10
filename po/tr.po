@@ -2,152 +2,114 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2008-08-27 10:54-0400\n"
-"Last-Translator: abdullah kocabas <abdullah.kocabas@abcdizustu.com>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 22:45+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491777905.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
-msgstr "kaydediniz."
+msgstr "Kaydediniz"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
-msgstr "dosyaları kaydediniz."
+msgstr "Dosyaları Kaydediniz"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
-msgstr "diğer"
+msgstr "Diğer"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "hata: '%(path)s'in içindeki dosyalara bakamıyor."
+msgstr "HATA: '%(path)s' in içindeki dosyalara bakamıyor."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "hata: '%(file)s' yok."
+msgstr "HATA: '%(file)s' yok."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "hata: %(file)s'yı okuyamıyor."
+msgstr "HATA: '%(file)s' yı okuyamıyor."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "hata: %s dosyasını açamıyor.\n"
+msgstr "HATA: '%s' dosyasını açamıyor\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
-msgstr "kelime dosyası"
+msgstr "Kelime Dosyası"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
-msgstr "önceki"
+msgstr "Önceki"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
-msgstr "diğer"
+msgstr "Diğer"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
-msgstr "kaydedilen dosyaları siliniz."
+msgstr "Kaydedilen Dosyaları Siliniz"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
-msgstr "hata"
+msgstr "Hata"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(error)s sını silerken %(file)s oluştu."
+msgstr "%(error)s sını silerken %(file)s oluştu"
 
-#: logviewer.py:534
+#: logviewer.py:616
 #, fuzzy
 msgid "Log Collector: Capture information"
 msgstr "kayıt toplayıcısı: XO bilgilerini yollayınız."
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr ""
-
-#~ msgid "Tools"
-#~ msgstr "araçlar"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "kayıt toplayıcısı sistem/n hakkında ve ana sistemin işleyişi hakkında bilgi "
-#~ "yollar. Bir sorun bildirmek için n/bu yolu kullanınız."
-
-#~ msgid "Send information"
-#~ msgstr "bilgi yollayınız."
-
-#~ msgid "Logs sent"
-#~ msgstr "kayıtlar yollandı."
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "kayıtlar sunucuya yüklendi."
-
-#~ msgid "Logs not sent"
-#~ msgstr "kayıtlar yollanmadı."
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr "kayıtlar sunucuya yüklenemedi. Lütfen ağ bağlantınızı kontrol ediniz."
-
-#~ msgid "Edit"
-#~ msgstr "düzenleyiniz."

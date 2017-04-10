@@ -2,102 +2,94 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2011-09-01 16:42+0200\n"
-"Last-Translator: Thangamani <thangam.arunx@gmail.com>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 22:37+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491777462.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "பதிவு"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "பதிவுகோவை"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "வேறு"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "'%(path)s' கோவைகளை பார்வையிடுவதைகைவிடுக"
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "'%(file)s' கள்ஏற்கனவே  இல்லாதவை"
+msgstr "'%(file)s' கள்ஏற்கனவே இல்லாதவை"
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "தவறு:'%(file)s' களை வாசிக்கஇயலாது"
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "தவறு:'%s' கோவைகளை திறக்கமுடியாது\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "சொல்சுற்று"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "முன்னைய"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "அடுத்தது"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "பதிவுக்கோவையை அழிக்க"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "தவறு"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s கள்அழிப்பதுஎப்போது %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr "பதிவு சேமிப்பான்: தகவலை சேகரி"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -107,53 +99,19 @@ msgstr ""
 "மற்றும் சஞ்சிகைக்கான இயங்கும் செயல்களின் பதிவாகும்.\n"
 "பிழைகளுக்கான் அறிக்கையை மேம்படுத்த பயன்படுத்தவும்."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr "தகவலைக் கைப்பற்று"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr "பதிவுகளை கைப்பற்றல"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr "பதிவுகளை கைப்பற்ற முடியவில்லை."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr "log-%s"
-
-#~ msgid "Tools"
-#~ msgstr "கருவிகள்"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "பதிவுசேமிப்பான்மூலம்தகவல்களை அனுப்புவது பற்றியஅமைப்புமுறை\n"
-#~ "கணினியூடாக செயல்முறையை வழங்குதல் உங்களுக்குத்தேவையாயின்\n"
-#~ "இதை உபயோகித்து பிரச்சினையை அறிக்கைப்படுத்துக."
-
-#~ msgid "Send information"
-#~ msgstr "தகவலை அனுப்புக"
-
-#~ msgid "Logs sent"
-#~ msgstr "பதிவுகளை அனுப்புக"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "பதிவுகள் கணினியில் மேல்ஏற்றம் செய்யப்படுகிறது"
-
-#~ msgid "Logs not sent"
-#~ msgstr "பதிவுகள் அனுப்பப்படவுில்லை"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "இப்பதிவுகள் கணினியில் மேல்ஏற்றம்செய்யப்படவில்லை.தயவுசெய்துஉங்களுடைய "
-#~ "வலையமைப்புதொடர்பை சரிபார்க்கவும்"
-
-#~ msgid "Edit"
-#~ msgstr "திருத்து"

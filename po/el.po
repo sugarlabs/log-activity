@@ -2,19 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2012-09-08 10:26+0200\n"
 "Last-Translator: Yannis <kiolalis@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,80 +17,79 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Καταγραφή"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "Αρχεία καταγραφών"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "Άλλο"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "ΣΦΑΛΜΑ: Αποτυχία αναζήτησης για αρχεία στο '%(path)s'."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "ΣΦΑΛΜΑ: Το αρχείο '%(file)s' δεν υπάρχει."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "ΣΦΑΛΜΑ: Αδυναμία ανάγνωσης του αρχείου '%(file)s'."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "ΣΦΑΛΜΑ: Αδυναμία ανοίγματος του αρχείου '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
 # στα κελιά του Excel υπάρχει ο όρος αναδίπλωση. Είναι το να μοιράζει τη λέξη σε 2 γραμμές.
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "Αναδίπλωση λέξης"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "Επόμενο"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "Διαγραφή αρχείου καταγραφής"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s κατά τη διαγραφή %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr "Συλλέκτης καταγραφών: Συλλογή πληροφοριών"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
@@ -108,53 +99,19 @@ msgstr ""
 "και τις τρέχουσες διαδικασίες σε μία εγγραφή ημερολογίου.\n"
 "Χρησιμοποιήστε το για να βελτιώσετε μία αναφορά προβλήματος."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr "Συλλογή πληροφοριών"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr "Δεν έγιναν καταγραφές"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr "Οι καταγραφές δεν μπόρεσαν να γίνουν"
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr "Καταγραφή-%s"
-
-#~ msgid "Tools"
-#~ msgstr "Εργαλεία"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "Ο συλλέκτης καταγραφών στέλνει πληροφορίες γι' αυτό το σύστημα\n"
-#~ "και εκτελεί διαδικασίες σε έναν κεντρικό διακομιστή.  Χρησιμοποιήστε\n"
-#~ "αυτή την επιλογή αν θέλετε να αναφέρετε ένα πρόβλημα."
-
-#~ msgid "Send information"
-#~ msgstr "Αποστολή πληροφοριών"
-
-#~ msgid "Logs sent"
-#~ msgstr "Οι καταγραφές στάλθηκαν"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "Έγινε αποστολή των καταγραφών στον διακομιστή."
-
-#~ msgid "Logs not sent"
-#~ msgstr "Οι καταγραφές δεν στάλθηκαν"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "Οι καταγραφές δεν ήταν δυνατό να σταλθούν στον διακομιστή. Παρακαλώ ελέγξτε "
-#~ "τη τη σύνδεση δικτύου."
-
-#~ msgid "Edit"
-#~ msgstr "Επεξεργασία"

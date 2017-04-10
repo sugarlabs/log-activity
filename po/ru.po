@@ -2,157 +2,119 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2010-02-07 02:56+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 21:21+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491772878.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Журнал"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
+"Эта программа создана для поиска и исправления ошибок в сложных программах "
+"на этом компьютере."
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "Файлы журнала"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "Другие"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "ОШИБКА: Невозможно найти файлы в каталоге '%(path)s'."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "ОШИБКА:Файл '%(file)s' не существует."
+msgstr "ОШИБКА: Файл '%(file)s' не существует."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "ОШИБКА: Невозможно прочитать файл '%(file)s'."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "ОШИБКА: Невозможно открыть файл '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
-msgstr ""
+msgstr "Показать список файлов"
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "Перенос по словам"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "Предыдущий"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "Следующий"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "Удалить файл журнала"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "Ошибка"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s при удалении %(file)s"
 
-#: logviewer.py:534
-#, fuzzy
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
-msgstr "Сборщик журналов: Отправить информацию об XO"
+msgstr "Сборщик: Сбор информации"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"Здесь собирается информация о системе\n"
+"и запущенных процессах в запись журнала.\n"
+"Используйте для улучшения отчета о проблеме."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
-msgstr ""
+msgstr "Сбор информации"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
-msgstr ""
+msgstr "Логи не собраны"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "Логи не могут быть собраны."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
-msgstr ""
-
-#~ msgid "Tools"
-#~ msgstr "Инструменты"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "Сборщик журналов отправляет информацию о системе\n"
-#~ " запускает процессы на центральном сервере\n"
-#~ "Используете эту опцию если хотите сообщить о проблеме."
-
-#~ msgid "Send information"
-#~ msgstr "Послать информацию"
-
-#~ msgid "Logs sent"
-#~ msgstr "Журналы отправлены"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "Журналы были загружены на сервер."
-
-#~ msgid "Logs not sent"
-#~ msgstr "Журналы не отправлены"
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "Журналы не могут быть отправлены на сервер. Пожалуйста, проверьте "
-#~ "работоспособность сетевого соединения."
-
-#~ msgid "Edit"
-#~ msgstr "Редактировать"
+msgstr "лог-%s"
