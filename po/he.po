@@ -2,19 +2,11 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
 "PO-Revision-Date: 2011-12-29 00:41+0200\n"
 "Last-Translator: 623633 <623633@gmx.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,147 +17,105 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 #, fuzzy
 msgid "Log"
 msgstr "רישום"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 #, fuzzy
 msgid "Log Files"
 msgstr "קבצי רישום"
 
-#: logviewer.py:101
+#: logviewer.py:108
 #, fuzzy
 msgid "Other"
 msgstr "אחר"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr ""
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr ""
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr ""
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "אין אפשרות לפתוח את הקובץ '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 #, fuzzy
 msgid "Word Wrap"
 msgstr "מעטפת מילים"
 
-#: logviewer.py:431
+#: logviewer.py:479
 #, fuzzy
 msgid "Previous"
 msgstr "הקודם"
 
-#: logviewer.py:436
+#: logviewer.py:484
 #, fuzzy
 msgid "Next"
 msgstr "הבא"
 
-#: logviewer.py:450
+#: logviewer.py:498
 #, fuzzy
 msgid "Delete Log File"
 msgstr "מחיקת קובץ רישום"
 
-#: logviewer.py:522
+#: logviewer.py:604
 #, fuzzy
 msgid "Error"
 msgstr "שגיאה"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:534
+#: logviewer.py:616
 #, fuzzy
 msgid "Log Collector: Capture information"
 msgstr "איסוף רישומים: שלחו מידע אודות ה-XO"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
-msgstr ""
-
-#, fuzzy
-#~ msgid "Tools"
-#~ msgstr "כלים"
-
-#, fuzzy
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "איסוף הרישומים שולח מידע על המערכת שלך\n"
-#~ " ומריץ תהליכים לשרת המרכזי. יש להשתמש\n"
-#~ " באפשרות הזאת אם ברצונך לדווח על הבעייה."
-
-#, fuzzy
-#~ msgid "Send information"
-#~ msgstr "שלח מידע"
-
-#, fuzzy
-#~ msgid "Logs sent"
-#~ msgstr "הרישום נשלח"
-
-#, fuzzy
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "הרישומים הועלו לשרת."
-
-#, fuzzy
-#~ msgid "Logs not sent"
-#~ msgstr "הרישום לא נשלח"
-
-#, fuzzy
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr "לא מצליח לעלות את הרישומים לשרת. יש לוודא שחיבור הרשת תקין."
-
-#, fuzzy
-#~ msgid "Edit"
-#~ msgstr "עריכה"

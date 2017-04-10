@@ -2,121 +2,123 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-03-18 20:37+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1rc4\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1489869458.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
-msgstr ""
+msgstr "لگاریتم"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
+"این یک برنامه طراحی شده برای افرادی است که تمایل به حل برنامه های پیچیده "
+"کامپیوتری دارند."
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
-msgstr ""
+msgstr "فایل های لگاریتمی"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
-msgstr ""
+msgstr "دیگر"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
+#, fuzzy, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr ""
+msgstr "خطا: قادر به جستجوی فایل در این مسیر نیست"
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
+#, fuzzy, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr ""
+msgstr "خطا: فایل یا فایل ها وجود ندارند."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
+#, fuzzy, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr ""
+msgstr "خطا: قادر به خواندن فایل یا فایل ها نیست."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
+#, fuzzy, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr ""
+msgstr "خطا: فایل باز نمیشود./n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
-msgstr ""
+msgstr "نمایش لیست فایلها"
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
-msgstr ""
+msgstr "قرار دادن کلمه"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
-msgstr ""
+msgstr "قبلی"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
-msgstr ""
+msgstr "بعدی"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
-msgstr ""
+msgstr "حذف فایل لگاریتمی"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
-msgstr ""
+msgstr "خطا"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
+#, fuzzy, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "خطا در زمان حذف فایل (ها)"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
-msgstr ""
+msgstr "جمع آوری لگاریتمی: اطلاعات دریافتی"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
+"اطلاعات دریافت شده راجع به سیستم و پردازش و راه اندازی در یک ژورنال وارد شده "
+"است که به منظور گزارش مشکلات قابل استفاده است."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
-msgstr ""
+msgstr "اطلاعات دریافتی"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
-msgstr ""
+msgstr "لگاریتم ها دریافت نشدند."
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
-msgstr ""
+msgstr "لگاریتم ها قادر به دریافت نیستند."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
+#, fuzzy, python-format
 msgid "log-%s"
-msgstr ""
+msgstr "لگاریتم منفی"

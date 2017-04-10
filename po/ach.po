@@ -7,88 +7,89 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2013-11-07 09:38+0200\n"
-"Last-Translator: arosella <arosella@yahoo.com>\n"
+"PO-Revision-Date: 2017-03-14 03:39+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: it\n"
+"Language: ach\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1489462780.000000\n"
 
 #: activity/activity.info:2
 msgid "Log"
-msgstr "Log"
+msgstr "Dony"
 
 #: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
-"Questa è una attività pensata per chiunque voglia risolvere qualche "
-"intricato problema di un programma del computer."
+"Manaye obedo tic ma giyubo pi ngat mo keken mamito cobo peko mo me kompuita "
+"madong kite tek loyo."
 
 #: logviewer.py:95
 msgid "Log Files"
-msgstr "File di Log"
+msgstr "Dony I pwail"
 
 #: logviewer.py:108
 msgid "Other"
-msgstr "Altro"
+msgstr "Mukene"
 
 #: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "ERRORE: File in '%(path)s' non trovati."
+msgstr "BAL: Okwero moyo pwail ii '%(path)s'."
 
 #: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "ERRORE: I File '%(file)s' non esistono."
+msgstr "BAL: Pwail '%(file)s' pe dong tye."
 
 #: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "ERRORE: Non posso leggere i file '%(file)s'."
+msgstr "BAL: Pe twero nyuto pwail '%(file)s'."
 
 #: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "Errore: Non posso aprire il file '%s'\n"
+msgstr "Bal: Pe twero yabo pwail '%s'\n"
 
 #: logviewer.py:453
 msgid "Show list of files"
-msgstr "Mostra la lista dei files"
+msgstr "Nyut nying pwail weng"
 
 #: logviewer.py:463
 msgid "Word Wrap"
-msgstr "Parole a capo"
+msgstr "Boyo Nyig lok"
 
 #: logviewer.py:479
 msgid "Previous"
-msgstr "Precedente"
+msgstr "Mukato"
 
 #: logviewer.py:484
 msgid "Next"
-msgstr "Successivo"
+msgstr "Malubo kore"
 
 #: logviewer.py:498
 msgid "Delete Log File"
-msgstr "Elimina il file di Log"
+msgstr "Jwa Pwail maotime"
 
 #: logviewer.py:604
 msgid "Error"
-msgstr "Errore"
+msgstr "Bal"
 
 #: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(error)s durante la cancellazione di %(file)s"
+msgstr "%(error)s ikare me jwayo %(file)s"
 
 #: logviewer.py:616
 msgid "Log Collector: Capture information"
-msgstr "Log Collector: Cattura informazioni"
+msgstr "Lajog jami ma otime: Mako ngec lung"
 
 #: logviewer.py:623
 msgid ""
@@ -96,23 +97,23 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
-"Questo serve per catturare le informazioni del sistema\n"
-"e dei processi in corso in una rige del diario.\n"
-"Si usa per migliorare la reportistica di un problema."
+"Eni ni mako ngec ikom kit me tic\n"
+"ki tute me tero i donyo me kakube.\n"
+"Tii ma enini wek i yil rwom pa repot me peki."
 
 #: logviewer.py:627
 msgid "Capture information"
-msgstr "Cattura informazioni"
+msgstr "Mak ngec"
 
 #: logviewer.py:650
 msgid "Logs not captured"
-msgstr "Log non catturati"
+msgstr "Pe kimako jami mutime"
 
 #: logviewer.py:651
 msgid "The logs could not be captured."
-msgstr "I log non possono essere catturati"
+msgstr "Pe onongo twero mako jami mutime."
 
 #: logviewer.py:661
 #, python-format
 msgid "log-%s"
-msgstr "log-%s"
+msgstr "jami mutime-%s"

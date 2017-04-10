@@ -2,152 +2,115 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2013-09-01 13:37+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 21:53+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491774800.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "로그"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "로그 화일"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "그외 것"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "에러: '%(path)s' 에서 화일을 찾기를 실패 했습니다. "
+msgstr "에러: '%(path)s' 에서 화일을 찾기를 실패 했습니다."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "에러: 화일 '%(file)s' 는 존재 하지 않습니다. "
+msgstr "에러: 화일 '%(file)s' 는 존재 하지 않습니다."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "에러: '%(file)s' 화일을 읽을 수 없습니다."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "에러: '%s' 화일을 열 수 없습니다. \n"
+msgstr "에러: '%s' 화일을 열 수 없습니다.\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "단어 간격"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "이전"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "다음"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "로그 화일 지우기"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "에러"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 #, fuzzy
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(file)s 지울때 발생하는 에러 %(error)s "
+msgstr "%(file)s 지울때 발생하는 에러 %(error)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 #, fuzzy
 msgid "Log Collector: Capture information"
 msgstr "로그 수집기: XO에 대한 정보를 보낸다"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr ""
-
-#~ msgid "Tools"
-#~ msgstr "도구"
-
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr "로그 수집기가 시스템과 실행 프로세스에 대한 정보를 중앙서버에 보냅니다. 발생한 문제를 알리고 싶은경우 다음 옵션을 사용하세요."
-
-#~ msgid "Send information"
-#~ msgstr "정보 보내기"
-
-#~ msgid "Logs sent"
-#~ msgstr "로그가 보내졌습니다"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "로그가 서버에 업로드 되었습니다."
-
-#~ msgid "Logs not sent"
-#~ msgstr "로그가 보내지지 않았습니다."
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr "로그를 서버에 업로드 못합니다. 네트워크 연결을 확인하세요."
-
-#~ msgid "Edit"
-#~ msgstr "편집"

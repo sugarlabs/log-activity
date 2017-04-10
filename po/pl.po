@@ -2,21 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2013-09-25 21:41+0200\n"
-"Last-Translator: Jakub <jamarat@o2.pl>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 22:07+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -24,14 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491775625.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Wpis"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
@@ -39,93 +31,90 @@ msgstr ""
 "Ta aktywność jest zaprojektowana dla tych, którzy chcą rozwiązać problemy "
 "skomplikowanych programów komputerowych."
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "Pliki wpisów"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "Inne"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "BŁĄD: Nie znaleziono plików w katalogu '%(path)s'."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr "BŁĄD: Plik '%(file)s' nie istnieje."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr "BŁĄD: Nie można odczytać pliku '%(file)s'."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "BŁĄD: Nie można otworzyć pliku '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr "Pokaż listę plików"
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "Zawijanie Słów"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "Poprzedni"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "Następny"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "Skasuj plik wpisów"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "Błąd"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s podczas kasowania %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 msgid "Log Collector: Capture information"
 msgstr "Zbieracz wpisów: Zachowaj informację"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 "To zbiera i zapisuje informacje o systemie\n"
-"i o uruchomionych procesach w wpisach dziennika. \n"
+"i o uruchomionych procesach w wpisach dziennika.\n"
 "Wykorzystaj do poprawienia raportu o problemie."
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr "Zachowaj informacje"
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr "Wpisy nie zachowane"
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr "Wpisy nie mogą być zachowane."
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr "wpis-%s"
-
-#~ msgid "Tools"
-#~ msgstr "Narzędzia"

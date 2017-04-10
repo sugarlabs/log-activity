@@ -2,153 +2,114 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-11 00:31-0400\n"
-"PO-Revision-Date: 2011-04-02 02:47+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2017-04-09 22:36+0000\n"
+"Last-Translator: Chris <cjl@sugarlabs.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1491777362.000000\n"
 
-#. TRANS: "name" option from activity.info file
+#: activity/activity.info:2
 msgid "Log"
 msgstr "Log"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
+#: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:93
+#: logviewer.py:95
 msgid "Log Files"
 msgstr "Log súbory"
 
-#: logviewer.py:101
+#: logviewer.py:108
 msgid "Other"
 msgstr "Ostatné"
 
-#: logviewer.py:211
+#: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr "Chyba: Nenašiel som súbory v '%(path)s'."
 
-#: logviewer.py:227
+#: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "Chyba: Súbor '%(path)s' neexistuje."
+msgstr "Chyba: Súbor '%(file)s' neexistuje."
 
-#: logviewer.py:232
+#: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "Chyba: Nemôžem čítať súbor '%(file)s'"
+msgstr "Chyba: Nemôžem čítať súbor '%(file)s'."
 
-#: logviewer.py:364
+#: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr "Chyba: Nemôžem otvoriť súbor '%s'\n"
 
-#: logviewer.py:405
+#: logviewer.py:453
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:415
+#: logviewer.py:463
 msgid "Word Wrap"
 msgstr "Rozdeliť slovo"
 
-#: logviewer.py:431
+#: logviewer.py:479
 msgid "Previous"
 msgstr "Predchádzajúci"
 
-#: logviewer.py:436
+#: logviewer.py:484
 msgid "Next"
 msgstr "Ďaľší"
 
-#: logviewer.py:450
+#: logviewer.py:498
 msgid "Delete Log File"
 msgstr "Vymazať Log súbory"
 
-#: logviewer.py:522
+#: logviewer.py:604
 msgid "Error"
 msgstr "Chyba"
 
-#: logviewer.py:523
+#: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr "%(error)s mazania súboru %(file)s"
 
-#: logviewer.py:534
+#: logviewer.py:616
 #, fuzzy
 msgid "Log Collector: Capture information"
 msgstr "Výstup logu: Posielam XO informáciu"
 
-#: logviewer.py:541
+#: logviewer.py:623
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:545
+#: logviewer.py:627
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:567
+#: logviewer.py:650
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:568
+#: logviewer.py:651
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:578
+#: logviewer.py:661
 #, python-format
 msgid "log-%s"
 msgstr ""
-
-#~ msgid "Tools"
-#~ msgstr "Nástroje"
-
-#, fuzzy
-#~ msgid ""
-#~ "Log collector sends information about the system\n"
-#~ "and running processes to a central server.  Use\n"
-#~ "this option if you want to report a problem."
-#~ msgstr ""
-#~ "Výstup logu posiela informácie o systéme a spustených procesoch na centrálny "
-#~ "server. Použi túto možnosť, ak potrebuješ nahlásiť problém."
-
-#~ msgid "Send information"
-#~ msgstr "Poslať informáciu"
-
-#~ msgid "Logs sent"
-#~ msgstr "Logy odoslané"
-
-#~ msgid "The logs were uploaded to the server."
-#~ msgstr "Logy boli odoslané na server."
-
-#~ msgid "Logs not sent"
-#~ msgstr "Logy sa nepodarilo odoslať."
-
-#~ msgid ""
-#~ "The logs could not be uploaded to the server. Please check your network "
-#~ "connection."
-#~ msgstr ""
-#~ "Logy sa nepodarilo odoslať na server. Prosím, skontroluj tvoje pripojenie k "
-#~ "sieti."
