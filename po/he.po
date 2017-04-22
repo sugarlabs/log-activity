@@ -119,3 +119,4 @@ msgstr ""
 #: logviewer.py:661
 #, python-format
 msgid "log-%s"
+msgstr ""
