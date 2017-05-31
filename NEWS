@@ -1,3 +1,10 @@
+38
+
+* New translations (Chris Leonard et al),
+* Add screenshots and category for the new ASLO (Sam Parkinson),
+* Regenerate POT file (James Cameron),
+* Use busy cursor and fix warnings (James Cameron).
+
 21
 
 * Utilize new toolbars design
