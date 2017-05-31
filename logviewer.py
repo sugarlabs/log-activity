@@ -22,6 +22,8 @@ from gettext import gettext as _
 
 import re
 
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from gi.repository import Gdk
 from gi.repository import Pango
@@ -608,7 +610,7 @@ class LogActivity(activity.Activity):
                 self.add_alert(notify)
 
     def _logviewer_cb(self, widget):
-        self.collector_palette.popup(True, self.collector_palette.SECONDARY)
+        self.collector_palette.popup(True)
 
 
 class CollectorPalette(Palette):
@@ -635,10 +637,16 @@ class CollectorPalette(Palette):
         self.set_content(vbox)
 
     def _on_send_button_clicked_cb(self, button):
+        window = self._activity.get_window()
+        old_cursor = window.get_cursor()
+        window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
+        Gdk.flush()
+
         identifier = str(int(time.time()))
         filename = '%s.zip' % identifier
         filepath = os.path.join(activity.get_activity_root(), filename)
         success = True
+        # FIXME: subprocess or thread
         try:
             self._collector.write_logs(archive=filepath, logbytes=0)
         except:
@@ -671,3 +679,6 @@ class CollectorPalette(Palette):
         jobject.destroy()
         activity.show_object_in_journal(self._last_log)
         os.remove(filepath)
+
+        window.set_cursor(old_cursor)
+        Gdk.flush()
