@@ -110,7 +110,8 @@ class MultiLogView(Gtk.Paned):
             self.extra_iter = self._treemodel.append(None, [_('Other'), ''])
 
         self.list_scroll = Gtk.ScrolledWindow()
-        self.list_scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.list_scroll.set_policy(Gtk.PolicyType.AUTOMATIC,
+                                    Gtk.PolicyType.AUTOMATIC)
         self.list_scroll.add(self._treeview)
         self.list_scroll.set_size_request(Gdk.Screen.width() * 30 / 100, -1)
 
@@ -137,7 +138,7 @@ class MultiLogView(Gtk.Paned):
     def _sort_logfile(self, treemodel, itera, iterb, user_data=None):
         a = treemodel.get_value(itera, 0)
         b = treemodel.get_value(iterb, 0)
-        if a == None or b == None:
+        if a is None or b is None:
             return 0
         a = a.lower()
         b = b.lower()
@@ -225,8 +226,8 @@ class MultiLogView(Gtk.Paned):
                 files = os.listdir(path)
             except:
                 logging.debug(
-                        _("ERROR: Failed to look for files in '%(path)s'.") %
-                        {'path': path})
+                    _("ERROR: Failed to look for files in '%(path)s'.") %
+                    {'path': path})
             else:
                 for logfile in files:
                     self._add_log_file(os.path.join(path, logfile))
@@ -246,12 +247,12 @@ class MultiLogView(Gtk.Paned):
 
         if not os.path.exists(path):
             logging.debug(_("ERROR: File '%(file)s' does not exist.") %
-                    {'file': path})
+                          {'file': path})
             return False
 
         if not os.access(path, os.R_OK):
             logging.debug(_("ERROR: Unable to read file '%(file)s'.") %
-                    {'file': path})
+                          {'file': path})
             return False
 
         directory, logfile = os.path.split(path)
@@ -260,7 +261,7 @@ class MultiLogView(Gtk.Paned):
         if _dir:
             logfile = '%s/%s' % (_dir, logfile)
 
-        if not logfile in self.logs or _dir:
+        if logfile not in self.logs or _dir:
             if not parent:
                 parent = self.extra_iter
                 if directory in self.path_iter:
@@ -275,7 +276,7 @@ class MultiLogView(Gtk.Paned):
         log.update()
         written = log._written
 
-        if self.active_log == None:
+        if self.active_log is None:
             self.active_log = log
             self._show_log(logfile)
             success, log_iter = \
@@ -398,7 +399,7 @@ class LogBuffer(Gtk.TextBuffer):
             self._written = (self._pos - init_pos)
         except:
             self.insert(self.get_end_iter(),
-                    _("Error: Can't open file '%s'\n") % self.logfile)
+                        _("Error: Can't open file '%s'\n") % self.logfile)
             self._written = 0
 
 
@@ -469,7 +470,7 @@ class LogActivity(activity.Activity):
         self.search_entry = iconentry.IconEntry()
         self.search_entry.set_size_request(Gdk.Screen.width() / 3, -1)
         self.search_entry.set_icon_from_name(
-                iconentry.ICON_ENTRY_PRIMARY, 'entry-search')
+            iconentry.ICON_ENTRY_PRIMARY, 'entry-search')
         self.search_entry.add_clear_button()
         self.search_entry.connect('activate', self._search_entry_activate_cb)
         self.search_entry.connect('changed', self._search_entry_changed_cb)
@@ -529,7 +530,7 @@ class LogActivity(activity.Activity):
             self._add_controls(self._toolbar)
 
         for control in [self._delete_btn, self._separator, self._stop_btn]:
-            if not control in self._toolbar:
+            if control not in self._toolbar:
                 self._toolbar.insert(control, -1)
 
     def _remove_controls(self, toolbar):
@@ -541,7 +542,7 @@ class LogActivity(activity.Activity):
     def _add_controls(self, toolbar):
         for control in [self._search_item, self._search_prev,
                         self._search_next]:
-            if not control in toolbar:
+            if control not in toolbar:
                 toolbar.insert(control, -1)
                 control.show()
 
@@ -571,9 +572,9 @@ class LogActivity(activity.Activity):
         if self._autosearch_timer:
             GObject.source_remove(self._autosearch_timer)
         self._autosearch_timer = GObject.timeout_add(_AUTOSEARCH_TIMEOUT,
-            self.__autosearch_timer_cb)
+                                                     self.__autosearch_cb)
 
-    def __autosearch_timer_cb(self):
+    def __autosearch_cb(self):
         self._autosearch_timer = None
         self.search_entry.activate()
         return False
@@ -593,8 +594,8 @@ class LogActivity(activity.Activity):
         else:
             prev_result = self.viewer.get_next_result('backward')
             next_result = self.viewer.get_next_result('forward')
-            self._search_prev.props.sensitive = prev_result != None
-            self._search_next.props.sensitive = next_result != None
+            self._search_prev.props.sensitive = prev_result is not None
+            self._search_next.props.sensitive = next_result is not None
 
     def _delete_log_cb(self, widget):
         if self.viewer.active_log:
@@ -621,10 +622,10 @@ class CollectorPalette(Palette):
 
         self._collector = LogCollect()
 
-        label = Gtk.Label(label=
-            _('This captures information about the system\n'\
-              'and running processes to a journal entry.\n'\
-              'Use this to improve a problem report.'))
+        trans = _('This captures information about the system\n'
+                  'and running processes to a journal entry.\n'
+                  'Use this to improve a problem report.')
+        label = Gtk.Label(label=trans)
 
         send_button = Gtk.Button(_('Capture information'))
         send_button.connect('clicked', self._on_send_button_clicked_cb)
@@ -670,7 +671,7 @@ class CollectorPalette(Palette):
             'title_set_by_user': '0',
             'suggested_filename': filename,
             'mime_type': 'application/zip',
-            }
+        }
         for k, v in metadata.items():
             jobject.metadata[k] = v
         jobject.file_path = filepath
