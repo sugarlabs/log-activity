@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-31 16:27+1000\n"
+"POT-Creation-Date: 2017-12-29 15:47+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,87 +27,87 @@ msgid ""
 "complicated program on the computer."
 msgstr ""
 
-#: logviewer.py:95
+#: logviewer.py:97
 msgid "Log Files"
 msgstr ""
 
-#: logviewer.py:108
+#: logviewer.py:110
 msgid "Other"
 msgstr ""
 
-#: logviewer.py:226
+#: logviewer.py:228
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr ""
 
-#: logviewer.py:246
+#: logviewer.py:248
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr ""
 
-#: logviewer.py:251
+#: logviewer.py:253
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr ""
 
-#: logviewer.py:399
+#: logviewer.py:401
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr ""
 
-#: logviewer.py:453
+#: logviewer.py:455
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:463
+#: logviewer.py:465
 msgid "Word Wrap"
 msgstr ""
 
-#: logviewer.py:479
+#: logviewer.py:481
 msgid "Previous"
 msgstr ""
 
-#: logviewer.py:484
+#: logviewer.py:486
 msgid "Next"
 msgstr ""
 
-#: logviewer.py:498
+#: logviewer.py:500
 msgid "Delete Log File"
 msgstr ""
 
-#: logviewer.py:604
+#: logviewer.py:606
 msgid "Error"
 msgstr ""
 
-#: logviewer.py:605
+#: logviewer.py:607
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:616
+#: logviewer.py:618
 msgid "Log Collector: Capture information"
 msgstr ""
 
-#: logviewer.py:623
+#: logviewer.py:625
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:627
+#: logviewer.py:629
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:650
+#: logviewer.py:658
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:651
+#: logviewer.py:659
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:661
+#: logviewer.py:669
 #, python-format
 msgid "log-%s"
 msgstr ""
