@@ -7,91 +7,88 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-24 17:39+1100\n"
-"PO-Revision-Date: 2017-06-14 20:30+0000\n"
-"Last-Translator: Mariana <dias.inkscape@gmail.com>\n"
+"PO-Revision-Date: 2017-12-19 22:17+0000\n"
+"Last-Translator: nabil509 <nabil509@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: pt_BR\n"
+"Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1.1\n"
-"X-POOTLE-MTIME: 1497472209.000000\n"
+"X-POOTLE-MTIME: 1513721820.000000\n"
 
 #: activity/activity.info:2
+#, fuzzy
 msgid "Log"
-msgstr "Histórico (log)"
+msgstr "Aɣmis"
 
 #: activity/activity.info:3
 msgid ""
 "This is an activity designed for anyone who wants to troubleshoot a "
 "complicated program on the computer."
 msgstr ""
-"Esta atividade foi projetada para pessoas interessadas em solucionar "
-"programas complicados no computador."
 
 #: logviewer.py:95
 msgid "Log Files"
-msgstr "Arquivos de Histórico (log)"
+msgstr "Ifuyla n weɣmis"
 
 #: logviewer.py:108
 msgid "Other"
-msgstr "Outro"
+msgstr ""
 
 #: logviewer.py:226
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
-msgstr "ERRO: Falha ao procurar arquivos em '%(path)s'."
+msgstr ""
 
 #: logviewer.py:246
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
-msgstr "ERRO: Arquivo '%(file)s' não existe(m)."
+msgstr ""
 
 #: logviewer.py:251
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
-msgstr "ERRO: Não foi possível ler o arquivo '%(file)s'."
+msgstr ""
 
 #: logviewer.py:399
 #, python-format
 msgid "Error: Can't open file '%s'\n"
-msgstr "Erro: Impossível abrir o arquivo '%s'\n"
+msgstr ""
 
 #: logviewer.py:453
 msgid "Show list of files"
-msgstr "Mostrar a lista de arquivos"
+msgstr ""
 
-# 1-geralmente ocorre quando a linha não cabe na tela e então escolhemos se queremos que a continuação apareça na próxima linha ou simplesmente haja truncamento visual;
-#
 #: logviewer.py:463
 msgid "Word Wrap"
-msgstr "Quebra de Palavras"
+msgstr ""
 
 #: logviewer.py:479
 msgid "Previous"
-msgstr "Anterior"
+msgstr ""
 
 #: logviewer.py:484
 msgid "Next"
-msgstr "Próximo"
+msgstr ""
 
 #: logviewer.py:498
 msgid "Delete Log File"
-msgstr "Apagar arquivo de Histórico (log)"
+msgstr ""
 
 #: logviewer.py:604
 msgid "Error"
-msgstr "Erro"
+msgstr ""
 
 #: logviewer.py:605
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr "%(error)s enquanto apagando %(file)s"
+msgstr ""
 
 #: logviewer.py:616
 msgid "Log Collector: Capture information"
-msgstr "Coletor de Histórico (Log): Coleta informações"
+msgstr ""
 
 #: logviewer.py:623
 msgid ""
@@ -99,24 +96,20 @@ msgid ""
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
-"Este captura e envia informações sobre o sistema,\n"
-"assim como os de processos sendo executados\n"
-"para o Journal. Use o mesmo para melhorar\n"
-"o relatório do problema."
 
 #: logviewer.py:627
 msgid "Capture information"
-msgstr "Capturar informação"
+msgstr ""
 
 #: logviewer.py:650
 msgid "Logs not captured"
-msgstr "Logs não capturados"
+msgstr ""
 
 #: logviewer.py:651
 msgid "The logs could not be captured."
-msgstr "Não foi possível capturar estes logs."
+msgstr ""
 
 #: logviewer.py:661
 #, python-format
 msgid "log-%s"
-msgstr "log-%s"
+msgstr ""
