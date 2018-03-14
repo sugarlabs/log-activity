@@ -47,9 +47,9 @@ import sys
 import time
 
 # The next couple are used by LogSend
-import httplib
+import http.client
 import mimetypes
-import urlparse
+import urllib.parse
 
 MFG_DATA_PATHS = ['/ofw/mfg-data/', '/proc/device-tree/mfg-data/']
 
@@ -296,7 +296,7 @@ class LogCollect:
         try:
             try:
                 z.writestr('info.txt', self.laptop_info())
-            except Exception, e:
+            except Exception as e:
                 z.writestr('info.txt',
                            "logcollect: could not add info.txt: %s" % e)
 
@@ -312,7 +312,7 @@ class LogCollect:
                                 z.writestr('var-log/' + fn,
                                            self.file_tail('/var/log/' + fn,
                                                           logbytes))
-                    except Exception, e:
+                    except Exception as e:
                         z.writestr('var-log/' + fn,
                                    "logcollect: could not add %s: %s" %
                                    (fn, e))
@@ -329,7 +329,7 @@ class LogCollect:
                             else:
                                 z.writestr(name,
                                            self.file_tail(path, logbytes))
-                        except Exception, e:
+                        except Exception as e:
                             z.writestr(name,
                                        "logcollect: could not add %s: %s" %
                                        (name, e))
@@ -345,18 +345,18 @@ class LogCollect:
                             else:
                                 z.writestr(name,
                                            self.file_tail(path, logbytes))
-                        except Exception, e:
+                        except Exception as e:
                             z.writestr(name,
                                        "logcollect: could not add %s: %s" %
                                        (name, e))
                 try:
                     z.write('/etc/resolv.conf')
-                except Exception, e:
+                except Exception as e:
                     z.writestr('/etc/resolv.conf',
                                "logcollect: could not add resolv.conf: %s" % e)
 
-        except Exception, e:
-            print 'While creating zip archive: %s' % e
+        except Exception as e:
+            print('While creating zip archive: %s' % e)
 
         z.close()
 
@@ -394,10 +394,10 @@ class LogCollect:
         """
 
         li = self.laptop_info()
-        for k, v in li.iteritems():
-            print k + ': ' + v
+        for k, v in li.items():
+            print(k + ': ' + v)
 
-        print self._mp.battery_info()
+        print(self._mp.battery_info())
 
     def laptop_info(self):
         """Return a string with laptop serial, battery type, build,
@@ -439,7 +439,7 @@ class LogCollect:
             s += '\n[ps auxwww]\n%s\n' % self._mp.ps_auxfwww()
             s += '\n[free]\n%s\n' % self._mp.usr_bin_free()
             s += '\n[top -bn2]\n%s\n' % self._mp.top()
-        except Exception, e:
+        except Exception as e:
             s += '\nException while building info:\n%s\n' % e
 
         return s
@@ -458,7 +458,7 @@ class LogSend:
         response page.
         """
         content_type, body = self.encode_multipart_formdata(fields, files)
-        h = httplib.HTTP(host)
+        h = http.client.HTTP(host)
         h.putrequest('POST', selector)
         h.putheader('content-type', content_type)
         h.putheader('content-length', str(len(body)))
@@ -518,10 +518,10 @@ class LogSend:
 
         # Client= olpc will make the server return just "OK" or "FAIL"
         fields = ('client', 'xo'),
-        urlparts = urlparse.urlsplit(url)
-        print "Sending logs to %s" % url
+        urlparts = urllib.parse.urlsplit(url)
+        print("Sending logs to %s" % url)
         r = self.post_multipart(urlparts[1], urlparts[2], fields, files)
-        print r
+        print(r)
         return (r == 'OK')
 
 
@@ -529,7 +529,7 @@ class LogSend:
 # a library.
 if sys.argv[0].endswith('logcollect.py') or \
         sys.argv[0].endswith('logcollect'):
-    print 'log-collect utility 1.0'
+    print('log-collect utility 1.0')
 
     lc = LogCollect()
     ls = LogSend()
@@ -538,7 +538,7 @@ if sys.argv[0].endswith('logcollect.py') or \
     mode = 'http'
 
     if len(sys.argv) == 1:
-        print """logcollect.py - send your XO logs to OLPC
+        print("""logcollect.py - send your XO logs to OLPC
 
 Usage:
     logcollect.py http://server.name/submit.php
@@ -557,7 +557,7 @@ Usage:
                         - Just save info.txt in /dev/shm/logs-SN123.zip
 
     If you specify 'all' or 'none' you must specify http or file as well.
-        """
+        """)
         sys.exit()
 
     logbytes = 15360
@@ -573,26 +573,26 @@ Usage:
         logs = mode[5:]
 
     logs = lc.write_logs(logs, logbytes)
-    print 'Logs saved in %s' % logs
+    print('Logs saved in %s' % logs)
 
     sent_ok = False
     if len(sys.argv) > 1:
         mode = sys.argv[len(sys.argv) - 1]
 
     if mode.startswith('http'):
-        print "Trying to send the logs using HTTP (web)"
+        print("Trying to send the logs using HTTP (web)")
         if len(mode) == 4:
-            print "No default log destination, aborting"
+            print("No default log destination, aborting")
             sys.exit(1)
         else:
             url = mode
 
         if ls.http_post_logs(url, logs):
-            print "Logs were sent."
+            print("Logs were sent.")
             sent_ok = True
         else:
-            print "FAILED to send logs."
+            print("FAILED to send logs.")
 
     if sent_ok:
         os.remove(logs)
-        print "Logs were sent, tempfile deleted."
+        print("Logs were sent, tempfile deleted.")
