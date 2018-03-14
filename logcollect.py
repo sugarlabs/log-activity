@@ -162,21 +162,21 @@ class MachineProperties:
             d = open('/proc/device-tree/openprom/model', 'r').read()
             v = self._trim_null(d)
             return v
-        except:
+        except BaseException:
             pass
 
         try:
             d = open('/ofw/openprom/model', 'r').read()
             v = self._trim_null(d)
             return v
-        except:
+        except BaseException:
             pass
 
         try:
             d = open('/sys/class/dmi/id/bios_version', 'r').read()
             v = self._trim_null(d)
             return v
-        except:
+        except BaseException:
             pass
 
         return ''
@@ -263,6 +263,7 @@ class LogCollect:
     """Collect XO logfiles and machine metadata for reporting to OLPC
 
     """
+
     def __init__(self):
         self._mp = MachineProperties()
 
