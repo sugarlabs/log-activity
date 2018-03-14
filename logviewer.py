@@ -421,7 +421,7 @@ class LogBuffer(Gtk.TextBuffer):
         # todo- Handle a subset of them.
         strip_ansi = re.compile(r'\033\[[\d;]*m')
         text = strip_ansi.sub('', text)
-        self.insert(self.get_end_iter(), text.encode('utf8'))
+        self.insert(self.get_end_iter(), text)
 
     def update(self):
         try:
@@ -640,7 +640,7 @@ class LogActivity(activity.Activity):
             logfile = self.viewer.active_log.logfile
             try:
                 os.remove(logfile)
-            except OSError, err:
+            except OSError as err:
                 notify = NotifyAlert()
                 notify.props.title = _('Error')
                 notify.props.msg = _('%(error)s when deleting %(file)s') % \
@@ -710,7 +710,7 @@ class CollectorPalette(Palette):
             'suggested_filename': filename,
             'mime_type': 'application/zip',
         }
-        for k, v in metadata.items():
+        for k, v in list(metadata.items()):
             jobject.metadata[k] = v
         jobject.file_path = filepath
         datastore.write(jobject)
