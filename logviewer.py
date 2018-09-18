@@ -24,11 +24,12 @@ import re
 
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
-from gi.repository import Gdk
-from gi.repository import Pango
+from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Gio
+from gi.repository import Gdk
+from gi.repository import Gtk
+from gi.repository import Pango
 
 from sugar3.activity import activity
 from sugar3.activity.widgets import ActivityToolbarButton
@@ -564,15 +565,15 @@ class LogActivity(activity.Activity):
 
     def _search_entry_activate_cb(self, entry):
         if self._autosearch_timer:
-            GObject.source_remove(self._autosearch_timer)
+            GLib.source_remove(self._autosearch_timer)
         self.viewer.set_search_text(entry.props.text)
         self._update_search_buttons()
 
     def _search_entry_changed_cb(self, entry):
         if self._autosearch_timer:
-            GObject.source_remove(self._autosearch_timer)
-        self._autosearch_timer = GObject.timeout_add(_AUTOSEARCH_TIMEOUT,
-                                                     self.__autosearch_cb)
+            GLib.source_remove(self._autosearch_timer)
+        self._autosearch_timer = GLib.timeout_add(_AUTOSEARCH_TIMEOUT,
+                                                  self.__autosearch_cb)
 
     def __autosearch_cb(self):
         self._autosearch_timer = None
