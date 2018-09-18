@@ -1,3 +1,15 @@
+39
+
+* New translations (Yaron, Božidar Putanec, nabil509, Mariana, Berend
+  and Paulo Francisco),
+
+* Fix several flake8 errors and warnings (James Cameron),
+* Add README (Rudra Sadhu),
+* Add .gitignore (Vipul Gupta)
+* Update metadata (Vipul Gupta)
+* Port from GObject to GLib (James Cameron),
+* Update POT file - line numbers only (James Cameron),
+
 38
 
 * New translations (Chris Leonard et al),
