@@ -8,4 +8,4 @@ license = MIT;GPLv2+
 summary = This is an activity designed for anyone who wants to troubleshoot a complicated program on the computer.
 tags = System;Programming
 url = https://help.sugarlabs.org/en/log.html
-github = https://github.com/sugarlabs/log-activity
+repository = https://github.com/sugarlabs/log-activity
