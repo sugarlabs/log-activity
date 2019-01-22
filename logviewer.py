@@ -54,7 +54,6 @@ _AUTOSEARCH_TIMEOUT = 1000
 def _notify_response_cb(notify, response, activity):
     activity.remove_alert(notify)
 
-
 class MultiLogView(Gtk.Paned):
 
     def __init__(self, paths, extra_files):
@@ -176,22 +175,30 @@ class MultiLogView(Gtk.Paned):
     def _configure_watcher(self):
         # Setting where GIO will be watching
         for p in self.paths:
-            monitor = Gio.File.new_for_path(p)\
-                .monitor_directory(Gio.FileMonitorFlags.NONE, None)
-            monitor.connect('changed', self._log_file_changed_cb)
-            self._gio_monitors.append(monitor)
+            dirs = os.listdir(p)
+            for direc in dirs:
+                directory = os.path.join(p, direc)
+                if os.path.isdir(directory):
+                    self._create_gio_monitor(directory)
+            self._create_gio_monitor(p)
 
         # We don't need monitor old logs, them will no change
-
         for f in self.extra_files:
-            monitor = Gio.File.new_for_path(f)\
-                .monitor_file(Gio.FileMonitorFlags.NONE, None)
-            monitor.connect('changed', self._log_file_changed_cb)
-            self._gio_monitors.append(monitor)
+            self._create_gio_monitor(f)
+
+    def _create_gio_monitor(self, direc_path):
+        monitor = Gio.File.new_for_path(direc_path)\
+            .monitor_directory(Gio.FileMonitorFlags.NONE, None)
+        monitor.connect('changed', self._log_file_changed_cb)
+        self._gio_monitors.append(monitor)
 
     def _log_file_changed_cb(self, monitor, log_file, other_file, event):
-        logfile = log_file.get_basename()
-
+        filepath = log_file.get_path()
+        paths = self.paths
+        logfile = None
+        for dir_path in self.paths:
+            if dir_path in filepath:
+                logfile = os.path.relpath(filepath, dir_path)
         if event == Gio.FileMonitorEvent.CHANGED:
             if logfile in self.logs:
                 self.logs[logfile].update()
