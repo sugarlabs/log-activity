@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 18:56+1000\n"
+"POT-Creation-Date: 2019-01-23 13:01+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,79 +35,79 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-#: logviewer.py:230
+#: logviewer.py:239
 #, python-format
 msgid "ERROR: Failed to look for files in '%(path)s'."
 msgstr ""
 
-#: logviewer.py:250
+#: logviewer.py:259
 #, python-format
 msgid "ERROR: File '%(file)s' does not exist."
 msgstr ""
 
-#: logviewer.py:255
+#: logviewer.py:264
 #, python-format
 msgid "ERROR: Unable to read file '%(file)s'."
 msgstr ""
 
-#: logviewer.py:403
+#: logviewer.py:412
 #, python-format
 msgid "Error: Can't open file '%s'\n"
 msgstr ""
 
-#: logviewer.py:457
+#: logviewer.py:466
 msgid "Show list of files"
 msgstr ""
 
-#: logviewer.py:467
+#: logviewer.py:476
 msgid "Word Wrap"
 msgstr ""
 
-#: logviewer.py:483
+#: logviewer.py:492
 msgid "Previous"
 msgstr ""
 
-#: logviewer.py:488
+#: logviewer.py:497
 msgid "Next"
 msgstr ""
 
-#: logviewer.py:502
+#: logviewer.py:511
 msgid "Delete Log File"
 msgstr ""
 
-#: logviewer.py:608
+#: logviewer.py:617
 msgid "Error"
 msgstr ""
 
-#: logviewer.py:609
+#: logviewer.py:618
 #, python-format
 msgid "%(error)s when deleting %(file)s"
 msgstr ""
 
-#: logviewer.py:620
+#: logviewer.py:629
 msgid "Log Collector: Capture information"
 msgstr ""
 
-#: logviewer.py:626
+#: logviewer.py:635
 msgid ""
 "This captures information about the system\n"
 "and running processes to a journal entry.\n"
 "Use this to improve a problem report."
 msgstr ""
 
-#: logviewer.py:631
+#: logviewer.py:640
 msgid "Capture information"
 msgstr ""
 
-#: logviewer.py:660
+#: logviewer.py:669
 msgid "Logs not captured"
 msgstr ""
 
-#: logviewer.py:661
+#: logviewer.py:670
 msgid "The logs could not be captured."
 msgstr ""
 
-#: logviewer.py:671
+#: logviewer.py:680
 #, python-format
 msgid "log-%s"
 msgstr ""

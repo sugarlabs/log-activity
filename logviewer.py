@@ -174,23 +174,29 @@ class MultiLogView(Gtk.Paned):
             return 0
 
     def _configure_watcher(self):
-        # Setting where GIO will be watching
         for p in self.paths:
-            monitor = Gio.File.new_for_path(p)\
-                .monitor_directory(Gio.FileMonitorFlags.NONE, None)
-            monitor.connect('changed', self._log_file_changed_cb)
-            self._gio_monitors.append(monitor)
-
-        # We don't need monitor old logs, them will no change
+            for q in os.listdir(p):
+                r = os.path.join(p, q)
+                if os.path.isdir(r):
+                    self._create_gio_monitor(r)
+            self._create_gio_monitor(p)
 
         for f in self.extra_files:
-            monitor = Gio.File.new_for_path(f)\
-                .monitor_file(Gio.FileMonitorFlags.NONE, None)
-            monitor.connect('changed', self._log_file_changed_cb)
-            self._gio_monitors.append(monitor)
+            self._create_gio_monitor(f)
+
+    def _create_gio_monitor(self, direc_path):
+        monitor = Gio.File.new_for_path(direc_path)\
+            .monitor_directory(Gio.FileMonitorFlags.NONE, None)
+        monitor.connect('changed', self._log_file_changed_cb)
+        self._gio_monitors.append(monitor)
 
     def _log_file_changed_cb(self, monitor, log_file, other_file, event):
-        logfile = log_file.get_basename()
+        filepath = log_file.get_path()
+        logfile = None
+        for p in self.paths:
+            if filepath.startswith(p):
+                logfile = os.path.relpath(filepath, p)
+                break
 
         if event == Gio.FileMonitorEvent.CHANGED:
             if logfile in self.logs:
