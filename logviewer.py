@@ -54,6 +54,7 @@ _AUTOSEARCH_TIMEOUT = 1000
 def _notify_response_cb(notify, response, activity):
     activity.remove_alert(notify)
 
+
 class MultiLogView(Gtk.Paned):
 
     def __init__(self, paths, extra_files):
