@@ -79,6 +79,29 @@ class MultiLogView(Gtk.Paned):
         self._configure_watcher()
         self._find_logs()
 
+    def _format_col(self, col, cell, model, iterator, user_data):
+        treestore, text_iter = self._treeview.get_selection().get_selected()
+        direc = None
+        try:
+            direc, filename = self.first_file_open.split('|')
+        except:
+            filename = self.first_file_open
+        if text_iter is None:
+            if direc is None and filename == model.get_value(iterator, 0):
+                cell.props.background_rgba = Gdk.RGBA(0.8, 0.8, 0.8, 1)
+            elif direc == model.get_value(iterator, 0):
+                child_iterator = model.iter_children(iterator)
+                while(child_iterator != None):
+                    if filename == model.get_value(child_iterator, 0):
+                        cell.props.background_rgba = Gdk.RGBA(0.8, 0.8, 0.8, 1)
+                        break
+                    else:
+                        child_iterator = model.iter_next(child_iterator)
+            else:
+                cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+        else:
+                cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+
     def _build_treeview(self):
         self._treeview = Gtk.TreeView()
 
@@ -97,6 +120,7 @@ class MultiLogView(Gtk.Paned):
 
         renderer = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn(_('Log Files'), renderer, text=0)
+        col.set_cell_data_func(renderer, self._format_col, 0)
         self._treeview.append_column(col)
 
         renderer = Gtk.CellRendererText()
@@ -222,6 +246,12 @@ class MultiLogView(Gtk.Paned):
 
     def _show_log(self, logfile):
         if logfile in self.logs:
+            if self.active_log is None:
+                try:
+                    direc, filename = os.path.split(logfile)
+                    self.first_file_open = time.ctime(float(direc)) + '|' + filename
+                except:
+                    self.first_file_open = logfile
             log = self.logs[logfile]
             self._textview.set_buffer(log)
             self._textview.scroll_to_mark(
@@ -265,7 +295,6 @@ class MultiLogView(Gtk.Paned):
 
         directory, logfile = os.path.split(path)
         name = logfile
-
         if _dir:
             logfile = '%s/%s' % (_dir, logfile)
 
@@ -285,8 +314,8 @@ class MultiLogView(Gtk.Paned):
         written = log._written
 
         if self.active_log is None:
-            self.active_log = log
             self._show_log(logfile)
+            self.active_log = log
             success, log_iter = \
                 self._treeview.get_model().convert_child_iter_to_iter(log.iter)
             self._treeview.get_selection().select_iter(log_iter)
