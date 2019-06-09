@@ -81,26 +81,21 @@ class MultiLogView(Gtk.Paned):
 
     def _format_col(self, col, cell, model, iterator, user_data):
         treestore, text_iter = self._treeview.get_selection().get_selected()
-        direc = None
-        try:
-            direc, filename = self.first_file_open.split('|')
-        except:
-            filename = self.first_file_open
+        direc, filename = self.first_file_open.split('|')
         if text_iter is None:
-            if direc is None and filename == model.get_value(iterator, 0):
-                cell.props.background_rgba = Gdk.RGBA(0.8, 0.8, 0.8, 1)
-            elif direc == model.get_value(iterator, 0):
-                child_iterator = model.iter_children(iterator)
-                while(child_iterator != None):
-                    if filename == model.get_value(child_iterator, 0):
-                        cell.props.background_rgba = Gdk.RGBA(0.8, 0.8, 0.8, 1)
-                        break
+            if filename == model.get_value(iterator, 0):
+                parent_iter = model.iter_parent(iterator)
+                if parent_iter is None:
+                    cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+                else:
+                    if direc == model.get_value(parent_iter, 0):
+                        cell.props.background_rgba = Gdk.RGBA(0.75, 0.75, 0.75, 1)
                     else:
-                        child_iterator = model.iter_next(child_iterator)
+                        cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
             else:
                 cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
         else:
-                cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+            cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
 
     def _build_treeview(self):
         self._treeview = Gtk.TreeView()
@@ -251,7 +246,7 @@ class MultiLogView(Gtk.Paned):
                     direc, filename = os.path.split(logfile)
                     self.first_file_open = time.ctime(float(direc)) + '|' + filename
                 except:
-                    self.first_file_open = logfile
+                    self.first_file_open = env.get_profile_path('logs') + '|' + logfile
             log = self.logs[logfile]
             self._textview.set_buffer(log)
             self._textview.scroll_to_mark(
