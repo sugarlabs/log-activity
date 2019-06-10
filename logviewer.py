@@ -65,6 +65,7 @@ class MultiLogView(Gtk.Paned):
         self.extra_files = extra_files
         # Hold a reference to the monitors so they don't get disposed
         self._gio_monitors = []
+        self.first_file_open = '|'
 
         self.active_log = None
         self.logs = {}
@@ -78,6 +79,25 @@ class MultiLogView(Gtk.Paned):
 
         self._configure_watcher()
         self._find_logs()
+
+    def _format_col(self, col, cell, model, iterator, user_data):
+        treestore, text_iter = self._treeview.get_selection().get_selected()
+        direc, filename = self.first_file_open.split('|')
+        if text_iter is None:
+            if filename == model.get_value(iterator, 0):
+                parent_iter = model.iter_parent(iterator)
+                if parent_iter is None:
+                    cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+                else:
+                    if direc == model.get_value(parent_iter, 0):
+                        cell.props.background_rgba = \
+                            Gdk.RGBA(0.75, 0.75, 0.75, 1)
+                    else:
+                        cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+            else:
+                cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
+        else:
+            cell.props.background_rgba = Gdk.RGBA(1.0, 1.0, 1.0, 1)
 
     def _build_treeview(self):
         self._treeview = Gtk.TreeView()
@@ -97,6 +117,7 @@ class MultiLogView(Gtk.Paned):
 
         renderer = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn(_('Log Files'), renderer, text=0)
+        col.set_cell_data_func(renderer, self._format_col, 0)
         self._treeview.append_column(col)
 
         renderer = Gtk.CellRendererText()
@@ -222,6 +243,14 @@ class MultiLogView(Gtk.Paned):
 
     def _show_log(self, logfile):
         if logfile in self.logs:
+            if self.active_log is None:
+                try:
+                    direc, filename = os.path.split(logfile)
+                    self.first_file_open = time.ctime(float(direc)) + \
+                                           '|' + filename
+                except ValueError:
+                    self.first_file_open = env.get_profile_path('logs') + \
+                                           '|' + logfile
             log = self.logs[logfile]
             self._textview.set_buffer(log)
             self._textview.scroll_to_mark(
@@ -285,8 +314,8 @@ class MultiLogView(Gtk.Paned):
         written = log._written
 
         if self.active_log is None:
-            self.active_log = log
             self._show_log(logfile)
+            self.active_log = log
             success, log_iter = \
                 self._treeview.get_model().convert_child_iter_to_iter(log.iter)
             self._treeview.get_selection().select_iter(log_iter)
