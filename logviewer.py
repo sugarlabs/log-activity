@@ -248,7 +248,8 @@ class MultiLogView(Gtk.Paned):
                         treeview.expand_row(path, False)
 
     def _treeview_key_press_cb(self, treeview, event):
-        self.emit('treeview-delete')
+        if event.keyval == Gdk.KEY_Delete:
+            self.emit('treeview-delete')
 
     def _show_log(self, logfile):
         if logfile in self.logs:
