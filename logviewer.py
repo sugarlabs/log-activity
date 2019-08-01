@@ -535,6 +535,7 @@ class LogActivity(activity.Activity):
         activity_toolbar.insert(collector_btn, -1)
 
         self._delete_btn = ToolButton('list-remove')
+        self._delete_btn = ToolButton('list-remove', accelerator='<ctrl>d')
         self._delete_btn.set_tooltip(_('Delete Log File'))
         self._delete_btn.connect('clicked', self._delete_log_cb)
         self._toolbar.insert(self._delete_btn, -1)
