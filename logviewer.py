@@ -57,11 +57,6 @@ def _notify_response_cb(notify, response, activity):
 
 class MultiLogView(Gtk.Paned):
 
-    __gsignals__ = {
-        'treeview-delete': (GObject.SignalFlags.RUN_FIRST, None,
-                            ([])),
-    }
-
     def __init__(self, paths, extra_files):
         GObject.GObject.__init__(self)
         self.set_orientation(Gtk.Orientation.HORIZONTAL)
@@ -109,7 +104,6 @@ class MultiLogView(Gtk.Paned):
 
         self._treeview.set_rules_hint(True)
         self._treeview.connect('cursor-changed', self._cursor_changed_cb)
-        self._treeview.connect("key-press-event", self._treeview_key_press_cb)
         self._treeview.set_enable_search(False)
 
         self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING,
@@ -246,10 +240,6 @@ class MultiLogView(Gtk.Paned):
                         treeview.collapse_row(path)
                     else:
                         treeview.expand_row(path, False)
-
-    def _treeview_key_press_cb(self, treeview, event):
-        if event.keyval == Gdk.KEY_Delete:
-            self.emit('treeview-delete')
 
     def _show_log(self, logfile):
         if logfile in self.logs:
@@ -466,7 +456,6 @@ class LogActivity(activity.Activity):
         ext_files.append(os.path.expanduser('~/.bash_history'))
 
         self.viewer = MultiLogView(paths, ext_files)
-        self.viewer.connect('treeview-delete', self._treeview_delete_cb)
         self.set_canvas(self.viewer)
         self.viewer.grab_focus()
 
@@ -479,9 +468,6 @@ class LogActivity(activity.Activity):
         self._configure_cb(None)
 
         Gdk.Screen.get_default().connect('size-changed', self._configure_cb)
-
-    def _treeview_delete_cb(self, i):
-        self._delete_log_cb()
 
     def _build_toolbox(self):
         toolbar_box = ToolbarBox()
@@ -549,6 +535,7 @@ class LogActivity(activity.Activity):
         activity_toolbar.insert(collector_btn, -1)
 
         self._delete_btn = ToolButton('list-remove')
+        self._delete_btn = ToolButton('list-remove', accelerator='<ctrl>d')
         self._delete_btn.set_tooltip(_('Delete Log File'))
         self._delete_btn.connect('clicked', self._delete_log_cb)
         self._toolbar.insert(self._delete_btn, -1)
@@ -648,7 +635,7 @@ class LogActivity(activity.Activity):
             self._search_prev.props.sensitive = prev_result is not None
             self._search_next.props.sensitive = next_result is not None
 
-    def _delete_log_cb(self, widget=None):
+    def _delete_log_cb(self, widget):
         if self.viewer.active_log:
             logfile = self.viewer.active_log.logfile
             try:
