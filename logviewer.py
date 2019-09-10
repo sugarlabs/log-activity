@@ -246,11 +246,11 @@ class MultiLogView(Gtk.Paned):
             if self.active_log is None:
                 try:
                     direc, filename = os.path.split(logfile)
-                    self.first_file_open = time.ctime(float(direc)) + \
-                                           '|' + filename
+                    self.first_file_open = \
+                        time.ctime(float(direc)) + '|' + filename
                 except ValueError:
-                    self.first_file_open = env.get_profile_path('logs') + \
-                                           '|' + logfile
+                    self.first_file_open = \
+                        env.get_profile_path('logs') + '|' + logfile
             log = self.logs[logfile]
             self._textview.set_buffer(log)
             self._textview.scroll_to_mark(
