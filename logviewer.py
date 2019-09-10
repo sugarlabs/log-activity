@@ -603,6 +603,7 @@ class LogActivity(activity.Activity):
     def _search_entry_activate_cb(self, entry):
         if self._autosearch_timer:
             GLib.source_remove(self._autosearch_timer)
+            self._autosearch_timer = None
         self.viewer.set_search_text(entry.props.text)
         self._update_search_buttons()
 
