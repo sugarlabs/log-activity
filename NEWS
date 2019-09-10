@@ -1,3 +1,11 @@
+40.1
+
+* Highlight default log on activity start (Swarup N),
+* Use ctrl-d to delete log file (Hrishi Patel),
+* Remove empty locale files (James Cameron),
+* Adjust README.md (James Cameron),
+* Fix log warning (James Cameron),
+
 40
 
 * Fix repository metadata (James Cameron),
