@@ -109,8 +109,13 @@ class MultiLogView(Gtk.Paned):
         self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING,
                                         GObject.TYPE_STRING)
 
-        # README: https://bugzilla.gnome.org/show_bug.cgi?id=680009
-        sorted = self._treemodel.sort_new_with_model()
+        if hasattr(Gtk.TreeModelSort, 'new_with_model'):
+            # GTK 3.24.14 and later
+            sorted = Gtk.TreeModelSort.new_with_model(self._treemodel)
+        else:
+            # GTK 3.24.13 and earlier, gtk/e3247ed0d9
+            sorted = self._treemodel.sort_new_with_model()
+
         sorted.set_sort_column_id(0, Gtk.SortType.ASCENDING)
         sorted.set_sort_func(0, self._sort_logfile)
         self._treeview.set_model(sorted)
