@@ -459,15 +459,15 @@ class LogSend:
         response page.
         """
         content_type, body = self.encode_multipart_formdata(fields, files)
-        h = http.client.HTTP(host)
+        h = http.client.HTTPConnection(host)
         h.putrequest('POST', selector)
         h.putheader('content-type', content_type)
         h.putheader('content-length', str(len(body)))
         h.putheader('Host', host)
         h.endheaders()
         h.send(body)
-        errcode, errmsg, headers = h.getreply()
-        return h.file.read()
+        response = h.getresponse()
+        return response.read()
 
     def encode_multipart_formdata(self, fields, files):
         """
