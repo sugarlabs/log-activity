@@ -23,8 +23,8 @@ from gettext import gettext as _
 import re
 
 import gi
-gi.require_version('Gdk', '3.0')
-gi.require_version('Gtk', '3.0')
+gi.require_version('Gtk', '4.0')
+gi.require_version('Gdk', '4.0')
 from gi.repository import GLib
 from gi.repository import GObject
 from gi.repository import Gio
@@ -32,19 +32,19 @@ from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import Pango
 
-from sugar3.activity import activity
-from sugar3.activity.widgets import ActivityToolbarButton
-from sugar3 import env
-from sugar3.graphics import iconentry
-from sugar3.graphics.toolbutton import ToolButton
-from sugar3.graphics.toggletoolbutton import ToggleToolButton
-from sugar3.graphics.palette import Palette
-from sugar3.graphics.alert import NotifyAlert
+from sugar4.activity import activity
+from sugar4.activity.widgets import ActivityToolbarButton
+from sugar4 import env
+from sugar4.graphics import iconentry
+from sugar4.graphics.toolbutton import ToolButton
+from sugar4.graphics.toggletoolbutton import ToggleToolButton
+from sugar4.graphics.palette import Palette
+from sugar4.graphics.alert import NotifyAlert
 from logcollect import LogCollect
-from sugar3.graphics.toolbarbox import ToolbarBox
-from sugar3.graphics.toolbarbox import ToolbarButton
-from sugar3.activity.widgets import CopyButton, StopButton
-from sugar3.datastore import datastore
+from sugar4.graphics.toolbarbox import ToolbarBox
+from sugar4.graphics.toolbarbox import ToolbarButton
+from sugar4.activity.widgets import CopyButton, StopButton
+from sugar4.datastore import datastore
 
 
 _AUTOSEARCH_TIMEOUT = 1000
@@ -75,8 +75,6 @@ class MultiLogView(Gtk.Paned):
         self._build_treeview()
         self._build_textview()
 
-        self.show_all()
-
         self._configure_watcher()
         self._find_logs()
 
@@ -102,19 +100,13 @@ class MultiLogView(Gtk.Paned):
     def _build_treeview(self):
         self._treeview = Gtk.TreeView()
 
-        self._treeview.set_rules_hint(True)
         self._treeview.connect('cursor-changed', self._cursor_changed_cb)
         self._treeview.set_enable_search(False)
 
         self._treemodel = Gtk.TreeStore(GObject.TYPE_STRING,
                                         GObject.TYPE_STRING)
 
-        if hasattr(Gtk.TreeModelSort, 'new_with_model'):
-            # GTK 3.24.14 and later
-            sorted = Gtk.TreeModelSort.new_with_model(self._treemodel)
-        else:
-            # GTK 3.24.13 and earlier, gtk/e3247ed0d9
-            sorted = self._treemodel.sort_new_with_model()
+        sorted = Gtk.TreeModelSort.new_with_model(self._treemodel)
 
         sorted.set_sort_column_id(0, Gtk.SortType.ASCENDING)
         sorted.set_sort_func(0, self._sort_logfile)
@@ -128,7 +120,7 @@ class MultiLogView(Gtk.Paned):
         renderer = Gtk.CellRendererText()
         col = Gtk.TreeViewColumn('', renderer, text=1)
         self._treeview.append_column(col)
-        col.props.visible = False
+        col.set_visible(False)
 
         self.path_iter = {}
         for p in self.paths:
@@ -140,28 +132,28 @@ class MultiLogView(Gtk.Paned):
         self.list_scroll = Gtk.ScrolledWindow()
         self.list_scroll.set_policy(Gtk.PolicyType.AUTOMATIC,
                                     Gtk.PolicyType.AUTOMATIC)
-        self.list_scroll.add(self._treeview)
-        self.list_scroll.set_size_request(Gdk.Screen.width() * 30 / 100, -1)
+        self.list_scroll.set_child(self._treeview)
+        self.list_scroll.set_size_request(300, -1)
 
-        self.add1(self.list_scroll)
+        self.set_start_child(self.list_scroll)
 
     def _build_textview(self):
         self._textview = Gtk.TextView()
         self._textview.set_wrap_mode(Gtk.WrapMode.NONE)
 
-        pangoFont = Pango.FontDescription('Mono')
-        self._textview.modify_font(pangoFont)
-
-        bgcolor = Gdk.color_parse('#FFFFFF')
-        self._textview.modify_base(Gtk.StateType.NORMAL, bgcolor)
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_data(b"textview { font-family: Monospace; background-color: #FFFFFF; }")
+        
+        context = self._textview.get_style_context()
+        context.add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         self._textview.set_editable(False)
 
         scroll = Gtk.ScrolledWindow()
         scroll.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        scroll.add(self._textview)
+        scroll.set_child(self._textview)
 
-        self.add2(scroll)
+        self.set_end_child(scroll)
 
     def _sort_logfile(self, treemodel, itera, iterb, user_data=None):
         a = treemodel.get_value(itera, 0)
@@ -467,12 +459,11 @@ class LogActivity(activity.Activity):
         self._build_toolbox()
 
         # Get Sugar's clipboard
-        self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
-        self.show()
+        self.clipboard = Gdk.Display.get_default().get_clipboard()
 
         self._configure_cb(None)
 
-        Gdk.Screen.get_default().connect('size-changed', self._configure_cb)
+        self.connect('notify::default-width', self._configure_cb)
 
     def _build_toolbox(self):
         toolbar_box = ToolbarBox()
@@ -483,52 +474,52 @@ class LogActivity(activity.Activity):
         activity_toolbar = activity_button.page
 
         self._toolbar = toolbar_box.toolbar
-        self._toolbar.insert(activity_button, -1)
+        self._toolbar.append(activity_button)
 
-        self._secondary_toolbar = Gtk.Toolbar()
+        self._secondary_toolbar = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         self._secondary_toolbar_button = ToolbarButton(
             page=self._secondary_toolbar,
             icon_name='system-search')
         self._secondary_toolbar.show()
-        self._toolbar.insert(self._secondary_toolbar_button, -1)
+        self._toolbar.append(self._secondary_toolbar_button)
         self._secondary_toolbar_button.hide()
 
         show_list = ToggleToolButton('view-list')
         show_list.set_active(True)
         show_list.set_tooltip(_('Show list of files'))
         show_list.connect('toggled', self._list_toggled_cb)
-        self._toolbar.insert(show_list, -1)
+        self._toolbar.append(show_list)
         show_list.show()
 
         copy = CopyButton()
         copy.connect('clicked', self.__copy_clicked_cb)
-        self._toolbar.insert(copy, -1)
+        self._toolbar.append(copy)
 
         wrap_btn = ToggleToolButton("format-wrap")
         wrap_btn.set_tooltip(_('Word Wrap'))
         wrap_btn.connect('clicked', self._wrap_cb)
-        self._toolbar.insert(wrap_btn, -1)
+        self._toolbar.append(wrap_btn)
 
         self.search_entry = iconentry.IconEntry()
-        self.search_entry.set_size_request(Gdk.Screen.width() / 3, -1)
+        self.search_entry.set_size_request(300, -1)
         self.search_entry.set_icon_from_name(
             iconentry.ICON_ENTRY_PRIMARY, 'entry-search')
         self.search_entry.add_clear_button()
         self.search_entry.connect('activate', self._search_entry_activate_cb)
         self.search_entry.connect('changed', self._search_entry_changed_cb)
-        self._search_item = Gtk.ToolItem()
-        self._search_item.add(self.search_entry)
-        self._toolbar.insert(self._search_item, -1)
+        self._search_item = Gtk.Box()
+        self._search_item.append(self.search_entry)
+        self._toolbar.append(self._search_item)
 
         self._search_prev = ToolButton('go-previous-paired')
         self._search_prev.set_tooltip(_('Previous'))
         self._search_prev.connect('clicked', self._search_prev_cb)
-        self._toolbar.insert(self._search_prev, -1)
+        self._toolbar.append(self._search_prev)
 
         self._search_next = ToolButton('go-next-paired')
         self._search_next.set_tooltip(_('Next'))
         self._search_next.connect('clicked', self._search_next_cb)
-        self._toolbar.insert(self._search_next, -1)
+        self._toolbar.append(self._search_next)
 
         self._update_search_buttons()
 
@@ -537,31 +528,28 @@ class LogActivity(activity.Activity):
         collector_btn.set_palette(self.collector_palette)
         collector_btn.connect('clicked', self._logviewer_cb)
         collector_btn.show()
-        activity_toolbar.insert(collector_btn, -1)
+        activity_toolbar.append(collector_btn)
 
-        self._delete_btn = ToolButton('list-remove')
         self._delete_btn = ToolButton('list-remove', accelerator='<ctrl>d')
         self._delete_btn.set_tooltip(_('Delete Log File'))
         self._delete_btn.connect('clicked', self._delete_log_cb)
-        self._toolbar.insert(self._delete_btn, -1)
+        self._toolbar.append(self._delete_btn)
 
-        self._separator = Gtk.SeparatorToolItem()
-        self._separator.set_expand(True)
-        self._separator.set_draw(False)
-        self._toolbar.insert(self._separator, -1)
+        self._separator = Gtk.Separator()
+        self._separator.set_hexpand(True)
+        self._toolbar.append(self._separator)
 
         self._stop_btn = StopButton(self)
-        self._toolbar.insert(self._stop_btn, -1)
+        self._toolbar.append(self._stop_btn)
 
-        toolbar_box.show_all()
         self.set_toolbar_box(toolbar_box)
 
     def _configure_cb(self, event=None):
         for control in [self._stop_btn, self._separator, self._delete_btn]:
-            if control in self._toolbar:
+            if control.get_parent() == self._toolbar:
                 self._toolbar.remove(control)
 
-        if Gdk.Screen.width() < Gdk.Screen.height():
+        if self.get_width() < self.get_height():
             self._secondary_toolbar_button.show()
             self._secondary_toolbar_button.set_expanded(True)
             self._remove_controls(self._toolbar)
@@ -573,20 +561,20 @@ class LogActivity(activity.Activity):
             self._add_controls(self._toolbar)
 
         for control in [self._delete_btn, self._separator, self._stop_btn]:
-            if control not in self._toolbar:
-                self._toolbar.insert(control, -1)
+            if control.get_parent() != self._toolbar:
+                self._toolbar.append(control)
 
     def _remove_controls(self, toolbar):
         for control in [self._search_item, self._search_prev,
                         self._search_next]:
-            if control in toolbar:
+            if control.get_parent() == toolbar:
                 toolbar.remove(control)
 
     def _add_controls(self, toolbar):
         for control in [self._search_item, self._search_prev,
                         self._search_next]:
-            if control not in toolbar:
-                toolbar.insert(control, -1)
+            if control.get_parent() != toolbar:
+                toolbar.append(control)
                 control.show()
 
     def _list_toggled_cb(self, widget):
@@ -670,22 +658,23 @@ class CollectorPalette(Palette):
                   'and running processes to a journal entry.\n'
                   'Use this to improve a problem report.')
         label = Gtk.Label(label=trans)
+        label.set_vexpand(True)
 
-        send_button = Gtk.Button(_('Capture information'))
+        send_button = Gtk.Button(label=_('Capture information'))
         send_button.connect('clicked', self._on_send_button_clicked_cb)
+        send_button.set_vexpand(True)
 
-        vbox = Gtk.VBox(False, 5)
-        vbox.pack_start(label, True, True, 0)
-        vbox.pack_start(send_button, True, True, 0)
-        vbox.show_all()
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        vbox.append(label)
+        vbox.append(send_button)
 
         self.set_content(vbox)
 
     def _on_send_button_clicked_cb(self, button):
         window = self._activity.get_window()
-        old_cursor = window.get_cursor()
-        window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.WATCH))
-        Gdk.flush()
+        
+        wait_cursor = Gdk.Cursor.new_from_name("wait", None)
+        self._activity.set_cursor(wait_cursor)
 
         identifier = str(int(time.time()))
         filename = '%s.zip' % identifier
@@ -725,5 +714,4 @@ class CollectorPalette(Palette):
         activity.show_object_in_journal(self._last_log)
         os.remove(filepath)
 
-        window.set_cursor(old_cursor)
-        Gdk.flush()
+        self._activity.set_cursor(None)
