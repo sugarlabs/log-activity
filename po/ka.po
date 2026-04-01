@@ -8,17 +8,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-02-08 06:49+1100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-04-01 08:11+0000\n"
+"Last-Translator: NF <rkavt@smartprojects.ge>\n"
+"Language-Team: Georgian <http://weblate.sugarlabs.org/projects/"
+"sugar-activities/log/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4.2\n"
 
 #: activity/activity.info:2
 msgid "Log"
-msgstr ""
+msgstr "ჟურნალი"
 
 #: activity/activity.info:3
 msgid ""
@@ -28,11 +31,11 @@ msgstr ""
 
 #: logviewer.py:119
 msgid "Log Files"
-msgstr ""
+msgstr "ჟურნალის ფაილები"
 
 #: logviewer.py:133
 msgid "Other"
-msgstr ""
+msgstr "სხვა"
 
 #: logviewer.py:266
 #, python-format
@@ -60,28 +63,28 @@ msgstr ""
 
 #: logviewer.py:503
 msgid "Word Wrap"
-msgstr ""
+msgstr "სიტყვების გადატანა"
 
 #: logviewer.py:519
 msgid "Previous"
-msgstr ""
+msgstr "წინა"
 
 #: logviewer.py:524
 msgid "Next"
-msgstr ""
+msgstr "შემდეგი"
 
 #: logviewer.py:539
 msgid "Delete Log File"
-msgstr ""
+msgstr "ჟურნალის ფაილის წაშლა"
 
 #: logviewer.py:646
 msgid "Error"
-msgstr ""
+msgstr "შეცდომა"
 
 #: logviewer.py:647
 #, python-format
 msgid "%(error)s when deleting %(file)s"
-msgstr ""
+msgstr "%(error)s %(file)s-ის წაშლისას"
 
 #: logviewer.py:658
 msgid "Log Collector: Capture information"
@@ -96,7 +99,7 @@ msgstr ""
 
 #: logviewer.py:669
 msgid "Capture information"
-msgstr ""
+msgstr "ჩაჭერის ინფორმაცია"
 
 #: logviewer.py:698
 msgid "Logs not captured"
